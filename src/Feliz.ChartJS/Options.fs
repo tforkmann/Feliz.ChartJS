@@ -54,4 +54,4 @@ type legend =
     static member inline position(position: LegendPosition) : ILegendProp =
         Interop.mkLegendProp "position" position
 
-    static member inline display(display: bool) : ILegendProp = Interop.mkLegendProp "legend" display
+    static member inline display(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
