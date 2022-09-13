@@ -3,29 +3,22 @@ namespace Feliz.ChartJS
 open Fable.Core
 
 /// This interface allows us to stop adding random props to the react grid layout.
-type IReactJSProp =
+type IChartJSProp =
     interface
     end
 
-type ILayout =
+type IOptionsProp =
     interface
     end
 
-type ILayoutProp =
+type ILineChartProp =
     interface
     end
 
-type IItem =
+type ILineDataProp =
     interface
     end
 
-type IStyleProp =
+type ILineDataSetsProp =
     interface
     end
-
-type Layout =
-    abstract x: int
-    abstract y: int
-    abstract i: string
-    abstract w: int
-    abstract h: int

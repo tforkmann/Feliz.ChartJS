@@ -1,12 +1,12 @@
-# Feliz Binding for [ReactJS](https://github.com/react-grid-layout/react-grid-layout)
+# Feliz Binding for [ChartJS](https://github.com/react-grid-layout/react-grid-layout)
 
-[![Feliz.ReactJS on Nuget](https://buildstats.info/nuget/Feliz.ReactJS)](https://www.nuget.org/packages/Feliz.ReactJS/)
-[![Client](https://github.com/DataBreezeUG/Feliz.ReactJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/DataBreezeUG/Feliz.ReactJS/actions/workflows/Docs.yml)
+[![Feliz.ChartJS on Nuget](https://buildstats.info/nuget/Feliz.ChartJS)](https://www.nuget.org/packages/Feliz.ChartJS/)
+[![Client](https://github.com/DataBreezeUG/Feliz.ChartJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/DataBreezeUG/Feliz.ChartJS/actions/workflows/Docs.yml)
 
 ## Installation
 Install the nuget package
 ```
-dotnet paket add Feliz.ReactJS
+dotnet paket add Feliz.ChartJS
 ```
 
 and install the npm package
@@ -17,7 +17,7 @@ npm install --save react-grid-layout
 
 or use Femto:
 ```
-femto install Feliz.ReactJS
+femto install Feliz.ChartJS
 ```
 
 ## Start test app
@@ -27,6 +27,6 @@ femto install Feliz.ReactJS
 dotnet run
 ```
 
-## Example ReactJS
-Here is an example ReactJS
+## Example ChartJS
+Here is an example ChartJS
 TODO

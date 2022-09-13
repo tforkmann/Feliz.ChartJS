@@ -6,7 +6,6 @@
   <ItemGroup>
     <Compile Include="Types.fs" />
     <Compile Include="Interop.fs" />
-    <Compile Include="Styles.fs" />
     <Compile Include="Components.fs" />
     <Compile Include="ChartJS.fs" />
   </ItemGroup>

@@ -4,11 +4,11 @@ open Fable.React
 open Browser.Dom
 open Feliz
 open Feliz.Bulma
-open Feliz.ReactJS
+open Feliz.ChartJS
 open Shared
 
 let layouts =
-    [|  ReactJS.layout [
+    [|  ChartJS.layout [
                 layout.i "a"
                 layout.x 0
                 layout.y 0
@@ -16,7 +16,7 @@ let layouts =
                 layout.h 2
                 layout.``static`` true
             ]
-        ReactJS.layout [
+        ChartJS.layout [
             layout.i "b"
             layout.x 1
             layout.y 0
@@ -26,25 +26,25 @@ let layouts =
             layout.maxW 4
         ] |]
 [<ReactComponent>]
-let ReactJSChart () =
-    ReactJS.gridChart [
-            ReactJS.layoutElements layouts
-            ReactJS.className "layout"
-            ReactJS.cols 24
-            ReactJS.autoSize false
-            ReactJS.isDraggable true
-            ReactJS.compactType Vertical
-            ReactJS.rowHeight 30
-            ReactJS.onLayoutChange (fun layout ->
-                console.log layout
-                for e in layout do
-                    console.log e.x
-                    console.log e.y
-                    console.log e.i
-                    console.log e.w
-                    console.log e.h)
-            ReactJS.width 1200
-            ReactJS.children [
+let ChartJSC () =
+    ChartJS.chart [
+            // ChartJS.layoutElements layouts
+            // ChartJS.className "layout"
+            // ChartJS.cols 24
+            // ChartJS.autoSize false
+            // ChartJS.isDraggable true
+            // ChartJS.compactType Vertical
+            // ChartJS.rowHeight 30
+            // ChartJS.onLayoutChange (fun layout ->
+            //     console.log layout
+            //     for e in layout do
+            //         console.log e.x
+            //         console.log e.y
+            //         console.log e.i
+            //         console.log e.w
+            //         console.log e.h)
+            // ChartJS.width 1200
+            ChartJS.children [
                 Html.div [
                     prop.key "a"
                     prop.text "Texta"
@@ -68,22 +68,22 @@ let ReactJSChart () =
 
             ]
         ]
-let ReactJSChart =
+let ChartJSChart =
     div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
-        ReactJSChart ()
+        ChartJSChart ()
     ]
 
 let overview =
     Html.div
-        [ Bulma.title.h1 [ Html.text "Feliz.ReactJS Example" ]
+        [ Bulma.title.h1 [ Html.text "Feliz.ChartJS Example" ]
           Bulma.content
-              [ Html.p "Here is an example how to use ReactJS"
+              [ Html.p "Here is an example how to use ChartJS"
                 div [ Props.Style [ Props.CSSProp.Height 350 ] ] [
-                    ReactJSChart ()
+                    ChartJSChart ()
                 ]
                 code """
                 let layouts =
-                    [|  ReactJS.layout [
+                    [|  ChartJS.layout [
                                 layout.i "a"
                                 layout.x 0
                                 layout.y 0
@@ -91,7 +91,7 @@ let overview =
                                 layout.h 2
                                 layout.``static`` true
                             ]
-                        ReactJS.layout [
+                        ChartJS.layout [
                             layout.i "b"
                             layout.x 1
                             layout.y 0
@@ -101,16 +101,16 @@ let overview =
                             layout.maxW 4
                         ] |]
                 [<ReactComponent>]
-                let ReactJSChart () =
-                    ReactJS.gridChart [
-                            ReactJS.layoutElements layouts
-                            ReactJS.className "layout"
-                            ReactJS.cols 24
-                            ReactJS.autoSize false
-                            ReactJS.isDraggable true
-                            ReactJS.compactType Vertical
-                            ReactJS.rowHeight 30
-                            ReactJS.onLayoutChange (fun layout ->
+                let ChartJSChart () =
+                    ChartJS.gridChart [
+                            ChartJS.layoutElements layouts
+                            ChartJS.className "layout"
+                            ChartJS.cols 24
+                            ChartJS.autoSize false
+                            ChartJS.isDraggable true
+                            ChartJS.compactType Vertical
+                            ChartJS.rowHeight 30
+                            ChartJS.onLayoutChange (fun layout ->
                                 console.log layout
                                 for e in layout do
                                     console.log e.x
@@ -118,8 +118,8 @@ let overview =
                                     console.log e.i
                                     console.log e.w
                                     console.log e.h)
-                            ReactJS.width 1200
-                            ReactJS.children [
+                            ChartJS.width 1200
+                            ChartJS.children [
                                 Html.div [
                                     prop.key "a"
                                     prop.text "Texta"
@@ -144,4 +144,4 @@ let overview =
                             ]
                         ]
                 """ ]
-          fixDocsView "FelizReactJS.ExampleGrid" false      ]
+          fixDocsView "FelizChartJS.ExampleGrid" false      ]

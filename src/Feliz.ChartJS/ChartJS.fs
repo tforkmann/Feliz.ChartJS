@@ -2,6 +2,7 @@ namespace Feliz.ChartJS
 
 open Fable.Core.JsInterop
 open Fable.Core
+open Fable.React
 open Feliz
 
 type Event = Browser.Types.Event
@@ -25,67 +26,80 @@ type CompactType =
     | Horizontal
     | Vertical
 
-type DroppingItem = {
-    i: string
-    w: int
-    h: int
-}
+type LineData = { lable: obj; datasets: obj }
 
-// The !! below is used to "unsafely" expose a prop into an IReactJSProp.
+
+// The !! below is used to "unsafely" expose a prop into an IChartJSProp.
 [<Erase>]
-type ReactJS =
-    /// Creates a new ReactReactJS component.
+type ChartJS =
+    /// Creates a new ChartJS component.
 
-    static member inline gridChart(props: IReactJSProp seq) =
-        Interop.reactApi.createElement (Interop.ReactJS, createObj !!props)
+    static member inline chart(props: IChartJSProp seq) =
+        Interop.reactApi.createElement (Interop.chart, createObj !!props)
 
-    static member inline layoutElements(layoutElements: 'a array) : IReactJSProp = !!("layout" ==> layoutElements)
-    static member inline layout props : ILayoutProp = !!(createObj !!props)
+    static member inline line(props: ILineChartProp seq) =
+        Interop.reactApi.createElement (Interop.line, createObj !!props)
 
-    static member inline style props : IReactJSProp =
-        Interop.mkReactJSProp "style" (createObj !!props)
+    static member inline options props : ILineChartProp =
+        Interop.mkLineChartProp "options" (createObj !!props)
 
-    static member inline className(className: string) : IReactJSProp =
-        Interop.mkReactJSProp "className" className
+    static member inline option props : IOptionsProp = !!(createObj !!props)
 
-    static member inline cols(cols: int) : IReactJSProp = Interop.mkReactJSProp "cols" cols
+    static member inline lineData props : ILineChartProp =
 
-    static member inline rowHeight(rowHeight: int) : IReactJSProp =
-        Interop.mkReactJSProp "rowHeight" rowHeight
+        Interop.mkLineChartProp "data" (createObj !!props)
 
-    static member inline compactType(compactType: CompactType) : IReactJSProp =
-        Interop.mkReactJSProp "compactType" compactType
+    static member inline labels props : ILineDataProp = !!(createObj !!props)
 
-    static member inline droppingItem( droppingItem:DroppingItem) : IReactJSProp =
-        Interop.mkReactJSProp "droppingItem" droppingItem
 
-    static member inline width(width: int) : IReactJSProp = Interop.mkReactJSProp "width" width
 
-    static member inline autoSize(autoSize: bool) : IReactJSProp =
-        Interop.mkReactJSProp "autoSize" autoSize
+    // static member inline data(data: ILineChartProp) : ILineChartProp = !!(createObj !!props)
 
-    static member inline allowOverlap(allowOverlap: bool) : IReactJSProp =
-        Interop.mkReactJSProp "allowOverlap" allowOverlap
+    // static member inline style props : IChartJSProp =
+    //     Interop.mkChartJSProp "style" (createObj !!props)
 
-    static member inline isDraggable(isDraggable: bool) : IReactJSProp =
-        Interop.mkReactJSProp "isDraggable" isDraggable
-    static member inline isDropable(isDropable: bool) : IReactJSProp =
-        Interop.mkReactJSProp "isDropable" isDropable
-    static member inline isResizable(isResizable: bool) : IReactJSProp =
-        Interop.mkReactJSProp "isResizable" isResizable
-    static member inline isBounded(isBounded: bool) : IReactJSProp =
-        Interop.mkReactJSProp "isBounded" isBounded
-    static member inline useCSSTransforms(useCSSTransforms: bool) : IReactJSProp =
-        Interop.mkReactJSProp "useCSSTransforms" useCSSTransforms
-    static member inline transformScale(transformScale: int) : IReactJSProp =
-        Interop.mkReactJSProp "transformScale" transformScale
-    static member inline preventCollision(preventCollision: bool) : IReactJSProp =
-        Interop.mkReactJSProp "preventCollision" preventCollision
+    // static member inline className(className: string) : IChartJSProp =
+    //     Interop.mkChartJSProp "className" className
 
-    // TODO: This is not yet implemented in the ReactJS.
-    // static member inline margin(margins: 'a array) : IReactJSProp = !!("margin" ==> margins)
+    // static member inline cols(cols: int) : IChartJSProp = Interop.mkChartJSProp "cols" cols
+
+    // static member inline rowHeight(rowHeight: int) : IChartJSProp =
+    //     Interop.mkChartJSProp "rowHeight" rowHeight
+
+    // static member inline compactType(compactType: CompactType) : IChartJSProp =
+    //     Interop.mkChartJSProp "compactType" compactType
+
+    // static member inline droppingItem( droppingItem:DroppingItem) : IChartJSProp =
+    //     Interop.mkChartJSProp "droppingItem" droppingItem
+
+    // static member inline width(width: int) : IChartJSProp = Interop.mkChartJSProp "width" width
+
+    // static member inline autoSize(autoSize: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "autoSize" autoSize
+
+    // static member inline allowOverlap(allowOverlap: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "allowOverlap" allowOverlap
+
+    // static member inline isDraggable(isDraggable: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "isDraggable" isDraggable
+    // static member inline isDropable(isDropable: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "isDropable" isDropable
+    // static member inline isResizable(isResizable: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "isResizable" isResizable
+    // static member inline isBounded(isBounded: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "isBounded" isBounded
+    // static member inline useCSSTransforms(useCSSTransforms: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "useCSSTransforms" useCSSTransforms
+    // static member inline transformScale(transformScale: int) : IChartJSProp =
+    //     Interop.mkChartJSProp "transformScale" transformScale
+    // static member inline preventCollision(preventCollision: bool) : IChartJSProp =
+    //     Interop.mkChartJSProp "preventCollision" preventCollision
+
+    // TODO: This is not yet implemented in the ChartJS.
+    // static member inline margin(margins: 'a array) : IChartJSProp = !!("margin" ==> margins)
 
     static member inline children(children: ReactElement list) =
-        unbox<IReactJSProp> (prop.children children)
+        unbox<IChartJSProp> (prop.children children)
 
-    static member inline onLayoutChange(handler: Layout [] -> unit) : IReactJSProp = !!("onLayoutChange" ==> handler)
+// static member inline onLayoutChange(handler: Layout [] -> unit) : IChartJSProp = !!("onLayoutChange" ==> handler)
+

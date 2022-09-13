@@ -6,11 +6,11 @@ open Index
 
 //ToDo
 let client = testList "Client" [
-    testCase "Test ReactJS" <| fun _ ->
+    testCase "Test ChartJS" <| fun _ ->
         // let model, _ = init ()
-        // let ReactJS =
+        // let ChartJS =
         //     { Id = "6"
-        //       Descr = "AdditionalReactJS" }
+        //       Descr = "AdditionalChartJS" }
 
         Expect.equal "2" "2" "Works"
 ]

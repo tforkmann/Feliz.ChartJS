@@ -9,20 +9,38 @@ module KeyHelper =
         ".$" + str
 
 [<Erase>]
-type layout =
-    static member inline i (i: string): ILayoutProp =
-        Interop.mkLayoutProp "i" (KeyHelper.keyHelper i)
-    static member inline x (x: int): ILayoutProp =
-        Interop.mkLayoutProp "x" x
-    static member inline y (y: int): ILayoutProp =
-        Interop.mkLayoutProp "y" y
-    static member inline ``static`` (sta: bool): ILayoutProp =
-        Interop.mkLayoutProp "static" sta
-    static member inline w(w: int): ILayoutProp =
-        Interop.mkLayoutProp "w" w
-    static member inline h(h: int): ILayoutProp =
-        Interop.mkLayoutProp "h" h
-    static member inline minW(minW: int): ILayoutProp =
-        Interop.mkLayoutProp "minW" minW
-    static member inline maxW(maxW: int): ILayoutProp =
-        Interop.mkLayoutProp "maW" maxW
+type line =
+    static member inline data props: ILineChartProp =
+        Interop.mkLineChartProp "data" (createObj !!props)
+
+[<Erase>]
+type option =
+    static member inline responsive (resp: bool): IOptionsProp =
+        Interop.mkOptionsProp "responsive" resp
+[<Erase>]
+type lineData =
+    static member inline labels (labels: string array): ILineDataProp =
+        printfn "labels %A" labels
+        // Interop.mkLineDataProp "labels" (createObj !!labels)
+        !!("labels" ==> labels)
+    static member inline datasets (props: ILineDataSetsProp seq) =
+        // Interop.reactApi.createElement (Interop.miniMap, createObj !!props)
+        // Interop.mkLineDataProp "datasets"
+        (!!("datasets" ==> props))
+    static member inline dataset props : ILineDataSetsProp = !!(createObj !!props)
+
+    // static member inline datasets props =
+    //     // Interop.reactApi.createElement (Interop.miniMap, createObj !!props)
+    //     Interop.mkLineDataProp "datasets" (!!("datasets" ==> props))
+        // !!(createObj !!props)
+
+[<Erase>]
+type linedataset =
+    static member inline label(label: string): ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "label" label
+    static member inline borderColor(borderColor: string): ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "borderColor" borderColor
+    static member inline backgroundColor(backgroundColor: string): ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "backgroundColor" backgroundColor
+    static member inline data(data: string []): ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "data" data
