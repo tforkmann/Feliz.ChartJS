@@ -69,7 +69,7 @@ let ChartJSBarChart () =
             option.responsive true
             option.plugins [
                 plugin.legend [
-                    legend.position "top"
+                    legend.position LegendPosition.Top
                 ]
                 plugin.title [
                     title.display true

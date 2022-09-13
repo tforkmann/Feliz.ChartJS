@@ -4,6 +4,13 @@ open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
 
+[<StringEnum>]
+type LegendPosition =
+    | Top
+    | Left
+    | Bottom
+    | Right
+
 [<Erase>]
 type option =
     static member inline responsive (resp: bool): IOptionsProp =
@@ -27,7 +34,7 @@ type title =
         Interop.mkTitleProp "text" text
 [<Erase>]
 type legend =
-    static member inline position(position: string): ILegendProp =
+    static member inline position(position: LegendPosition): ILegendProp =
         Interop.mkLegendProp "position" position
     static member inline display(display: bool): ILegendProp =
         Interop.mkLegendProp "legend" display
