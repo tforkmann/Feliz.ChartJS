@@ -27,6 +27,9 @@ module Interop =
     let PointElement : obj = import "PointElement" "chart.js"
     let BarElement : obj = import "BarElement" "chart.js"
     let ArcElement : obj = import "ArcElement" "chart.js"
+    let Legend : obj = import "Legend" "chart.js"
+    let Title: obj = import "Title" "chart.js"
+    let Tooltip : obj = import "Tooltip" "chart.js"
     let chart : obj = import "Chart" "react-chartjs-2"
     let line : obj = import "Line" "react-chartjs-2"
     let doughnut : obj = import "Doughnut" "react-chartjs-2"
@@ -38,3 +41,6 @@ module Interop =
     ChartJS?register(LineElement)
     ChartJS?register(BarElement)
     ChartJS?register(ArcElement)
+    ChartJS?register(Tooltip)
+    ChartJS?register(Legend)
+    ChartJS?register(Title)
