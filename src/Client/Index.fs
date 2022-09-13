@@ -113,53 +113,27 @@ let ChartJSBarChart () =
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
     ChartJS.doughnut [
-        doughnut.options [
-            option.responsive true
-        ]
+        // doughnut.options [
+        //     option.responsive true
+        // ]
         doughnut.data [
-            doughnutData.labels [|
-                "Red"
-                "Blue"
-                "Yellow"
-                "Green"
-                "Purple"
-                "Orange"
-            |]
+            doughnutData.labels [| "Red";"Blue";"Yellow";  "Green" ; "Purple"; "Orange" |]
             doughnutData.datasets [|
                 doughnutData.dataset [
-                    doughnutDataSet.label "My First Dataset"
-                    doughnutDataSet.borderColor "rgb(53, 162, 235)"
-                    doughnutDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    doughnutDataSet.data [|
-                        "1"
-                        "2"
-                        "3"
-                        "4"
-                        "5"
-                        "6"
+                    doughnutDataSet.label "# of Votes"
+                    doughnutDataSet.borderColor  [|"rgba(255, 99, 132, 1)";"rgba(54, 162, 235, 1)";"rgba(255, 206, 86, 1)";"rgba(75, 192, 192, 1)";"rgba(153, 102, 255, 1)";"rgba(255, 159, 64, 1)"|]
+                    doughnutDataSet.borderWidth 1
+                    doughnutDataSet.backgroundColor [|"rgba(255, 99, 132, 0.2)";"rgba(54, 162, 235, 0.2)";"rgba(255, 206, 86, 0.2)";"rgba(75, 192, 192, 0.2)";"rgba(153, 102, 255, 0.2)";"rgba(255, 159, 64, 0.2)"|]
+                    doughnutDataSet.data [| 12;19;3;5;2;3 |]
+                    ]
                     |]
                 ]
-                doughnutData.dataset [
-                    doughnutDataSet.label "My Second Dataset"
-                    doughnutDataSet.borderColor "yellow"
-                    doughnutDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    doughnutDataSet.data [|
-                        "1"
-                        "2"
-                        "3"
-                        "4"
-                        "4"
-                        "6"
-                    |]
-                ]
-            |]
         ]
-    ]
 
 let view (model: Model) (dispatch: Msg -> unit) =
     div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
         // ChartJSLineChart()
-        ChartJSBarChart()
-        // ChartJSDoughnutChart()
+        // ChartJSBarChart()
+        ChartJSDoughnutChart()
 
     ]

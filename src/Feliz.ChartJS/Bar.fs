@@ -32,8 +32,10 @@ type barDataSet =
 
     static member inline borderWidth(borderWidth: int) : IBarDataSetsProp =
         Interop.mkBarDataSetsProp "borderWidth" borderWidth
+
     static member inline borderSkipped(borderSkipped: bool) : IBarDataSetsProp =
         Interop.mkBarDataSetsProp "borderSkipped" borderSkipped
+
     static member inline borderRadius(borderRadius: int) : IBarDataSetsProp =
         Interop.mkBarDataSetsProp "borderRadius" borderRadius
 
