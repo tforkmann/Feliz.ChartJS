@@ -45,8 +45,8 @@ let projectUrl = sprintf "%s/%s" gitHome gitName
 let summary = "Feliz React Binding for ChartJS"
 
 let copyright = "Copyright \169 2021"
-let iconUrl = "https://raw.githubusercontent.com/databreezeug/Feliz.ChartJS/master/Feliz.ChartJS_logo.png"
-let licenceUrl = "https://github.com/databreezeug/FelizChartJS/blob/master/LICENSE.md"
+let iconUrl = "https://raw.githubusercontent.com/tforkmann/Feliz.ChartJS/main/Feliz.ChartJS_logo.png"
+let licenceUrl = "https://github.com/tforkmann/FelizChartJS/blob/master/LICENSE.md"
 let configuration = DotNet.BuildConfiguration.Release
 
 // Longer description of the project
@@ -54,7 +54,7 @@ let configuration = DotNet.BuildConfiguration.Release
 let description = """Feliz binding for React Grid Layout."""
 // List of author names (for NuGet package)
 let authors = [ "Tim Forkmann"]
-let owner = "DataBreeze Inc."
+let owner = "tForkmann"
 // Tags for your project (for NuGet package)
 let tags = "Feliz binding for ChartJS"
 

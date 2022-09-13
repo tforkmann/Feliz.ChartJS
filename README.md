@@ -1,7 +1,7 @@
 # Feliz Binding for [ChartJS](https://github.com/react-grid-layout/react-grid-layout)
 
 [![Feliz.ChartJS on Nuget](https://buildstats.info/nuget/Feliz.ChartJS)](https://www.nuget.org/packages/Feliz.ChartJS/)
-[![Client](https://github.com/DataBreezeUG/Feliz.ChartJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/DataBreezeUG/Feliz.ChartJS/actions/workflows/Docs.yml)
+[![Client](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml)
 
 ## Installation
 Install the nuget package
