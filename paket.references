@@ -1,0 +1,6 @@
+Fake.Core.Target
+Fake.DotNet.Cli
+Fake.Core.UserInput
+Fake.Core.ReleaseNotes
+Fake.Tools.Git
+Farmer

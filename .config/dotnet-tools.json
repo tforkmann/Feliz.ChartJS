@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "paket": {
+      "version": "7.1.5",
+      "commands": [
+        "paket"
+      ]
+    },
+    "fable": {
+      "version": "3.7.12",
+      "commands": [
+        "fable"
+      ]
+    },
+    "fantomas-tool": {
+      "version": "4.7.9",
+      "commands": [
+        "fantomas"
+      ]
+    },
+    "fake-cli": {
+      "version": "5.22.0",
+      "commands": [
+        "fake"
+      ]
+    }
+  }
+}
