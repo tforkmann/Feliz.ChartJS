@@ -1,4 +1,4 @@
-# Feliz Binding for [ChartJS](https://github.com/react-grid-layout/react-grid-layout)
+# Feliz Binding for [ChartJS](https://github.com/reactchartjs/react-chartjs-2)
 
 [![Feliz.ChartJS on Nuget](https://buildstats.info/nuget/Feliz.ChartJS)](https://www.nuget.org/packages/Feliz.ChartJS/)
 [![Client](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml)
@@ -12,7 +12,7 @@ dotnet paket add Feliz.ChartJS
 and install the npm package
 
 ```
-npm install --save react-grid-layout
+npm install --save react-chartjs-2 chart.js
 ```
 
 or use Femto:

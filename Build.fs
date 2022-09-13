@@ -51,7 +51,7 @@ let configuration = DotNet.BuildConfiguration.Release
 
 // Longer description of the project
 // (used as a description for NuGet package; line breaks are automatically cleaned up)
-let description = """Feliz binding for React Grid Layout."""
+let description = """Feliz binding for React Chart JS."""
 // List of author names (for NuGet package)
 let authors = [ "Tim Forkmann"]
 let owner = "tForkmann"
