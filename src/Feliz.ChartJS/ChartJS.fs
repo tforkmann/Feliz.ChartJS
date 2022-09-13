@@ -34,6 +34,9 @@ type ChartJS =
     static member inline bar(props: IBarChartProp seq) =
         Interop.reactApi.createElement (Interop.bar, createObj !!props)
 
+    static member inline doughnut(props: IDoughnutChartProp seq) =
+        Interop.reactApi.createElement (Interop.doughnut, createObj !!props)
+
     static member inline option props : IOptionsProp = !!(createObj !!props)
 
     static member inline children(children: ReactElement list) =

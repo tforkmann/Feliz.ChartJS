@@ -71,10 +71,35 @@ let ChartJSBarChart () =
                             |]
         ]
             ]
+[<ReactComponent>]
+let ChartJSDoughnutChart () =
+    ChartJS.doughnut [
+        doughnut.options [
+            option.responsive true
+        ]
+        doughnut.data [
+            doughnutData.labels [|"Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange"|]
+            doughnutData.datasets [|
+                doughnutData.dataset [
+                                doughnutdataset.label "My First Dataset"
+                                doughnutdataset.borderColor "rgb(53, 162, 235)"
+                                doughnutdataset.backgroundColor "rgba(53, 162, 235, 0.5)"
+                                doughnutdataset.data [|"1"; "2"; "3"; "4"; "5"; "6"|]
+                                ]
+                doughnutData.dataset [
+                                doughnutdataset.label "My Second Dataset"
+                                doughnutdataset.borderColor "yellow"
+                                doughnutdataset.backgroundColor "rgba(53, 162, 235, 0.5)"
+                                doughnutdataset.data [|"1"; "2"; "3"; "4"; "4"; "6"|]
+                                ]
+                            |]
+        ]
+            ]
 
 let view (model: Model) (dispatch: Msg -> unit) =
     div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
         ChartJSLineChart ()
         ChartJSBarChart ()
+        ChartJSDoughnutChart ()
 
     ]
