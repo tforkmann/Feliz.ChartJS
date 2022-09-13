@@ -7,19 +7,6 @@ open Feliz
 
 type Event = Browser.Types.Event
 
-[<Erase>]
-type labelStyle =
-    static member inline fill(fill: string) = Interop.mkAttr "fill" fill
-    static member inline fontWeight(fontWeight: int) = Interop.mkAttr "fontWeight" fontWeight
-
-[<StringEnum>]
-type CompactType =
-    | Horizontal
-    | Vertical
-
-type LineData = { lable: obj; datasets: obj }
-
-
 // The !! below is used to "unsafely" expose a prop into an IChartJSProp.
 [<Erase>]
 type ChartJS =

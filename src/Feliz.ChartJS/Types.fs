@@ -10,6 +10,15 @@ type IChartJSProp =
 type IOptionsProp =
     interface
     end
+type IPluginsProp =
+    interface
+    end
+type ILegendProp =
+    interface
+    end
+type ITitleProp =
+    interface
+    end
 
 type ILineChartProp =
     interface

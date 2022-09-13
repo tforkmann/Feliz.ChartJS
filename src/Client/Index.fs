@@ -8,69 +8,91 @@ open Feliz.ChartJS
 open Browser.Dom
 open Fable.Core.JsInterop
 
-type Model =
-    { Txt: string }
+type Model = { Txt: string }
 
-type Msg =
-    | UpdateTxt of string
+type Msg = UpdateTxt of string
 
-let init () =
-    { Txt = "" },
-    Cmd.none
+let init () = { Txt = "" }, Cmd.none
 
 let update msg (model: Model) =
     match msg with
-    | UpdateTxt txt ->
-        { model with Txt = txt }, Cmd.none
+    | UpdateTxt txt -> { model with Txt = txt }, Cmd.none
 
 [<ReactComponent>]
 let ChartJSLineChart () =
     ChartJS.line [
-        line.options [
-            option.responsive true
-        ]
+        line.options [ option.responsive true ]
         line.data [
-            lineData.labels [|"Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange"|]
+            lineData.labels [|
+                "Red"
+                "Blue"
+                "Yellow"
+                "Green"
+                "Purple"
+                "Orange"
+            |]
             lineData.datasets [|
                 lineData.dataset [
-                                linedataset.label "My First Dataset"
-                                linedataset.borderColor "rgb(53, 162, 235)"
-                                linedataset.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                linedataset.data [|"1"; "2"; "3"; "4"; "5"; "6"|]
-                                ]
+                    lineDataSet.label "My First Dataset"
+                    lineDataSet.borderColor "rgb(53, 162, 235)"
+                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    lineDataSet.data [|
+                        "1"
+                        "2"
+                        "3"
+                        "4"
+                        "5"
+                        "6"
+                    |]
+                ]
                 lineData.dataset [
-                                linedataset.label "My Second Dataset"
-                                linedataset.borderColor "yellow"
-                                linedataset.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                linedataset.data [|"1"; "2"; "3"; "4"; "4"; "6"|]
-                                ]
-                            |]
+                    lineDataSet.label "My Second Dataset"
+                    lineDataSet.borderColor "yellow"
+                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    lineDataSet.data [|
+                        "1"
+                        "2"
+                        "3"
+                        "4"
+                        "4"
+                        "6"
+                    |]
+                ]
+            |]
         ]
-            ]
+    ]
+
 [<ReactComponent>]
 let ChartJSBarChart () =
     ChartJS.bar [
         bar.options [
             option.responsive true
+            option.plugins [
+                plugin.legend [
+                    legend.position "top"
+                ]
+                plugin.title [
+                    title.display true
+                    title.text "Chart.js Bar Chart"
+                ]
+            ]
         ]
         bar.data [
-            barData.labels [|"Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange"|]
+            barData.labels [| "January"; "Feburary"|]
             barData.datasets [|
                 barData.dataset [
-                                bardataset.label "My First Dataset"
-                                bardataset.borderColor "rgb(53, 162, 235)"
-                                bardataset.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                bardataset.data [|"1"; "2"; "3"; "4"; "5"; "6"|]
-                                ]
-                barData.dataset [
-                                bardataset.label "My Second Dataset"
-                                bardataset.borderColor "yellow"
-                                bardataset.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                bardataset.data [|"1"; "2"; "3"; "4"; "4"; "6"|]
-                                ]
-                            |]
+                    barDataSet.label "My First Dataset"
+                    barDataSet.borderColor "rgb(53, 162, 235)"
+                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    barDataSet.borderSkipped false
+                    barDataSet.borderWidth 2
+                    barDataSet.borderRadius 50
+                    barDataSet.data [|"1";"2" |]
+                ]
+            |]
         ]
-            ]
+    ]
+
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
     ChartJS.doughnut [
@@ -78,28 +100,49 @@ let ChartJSDoughnutChart () =
             option.responsive true
         ]
         doughnut.data [
-            doughnutData.labels [|"Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange"|]
+            doughnutData.labels [|
+                "Red"
+                "Blue"
+                "Yellow"
+                "Green"
+                "Purple"
+                "Orange"
+            |]
             doughnutData.datasets [|
                 doughnutData.dataset [
-                                doughnutdataset.label "My First Dataset"
-                                doughnutdataset.borderColor "rgb(53, 162, 235)"
-                                doughnutdataset.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                doughnutdataset.data [|"1"; "2"; "3"; "4"; "5"; "6"|]
-                                ]
+                    doughnutDataSet.label "My First Dataset"
+                    doughnutDataSet.borderColor "rgb(53, 162, 235)"
+                    doughnutDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    doughnutDataSet.data [|
+                        "1"
+                        "2"
+                        "3"
+                        "4"
+                        "5"
+                        "6"
+                    |]
+                ]
                 doughnutData.dataset [
-                                doughnutdataset.label "My Second Dataset"
-                                doughnutdataset.borderColor "yellow"
-                                doughnutdataset.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                doughnutdataset.data [|"1"; "2"; "3"; "4"; "4"; "6"|]
-                                ]
-                            |]
+                    doughnutDataSet.label "My Second Dataset"
+                    doughnutDataSet.borderColor "yellow"
+                    doughnutDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    doughnutDataSet.data [|
+                        "1"
+                        "2"
+                        "3"
+                        "4"
+                        "4"
+                        "6"
+                    |]
+                ]
+            |]
         ]
-            ]
+    ]
 
 let view (model: Model) (dispatch: Msg -> unit) =
     div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
-        ChartJSLineChart ()
-        ChartJSBarChart ()
-        ChartJSDoughnutChart ()
+        // ChartJSLineChart()
+        ChartJSBarChart()
+        // ChartJSDoughnutChart()
 
     ]

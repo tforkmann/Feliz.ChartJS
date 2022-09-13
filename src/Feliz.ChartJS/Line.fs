@@ -20,7 +20,7 @@ type lineData =
     static member inline dataset props : ILineDataSetsProp = !!(createObj !!props)
 
 [<Erase>]
-type linedataset =
+type lineDataSet =
     static member inline label(label: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "label" label
     static member inline borderColor(borderColor: string): ILineDataSetsProp =
