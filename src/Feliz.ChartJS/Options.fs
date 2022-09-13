@@ -15,6 +15,8 @@ type LegendPosition =
 type option =
     static member inline responsive (resp: bool): IOptionsProp =
         Interop.mkOptionsProp "responsive" resp
+    static member inline maintainAspectRatio (ratio: bool): IOptionsProp =
+        Interop.mkOptionsProp "maintainAspectRatio" ratio
     static member inline scales (scales: obj): IOptionsProp =
         Interop.mkOptionsProp "scales" scales
     static member inline plugins(props: IPluginsProp seq) : IOptionsProp =
