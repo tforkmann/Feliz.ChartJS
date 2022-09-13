@@ -14,11 +14,21 @@ type IOptionsProp =
 type ILineChartProp =
     interface
     end
+type IBarChartProp =
+    interface
+    end
 
 type ILineDataProp =
     interface
     end
 
 type ILineDataSetsProp =
+    interface
+    end
+type IBarDataProp =
+    interface
+    end
+
+type IBarDataSetsProp =
     interface
     end

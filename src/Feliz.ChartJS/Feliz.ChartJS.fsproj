@@ -7,6 +7,8 @@
     <Compile Include="Types.fs" />
     <Compile Include="Interop.fs" />
     <Compile Include="Components.fs" />
+    <Compile Include="Line.fs" />
+    <Compile Include="Bar.fs" />
     <Compile Include="ChartJS.fs" />
   </ItemGroup>
   <PropertyGroup>
