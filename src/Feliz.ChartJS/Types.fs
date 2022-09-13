@@ -13,6 +13,13 @@ type IOptionsProp =
 type IPluginsProp =
     interface
     end
+type IScalesProp =
+    interface
+    end
+type IAxesProp =
+    interface
+    end
+
 type ILegendProp =
     interface
     end

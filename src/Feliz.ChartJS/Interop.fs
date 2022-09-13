@@ -11,7 +11,9 @@ module Interop =
     let inline mkDoughnutChartProp (key: string) (value: obj) : IDoughnutChartProp = unbox (key, value)
     let inline mkOptionsProp (key: string) (value: obj) : IOptionsProp = unbox (key, value)
     let inline mkPluginsProp (key: string) (value: obj) : IPluginsProp = unbox (key, value)
+    let inline mkScalesProp (key: string) (value: obj) : IScalesProp = unbox (key, value)
     let inline mkTitleProp (key: string) (value: obj) : ITitleProp = unbox (key, value)
+    let inline mkAxesProp (key: string) (value: obj) : IAxesProp = unbox (key, value)
     let inline mkLegendProp (key: string) (value: obj) : ILegendProp = unbox (key, value)
     let inline mkLineDataProp (key: string) (value: obj) : ILineDataProp = unbox (key, value)
     let inline mkLineDataSetsProp (key: string) (value: obj) : ILineDataSetsProp = unbox (key, value)
@@ -30,6 +32,7 @@ module Interop =
     let Legend : obj = import "Legend" "chart.js"
     let Title: obj = import "Title" "chart.js"
     let Tooltip : obj = import "Tooltip" "chart.js"
+
     let chart : obj = import "Chart" "react-chartjs-2"
     let line : obj = import "Line" "react-chartjs-2"
     let doughnut : obj = import "Doughnut" "react-chartjs-2"

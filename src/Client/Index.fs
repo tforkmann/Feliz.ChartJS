@@ -67,6 +67,14 @@ let ChartJSBarChart () =
     ChartJS.bar [
         bar.options [
             option.responsive true
+            option.scales [
+                scale.x [
+                    axes.stacked true
+                ]
+                scale.y [
+                    axes.stacked true
+                ]
+            ]
             option.plugins [
                 plugin.legend [
                     legend.position LegendPosition.Top
@@ -82,7 +90,16 @@ let ChartJSBarChart () =
             barData.datasets [|
                 barData.dataset [
                     barDataSet.label "My First Dataset"
-                    barDataSet.borderColor "rgb(53, 162, 235)"
+                    barDataSet.borderColor "blue"
+                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    barDataSet.borderSkipped false
+                    barDataSet.borderWidth 2
+                    barDataSet.borderRadius 50
+                    barDataSet.data [|"1";"2" |]
+                ]
+                barData.dataset [
+                    barDataSet.label "My Second Dataset"
+                    barDataSet.borderColor "green"
                     barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
                     barDataSet.borderSkipped false
                     barDataSet.borderWidth 2
