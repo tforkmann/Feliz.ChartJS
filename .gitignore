@@ -21,3 +21,4 @@ release.sh
 src/Docs/output/
 src/Client/output/
 tests/Client/output/
+tests/Client/*.js
