@@ -34,5 +34,5 @@ type doughnutDataSet =
         Interop.mkDoughnutDataSetsProp "hoverOffset" hoverOffset
     static member inline weight(weight: int): IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "weight" weight
-    static member inline data(data: int []): IDoughnutDataSetsProp =
+    static member inline data(data: string []): IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "data" data
