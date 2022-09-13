@@ -7,6 +7,8 @@
         "parcel:serve:docs": "parcel serve ./src/Docs/index.html --port 5000",
         "prestart": "dotnet tool restore",
         "startdocs": "cross-os startdocs",
+        "test:build": "dotnet fable tests/Client --outDir tests/Client/output --run webpack -p --config webpack.tests.config.js",
+        "test:live": "dotnet fable tests/Client --outDir tests/Client/output --run webpack-dev-server --config webpack.tests.config.js",
         "start": "cross-os start"
     },
     "cross-os": {

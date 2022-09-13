@@ -230,7 +230,7 @@ let dependencies = [
         ==> "InstallClient"
         ==> "UpdateTools"
         ==> "Build"
-        ==> "ExecuteTests"
+        // ==> "ExecuteTests"
         ==> "PrepareRelease"
         ==> "Pack"
         ==> "Push"
