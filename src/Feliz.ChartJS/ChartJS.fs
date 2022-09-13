@@ -31,61 +31,61 @@ type DroppingItem = {
     h: int
 }
 
-// The !! below is used to "unsafely" expose a prop into an IGridLayoutProp.
+// The !! below is used to "unsafely" expose a prop into an IReactJSProp.
 [<Erase>]
-type GridLayout =
-    /// Creates a new ReactGridLayout component.
+type ReactJS =
+    /// Creates a new ReactReactJS component.
 
-    static member inline gridChart(props: IGridLayoutProp seq) =
-        Interop.reactApi.createElement (Interop.gridlayout, createObj !!props)
+    static member inline gridChart(props: IReactJSProp seq) =
+        Interop.reactApi.createElement (Interop.ReactJS, createObj !!props)
 
-    static member inline layoutElements(layoutElements: 'a array) : IGridLayoutProp = !!("layout" ==> layoutElements)
+    static member inline layoutElements(layoutElements: 'a array) : IReactJSProp = !!("layout" ==> layoutElements)
     static member inline layout props : ILayoutProp = !!(createObj !!props)
 
-    static member inline style props : IGridLayoutProp =
-        Interop.mkGridLayoutProp "style" (createObj !!props)
+    static member inline style props : IReactJSProp =
+        Interop.mkReactJSProp "style" (createObj !!props)
 
-    static member inline className(className: string) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "className" className
+    static member inline className(className: string) : IReactJSProp =
+        Interop.mkReactJSProp "className" className
 
-    static member inline cols(cols: int) : IGridLayoutProp = Interop.mkGridLayoutProp "cols" cols
+    static member inline cols(cols: int) : IReactJSProp = Interop.mkReactJSProp "cols" cols
 
-    static member inline rowHeight(rowHeight: int) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "rowHeight" rowHeight
+    static member inline rowHeight(rowHeight: int) : IReactJSProp =
+        Interop.mkReactJSProp "rowHeight" rowHeight
 
-    static member inline compactType(compactType: CompactType) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "compactType" compactType
+    static member inline compactType(compactType: CompactType) : IReactJSProp =
+        Interop.mkReactJSProp "compactType" compactType
 
-    static member inline droppingItem( droppingItem:DroppingItem) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "droppingItem" droppingItem
+    static member inline droppingItem( droppingItem:DroppingItem) : IReactJSProp =
+        Interop.mkReactJSProp "droppingItem" droppingItem
 
-    static member inline width(width: int) : IGridLayoutProp = Interop.mkGridLayoutProp "width" width
+    static member inline width(width: int) : IReactJSProp = Interop.mkReactJSProp "width" width
 
-    static member inline autoSize(autoSize: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "autoSize" autoSize
+    static member inline autoSize(autoSize: bool) : IReactJSProp =
+        Interop.mkReactJSProp "autoSize" autoSize
 
-    static member inline allowOverlap(allowOverlap: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "allowOverlap" allowOverlap
+    static member inline allowOverlap(allowOverlap: bool) : IReactJSProp =
+        Interop.mkReactJSProp "allowOverlap" allowOverlap
 
-    static member inline isDraggable(isDraggable: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "isDraggable" isDraggable
-    static member inline isDropable(isDropable: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "isDropable" isDropable
-    static member inline isResizable(isResizable: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "isResizable" isResizable
-    static member inline isBounded(isBounded: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "isBounded" isBounded
-    static member inline useCSSTransforms(useCSSTransforms: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "useCSSTransforms" useCSSTransforms
-    static member inline transformScale(transformScale: int) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "transformScale" transformScale
-    static member inline preventCollision(preventCollision: bool) : IGridLayoutProp =
-        Interop.mkGridLayoutProp "preventCollision" preventCollision
+    static member inline isDraggable(isDraggable: bool) : IReactJSProp =
+        Interop.mkReactJSProp "isDraggable" isDraggable
+    static member inline isDropable(isDropable: bool) : IReactJSProp =
+        Interop.mkReactJSProp "isDropable" isDropable
+    static member inline isResizable(isResizable: bool) : IReactJSProp =
+        Interop.mkReactJSProp "isResizable" isResizable
+    static member inline isBounded(isBounded: bool) : IReactJSProp =
+        Interop.mkReactJSProp "isBounded" isBounded
+    static member inline useCSSTransforms(useCSSTransforms: bool) : IReactJSProp =
+        Interop.mkReactJSProp "useCSSTransforms" useCSSTransforms
+    static member inline transformScale(transformScale: int) : IReactJSProp =
+        Interop.mkReactJSProp "transformScale" transformScale
+    static member inline preventCollision(preventCollision: bool) : IReactJSProp =
+        Interop.mkReactJSProp "preventCollision" preventCollision
 
-    // TODO: This is not yet implemented in the gridlayout.
-    // static member inline margin(margins: 'a array) : IGridLayoutProp = !!("margin" ==> margins)
+    // TODO: This is not yet implemented in the ReactJS.
+    // static member inline margin(margins: 'a array) : IReactJSProp = !!("margin" ==> margins)
 
     static member inline children(children: ReactElement list) =
-        unbox<IGridLayoutProp> (prop.children children)
+        unbox<IReactJSProp> (prop.children children)
 
-    static member inline onLayoutChange(handler: Layout [] -> unit) : IGridLayoutProp = !!("onLayoutChange" ==> handler)
+    static member inline onLayoutChange(handler: Layout [] -> unit) : IReactJSProp = !!("onLayoutChange" ==> handler)

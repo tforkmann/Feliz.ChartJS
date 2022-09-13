@@ -6,11 +6,11 @@ open Index
 
 //ToDo
 let client = testList "Client" [
-    testCase "Test gridLayout" <| fun _ ->
+    testCase "Test ReactJS" <| fun _ ->
         // let model, _ = init ()
-        // let gridLayout =
+        // let ReactJS =
         //     { Id = "6"
-        //       Descr = "AdditionalGridLayout" }
+        //       Descr = "AdditionalReactJS" }
 
         Expect.equal "2" "2" "Works"
 ]

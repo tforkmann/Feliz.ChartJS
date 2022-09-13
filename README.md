@@ -1,12 +1,12 @@
-# Feliz Binding for [GridLayout](https://github.com/react-grid-layout/react-grid-layout)
+# Feliz Binding for [ReactJS](https://github.com/react-grid-layout/react-grid-layout)
 
-[![Feliz.GridLayout on Nuget](https://buildstats.info/nuget/Feliz.GridLayout)](https://www.nuget.org/packages/Feliz.GridLayout/)
-[![Client](https://github.com/DataBreezeUG/Feliz.GridLayout/actions/workflows/Docs.yml/badge.svg)](https://github.com/DataBreezeUG/Feliz.GridLayout/actions/workflows/Docs.yml)
+[![Feliz.ReactJS on Nuget](https://buildstats.info/nuget/Feliz.ReactJS)](https://www.nuget.org/packages/Feliz.ReactJS/)
+[![Client](https://github.com/DataBreezeUG/Feliz.ReactJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/DataBreezeUG/Feliz.ReactJS/actions/workflows/Docs.yml)
 
 ## Installation
 Install the nuget package
 ```
-dotnet paket add Feliz.GridLayout
+dotnet paket add Feliz.ReactJS
 ```
 
 and install the npm package
@@ -17,7 +17,7 @@ npm install --save react-grid-layout
 
 or use Femto:
 ```
-femto install Feliz.GridLayout
+femto install Feliz.ReactJS
 ```
 
 ## Start test app
@@ -27,6 +27,6 @@ femto install Feliz.GridLayout
 dotnet run
 ```
 
-## Example GridLayout
-Here is an example GridLayout
+## Example ReactJS
+Here is an example ReactJS
 TODO
