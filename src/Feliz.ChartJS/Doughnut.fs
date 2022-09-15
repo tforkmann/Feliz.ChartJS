@@ -8,8 +8,10 @@ open Fable.Core
 type doughnut =
     static member inline options props : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "options" (createObj !!props)
+
     static member inline data props : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "data" (createObj !!props)
+
     static member inline labels props : IDoughnutChartProp = !!(createObj !!props)
 
 [<Erase>]
@@ -20,19 +22,33 @@ type doughnutData =
 
 [<Erase>]
 type doughnutDataSet =
-    static member inline label(label: string): IDoughnutDataSetsProp =
+    static member inline label(label: string) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "label" label
-    static member inline borderAlign(borderAlign: string): IDoughnutDataSetsProp =
+
+    static member inline borderAlign(borderAlign: string) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "borderAlign" borderAlign
-    static member inline borderWidth(borderWidth: int): IDoughnutDataSetsProp =
+
+    static member inline borderWidth(borderWidth: int) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "borderWidth" borderWidth
-    static member inline borderColor(borderColor: string []): IDoughnutDataSetsProp =
+
+    static member inline borderColor(borderColor: string []) : IDoughnutDataSetsProp =
         (!!("borderColor" ==> borderColor))
-    static member inline backgroundColor(backgroundColor: string []): IDoughnutDataSetsProp =
+
+    static member inline backgroundColor(backgroundColor: string []) : IDoughnutDataSetsProp =
         (!!("backgroundColor" ==> backgroundColor))
-    static member inline hoverOffset(hoverOffset: int): IDoughnutDataSetsProp =
+
+    static member inline hoverOffset(hoverOffset: int) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "hoverOffset" hoverOffset
-    static member inline weight(weight: int): IDoughnutDataSetsProp =
+
+    static member inline weight(weight: int) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "weight" weight
-    static member inline data(data: string []): IDoughnutDataSetsProp =
+
+    static member inline data(data: int []) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "data" data
+
+    static member inline datalabels props : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "datalabels" (createObj !!props)
+
+[<Erase>]
+type datalabel =
+    static member inline anchor(anchor: string) : IDataLabelProp = Interop.mkDataLabelProp "anchor" anchor

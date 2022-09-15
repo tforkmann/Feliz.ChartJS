@@ -11,9 +11,6 @@ type Event = Browser.Types.Event
 type ChartJS =
     /// Creates a new ChartJS component.
 
-    static member inline chart(props: IChartJSProp seq) =
-        Interop.reactApi.createElement (Interop.chart, createObj !!props)
-
     static member inline line(props: ILineChartProp seq) =
         Interop.reactApi.createElement (Interop.line, createObj !!props)
 
@@ -24,6 +21,8 @@ type ChartJS =
         Interop.reactApi.createElement (Interop.doughnut, createObj !!props)
 
     static member inline option props : IOptionsProp = !!(createObj !!props)
+
+    static member inline plugins(props: obj seq) = (!!("plugins" ==> props))
 
     static member inline children(children: ReactElement list) =
         unbox<IChartJSProp> (prop.children children)

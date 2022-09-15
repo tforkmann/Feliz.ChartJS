@@ -15,6 +15,10 @@ module Interop =
     let inline mkTitleProp (key: string) (value: obj) : ITitleProp = unbox (key, value)
     let inline mkAxesProp (key: string) (value: obj) : IAxesProp = unbox (key, value)
     let inline mkLegendProp (key: string) (value: obj) : ILegendProp = unbox (key, value)
+    let inline mkDataLabelsProp (key: string) (value: obj) : IDataLabelsProp = unbox (key, value)
+    let inline mkDataLabelProp (key: string) (value: obj) : IDataLabelProp = unbox (key, value)
+    let inline mkLabelsProp (key: string) (value: obj) : ILabelsProp = unbox (key, value)
+    let inline mkFontProp (key: string) (value: obj) : IFontProp = unbox (key, value)
     let inline mkLineDataProp (key: string) (value: obj) : ILineDataProp = unbox (key, value)
     let inline mkLineDataSetsProp (key: string) (value: obj) : ILineDataSetsProp = unbox (key, value)
     let inline mkBarDataProp (key: string) (value: obj) : IBarDataProp = unbox (key, value)
@@ -33,10 +37,7 @@ module Interop =
     let Title: obj = import "Title" "chart.js"
     let Tooltip : obj = import "Tooltip" "chart.js"
 
-    let chart : obj = import "Chart" "react-chartjs-2"
-    let line : obj = import "Line" "react-chartjs-2"
-    let doughnut : obj = import "Doughnut" "react-chartjs-2"
-    let bar : obj = import "Bar" "react-chartjs-2"
+    let ChartDataLabels : obj = importAll "chartjs-plugin-datalabels"
 
     ChartJS?register(CategoryScale)
     ChartJS?register(LinearScale)
@@ -47,3 +48,9 @@ module Interop =
     ChartJS?register(Tooltip)
     ChartJS?register(Legend)
     ChartJS?register(Title)
+    ChartJS?register(ChartDataLabels)
+
+    let chart : obj = import "Chart" "react-chartjs-2"
+    let line : obj = import "Line" "react-chartjs-2"
+    let doughnut : obj = import "Doughnut" "react-chartjs-2"
+    let bar : obj = import "Bar" "react-chartjs-2"

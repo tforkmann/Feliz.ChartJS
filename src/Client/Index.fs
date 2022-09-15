@@ -68,17 +68,11 @@ let ChartJSBarChart () =
         bar.options [
             option.responsive true
             option.scales [
-                scale.x [
-                    axes.stacked true
-                ]
-                scale.y [
-                    axes.stacked true
-                ]
+                scale.x [ axes.stacked true ]
+                scale.y [ axes.stacked true ]
             ]
             option.plugins [
-                plugin.legend [
-                    legend.position LegendPosition.Top
-                ]
+                plugin.legend [ legend.position Top ]
                 plugin.title [
                     title.display true
                     title.text "Chart.js Bar Chart"
@@ -86,7 +80,10 @@ let ChartJSBarChart () =
             ]
         ]
         bar.data [
-            barData.labels [| "January"; "Feburary"|]
+            barData.labels [|
+                "January"
+                "Feburary"
+            |]
             barData.datasets [|
                 barData.dataset [
                     barDataSet.label "My First Dataset"
@@ -95,7 +92,7 @@ let ChartJSBarChart () =
                     barDataSet.borderSkipped false
                     barDataSet.borderWidth 2
                     barDataSet.borderRadius 50
-                    barDataSet.data [|"1";"2" |]
+                    barDataSet.data [| "1"; "2" |]
                 ]
                 barData.dataset [
                     barDataSet.label "My Second Dataset"
@@ -104,36 +101,97 @@ let ChartJSBarChart () =
                     barDataSet.borderSkipped false
                     barDataSet.borderWidth 2
                     barDataSet.borderRadius 50
-                    barDataSet.data [|"1";"2" |]
+                    barDataSet.data [| "1"; "2" |]
                 ]
             |]
         ]
     ]
 
+let renderCustomLabel (context: IContextProperties) =
+
+    Svg.text [
+        svg.text "test"
+    ]
+
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
     ChartJS.doughnut [
-        // doughnut.options [
-        //     option.responsive true
-        // ]
+        doughnut.options [
+            option.responsive true
+            option.plugins [
+                plugin.legend [ legend.position Top ]
+                plugin.title [
+                    title.display true
+                    title.text "Chart.js Doughnut Chart"
+                ]
+                plugin.datalabels [
+                    datalabels.display true
+                    datalabels.allign Bottom
+                    datalabels.borderRadius 3
+                    datalabels.color "green"
+                    datalabels.backgroundColor "#ccc"
+                    // datalabels.labels [
+                    //     labels.value {|color="blue"|}
+                    // ]
+                    // datalabels.formatter renderCustomLabel
+                    ]
+            ]
+        ]
         doughnut.data [
-            doughnutData.labels [| "Red";"Blue";"Yellow";  "Green" ; "Purple"; "Orange" |]
+            doughnutData.labels [|
+                "Red"
+                "Blue"
+                "Yellow"
+                "Green"
+                "Purple"
+                "Orange"
+            |]
             doughnutData.datasets [|
                 doughnutData.dataset [
                     doughnutDataSet.label "# of Votes"
-                    doughnutDataSet.borderColor  [|"rgba(255, 99, 132, 1)";"rgba(54, 162, 235, 1)";"rgba(255, 206, 86, 1)";"rgba(75, 192, 192, 1)";"rgba(153, 102, 255, 1)";"rgba(255, 159, 64, 1)"|]
+                    doughnutDataSet.borderColor [|
+                        "rgba(255, 99, 132, 1)"
+                        "rgba(54, 162, 235, 1)"
+                        "rgba(255, 206, 86, 1)"
+                        "rgba(75, 192, 192, 1)"
+                        "rgba(153, 102, 255, 1)"
+                        "rgba(255, 159, 64, 1)"
+                    |]
                     doughnutDataSet.borderWidth 1
-                    doughnutDataSet.backgroundColor [|"rgba(255, 99, 132, 0.2)";"rgba(54, 162, 235, 0.2)";"rgba(255, 206, 86, 0.2)";"rgba(75, 192, 192, 0.2)";"rgba(153, 102, 255, 0.2)";"rgba(255, 159, 64, 0.2)"|]
-                    doughnutDataSet.data [| "12";"19";"3";"5";"2";"3" |]
-                    ]
+                    doughnutDataSet.backgroundColor [|
+                        "rgba(255, 99, 132, 0.2)"
+                        "rgba(54, 162, 235, 0.2)"
+                        "rgba(255, 206, 86, 0.2)"
+                        "rgba(75, 192, 192, 0.2)"
+                        "rgba(153, 102, 255, 0.2)"
+                        "rgba(255, 159, 64, 0.2)"
+                    |]
+                    doughnutDataSet.data [|
+                        12
+                        19
+                        3
+                        5
+                        2
+                        3
+                    |]
+                    doughnutDataSet.datalabels [|
+                        datalabel.anchor "end"
                     |]
                 ]
+            |]
         ]
+    ]
 
 let view (model: Model) (dispatch: Msg -> unit) =
-    div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
-        // ChartJSLineChart()
-        // ChartJSBarChart()
-        ChartJSDoughnutChart()
+    Html.div [
+        prop.style [
+            style.height 600
+            style.width 600
+        ]
+        prop.children [
+            // ChartJSLineChart()
+            // ChartJSBarChart()
+            ChartJSDoughnutChart()
+        ]
 
-    ]
+        ]

@@ -26,6 +26,18 @@ type ILegendProp =
 type ITitleProp =
     interface
     end
+type IDataLabelsProp =
+    interface
+    end
+type ILabelsProp =
+    interface
+    end
+type IDataLabelProp =
+    interface
+    end
+type IFontProp =
+    interface
+    end
 
 type ILineChartProp =
     interface
@@ -58,3 +70,13 @@ type IDoughnutDataProp =
 type IDoughnutDataSetsProp =
     interface
     end
+
+[<Erase>]
+type IContextProperties =
+    abstract cy : float
+    abstract cx : float
+    abstract midAngle : float
+    abstract innerRadius : float
+    abstract outerRadius : float
+    abstract percent : float
+    abstract index : int

@@ -5,7 +5,7 @@ open Fable.Core.JsInterop
 open Fable.Core
 
 [<StringEnum>]
-type LegendPosition =
+type Position =
     | Top
     | Left
     | Bottom
@@ -32,6 +32,9 @@ type plugin =
     static member inline legend(props: ILegendProp seq) : IPluginsProp =
         Interop.mkPluginsProp "legend" (createObj !!props)
 
+    static member inline datalabels(props: IDataLabelsProp seq) : IPluginsProp =
+        Interop.mkPluginsProp "datalabels" (createObj !!props)
+
 [<Erase>]
 type scale =
     static member inline x(props: IAxesProp seq) : IScalesProp =
@@ -51,7 +54,41 @@ type title =
 
 [<Erase>]
 type legend =
-    static member inline position(position: LegendPosition) : ILegendProp =
+    static member inline position(position: Position) : ILegendProp =
         Interop.mkLegendProp "position" position
 
     static member inline display(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
+
+[<Erase>]
+type datalabels =
+    static member inline allign(allign: Position) : IDataLabelsProp =
+        Interop.mkDataLabelsProp "allign" allign
+
+    static member inline display(display: bool) : IDataLabelsProp =
+        Interop.mkDataLabelsProp "display" display
+
+    static member inline color(color: string) : IDataLabelsProp = Interop.mkDataLabelsProp "color" color
+
+    static member inline backgroundColor(backgroundColor: string) : IDataLabelsProp =
+        Interop.mkDataLabelsProp "backgroundColor" backgroundColor
+
+    static member inline borderRadius(borderRadius: int) : IDataLabelsProp =
+        Interop.mkDataLabelsProp "borderRadius" borderRadius
+
+    static member inline font props : IDataLabelsProp =
+        Interop.mkDataLabelsProp "font" (createObj !!props)
+
+    static member inline labels props : IDataLabelsProp =
+        Interop.mkDataLabelsProp "labels" (createObj !!props)
+
+    static member inline formatter(context: IContextProperties -> ReactElement) : IDataLabelsProp =
+        Interop.mkDataLabelsProp "formatter" context
+
+[<Erase>]
+type font =
+    static member inline size(size: int) : IFontProp = Interop.mkFontProp "allign" size
+
+[<Erase>]
+type labels =
+    static member inline value props : ILabelsProp =
+        Interop.mkLabelsProp "value" (createObj !!props)
