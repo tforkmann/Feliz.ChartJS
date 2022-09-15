@@ -21,7 +21,20 @@ let update msg (model: Model) =
 [<ReactComponent>]
 let ChartJSLineChart () =
     ChartJS.line [
-        line.options [ option.responsive true ]
+        line.options [
+            option.responsive true
+            option.plugins[plugin.datalabels [
+                               datalabels.display true
+                               datalabels.allign Bottom
+                               datalabels.borderRadius 3
+                               datalabels.color "red"
+                               datalabels.backgroundColor "green"
+                               // datalabels.labels [
+                               //     labels.value {|color="blue"|}
+                               // ]
+                               // datalabels.formatter renderCustomLabel
+                               ]]
+        ]
         line.data [
             lineData.labels [|
                 "Red"
@@ -77,6 +90,17 @@ let ChartJSBarChart () =
                     title.display true
                     title.text "Chart.js Bar Chart"
                 ]
+                plugin.datalabels [
+                    datalabels.display true
+                    datalabels.allign Bottom
+                    datalabels.borderRadius 3
+                    datalabels.color "red"
+                    datalabels.backgroundColor "green"
+                    // datalabels.labels [
+                    //     labels.value {|color="blue"|}
+                    // ]
+                    // datalabels.formatter renderCustomLabel
+                    ]
             ]
         ]
         bar.data [
@@ -109,9 +133,7 @@ let ChartJSBarChart () =
 
 let renderCustomLabel (context: IContextProperties) =
 
-    Svg.text [
-        svg.text "test"
-    ]
+    Svg.text [ svg.text "test" ]
 
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
@@ -128,8 +150,8 @@ let ChartJSDoughnutChart () =
                     datalabels.display true
                     datalabels.allign Bottom
                     datalabels.borderRadius 3
-                    datalabels.color "green"
-                    datalabels.backgroundColor "#ccc"
+                    datalabels.color "red"
+                    datalabels.backgroundColor "green"
                     // datalabels.labels [
                     //     labels.value {|color="blue"|}
                     // ]
@@ -189,8 +211,8 @@ let view (model: Model) (dispatch: Msg -> unit) =
             style.width 600
         ]
         prop.children [
-            // ChartJSLineChart()
-            // ChartJSBarChart()
+            ChartJSLineChart()
+            ChartJSBarChart()
             ChartJSDoughnutChart()
         ]
 

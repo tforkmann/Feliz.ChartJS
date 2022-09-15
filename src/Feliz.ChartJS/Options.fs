@@ -66,6 +66,8 @@ type datalabels =
 
     static member inline display(display: bool) : IDataLabelsProp =
         Interop.mkDataLabelsProp "display" display
+    static member inline clamp(clamp: bool) : IDataLabelsProp =
+        Interop.mkDataLabelsProp "clamp" clamp
 
     static member inline color(color: string) : IDataLabelsProp = Interop.mkDataLabelsProp "color" color
 
