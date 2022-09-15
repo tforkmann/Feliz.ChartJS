@@ -1,3 +1,5 @@
+#### 0.2.1 - 2022-09-14
+* Add Formatter and chartjs-plugin-datalabels
 #### 0.2.0 - 2022-09-13
 * Use string
 #### 0.1.9 - 2022-09-13
