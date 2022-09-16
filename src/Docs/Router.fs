@@ -8,6 +8,7 @@ type Page =
     | Install
     | Use
     | LineChart
+    | BarChart
 
 
 [<RequireQualifiedAccess>]
@@ -18,6 +19,7 @@ module Page =
         function
         | [ "use" ] -> Use
         | [ "linechart" ] -> LineChart
+        | [ "barchart" ] -> BarChart
         | [] -> Install
         | _ -> defaultPage
 
@@ -27,6 +29,7 @@ module Page =
         function
         | Install -> [] |> noQueryString
         | LineChart -> ["linechart"] |> noQueryString
+        | BarChart -> ["barchart"] |> noQueryString
         | Use -> [ "use" ] |> noQueryString
 
 [<RequireQualifiedAccess>]
