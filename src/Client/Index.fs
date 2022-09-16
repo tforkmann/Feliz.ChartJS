@@ -33,7 +33,12 @@ let ChartJSLineChart () =
                                //     labels.value {|color="blue"|}
                                // ]
                                // datalabels.formatter renderCustomLabel
-                               ]]
+                               ]
+                           plugin.zoom [
+                               zoom.wheel [
+                                   wheel.enabled true
+                               ]
+                           ]]
         ]
         line.data [
             lineData.labels [|
@@ -213,8 +218,8 @@ let view (model: Model) (dispatch: Msg -> unit) =
         ]
         prop.children [
             ChartJSLineChart()
-            ChartJSBarChart()
-            ChartJSDoughnutChart()
+            // ChartJSBarChart()
+            // ChartJSDoughnutChart()
         ]
 
         ]

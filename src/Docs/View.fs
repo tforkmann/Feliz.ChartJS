@@ -103,13 +103,13 @@ let private leftSide (p: Page) =
                     "inline-block text-3xl font-title px-5 py-5 font-bold"
                     [ Html.span [
                           color.textPrimary
-                          prop.text "Clapper"
+                          prop.text "Feliz.ChartJS"
                       ]
                       Html.a [
-                          prop.href "https://www.nuget.org/packages/Clapper"
+                          prop.href "https://www.nuget.org/packages/Feliz.ChartJS"
                           prop.children [
                               Html.img [
-                                  prop.src "https://img.shields.io/nuget/v/Clapper.svg?style=flat-square"
+                                  prop.src "https://img.shields.io/nuget/v/Feliz.ChartJS.svg?style=flat-square"
                               ]
                           ]
                       ] ]
@@ -120,6 +120,7 @@ let private leftSide (p: Page) =
                         Daisy.menuTitle [ Html.span "Docs" ]
                         mi "Install" Install
                         mi "Use" Use
+                        mi "LineChart" LineChart
                     ]
                 ]
             ]
@@ -154,6 +155,7 @@ let AppView (state: State) (dispatch: Msg -> unit) =
         match state.Page with
         | Install -> "Installation", "/docs/install", Pages.Install.InstallView()
         | Use -> "How to use", "/docs/use", Pages.Use.UseView()
+        | LineChart -> "LineChart", "/linechart", Pages.LineChart.LineChartView()
 
     React.router [
         router.hashMode

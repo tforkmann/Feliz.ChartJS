@@ -29,6 +29,9 @@ type ITitleProp =
 type IDataLabelsProp =
     interface
     end
+type IZoomProp =
+    interface
+    end
 type ILabelsProp =
     interface
     end
@@ -36,6 +39,9 @@ type IDataLabelProp =
     interface
     end
 type IFontProp =
+    interface
+    end
+type IWheelProp =
     interface
     end
 

@@ -16,9 +16,11 @@ module Interop =
     let inline mkAxesProp (key: string) (value: obj) : IAxesProp = unbox (key, value)
     let inline mkLegendProp (key: string) (value: obj) : ILegendProp = unbox (key, value)
     let inline mkDataLabelsProp (key: string) (value: obj) : IDataLabelsProp = unbox (key, value)
+    let inline mkZoomProp (key: string) (value: obj) : IZoomProp = unbox (key, value)
     let inline mkDataLabelProp (key: string) (value: obj) : IDataLabelProp = unbox (key, value)
     let inline mkLabelsProp (key: string) (value: obj) : ILabelsProp = unbox (key, value)
     let inline mkFontProp (key: string) (value: obj) : IFontProp = unbox (key, value)
+    let inline mkWheelProp (key: string) (value: obj) : IWheelProp = unbox (key, value)
     let inline mkLineDataProp (key: string) (value: obj) : ILineDataProp = unbox (key, value)
     let inline mkLineDataSetsProp (key: string) (value: obj) : ILineDataSetsProp = unbox (key, value)
     let inline mkBarDataProp (key: string) (value: obj) : IBarDataProp = unbox (key, value)
@@ -26,30 +28,34 @@ module Interop =
     let inline mkDoughnutDataProp (key: string) (value: obj) : IDoughnutDataProp = unbox (key, value)
     let inline mkDoughnutDataSetsProp (key: string) (value: obj) : IDoughnutDataSetsProp = unbox (key, value)
 
-    let ChartJS : obj = import "Chart" "chart.js"
-    let CategoryScale : obj = import "CategoryScale" "chart.js"
-    let LinearScale : obj = import "LinearScale" "chart.js"
-    let LineElement : obj = import "LineElement" "chart.js"
-    let PointElement : obj = import "PointElement" "chart.js"
-    let BarElement : obj = import "BarElement" "chart.js"
-    let ArcElement : obj = import "ArcElement" "chart.js"
-    let Legend : obj = import "Legend" "chart.js"
+    let ChartJS: obj = import "Chart" "chart.js"
+    let CategoryScale: obj = import "CategoryScale" "chart.js"
+    let LinearScale: obj = import "LinearScale" "chart.js"
+    let LineElement: obj = import "LineElement" "chart.js"
+    let PointElement: obj = import "PointElement" "chart.js"
+    let BarElement: obj = import "BarElement" "chart.js"
+    let ArcElement: obj = import "ArcElement" "chart.js"
+    let Legend: obj = import "Legend" "chart.js"
     let Title: obj = import "Title" "chart.js"
-    let Tooltip : obj = import "Tooltip" "chart.js"
+    let Tooltip: obj = import "Tooltip" "chart.js"
 
-    let ChartDataLabels : obj = importAll "chartjs-plugin-datalabels"
+    let ChartDataLabels: obj = importAll "chartjs-plugin-datalabels"
+    // let hammerJS: obj = importAll "hammerjs"
+    // let ZoomPlugin: obj = importAll "chartjs-plugin-zoom"
 
-    let chart : obj = import "Chart" "react-chartjs-2"
-    let line : obj = import "Line" "react-chartjs-2"
-    let doughnut : obj = import "Doughnut" "react-chartjs-2"
-    let bar : obj = import "Bar" "react-chartjs-2"
-    ChartJS?register(CategoryScale)
-    ChartJS?register(LinearScale)
-    ChartJS?register(PointElement)
-    ChartJS?register(LineElement)
-    ChartJS?register(BarElement)
-    ChartJS?register(ArcElement)
-    ChartJS?register(Tooltip)
-    ChartJS?register(Legend)
-    ChartJS?register(Title)
-    ChartJS?register(ChartDataLabels)
+    let chart: obj = import "Chart" "react-chartjs-2"
+    let line: obj = import "Line" "react-chartjs-2"
+    let doughnut: obj = import "Doughnut" "react-chartjs-2"
+    let bar: obj = import "Bar" "react-chartjs-2"
+
+    // ChartJS?register (ZoomPlugin)
+    ChartJS?register (CategoryScale)
+    ChartJS?register (LinearScale)
+    ChartJS?register (PointElement)
+    ChartJS?register (LineElement)
+    ChartJS?register (BarElement)
+    ChartJS?register (ArcElement)
+    ChartJS?register (Tooltip)
+    ChartJS?register (Legend)
+    ChartJS?register (Title)
+    ChartJS?register (ChartDataLabels)

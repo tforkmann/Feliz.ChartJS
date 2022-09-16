@@ -7,6 +7,8 @@ open Fable.Core.JsInterop
 type Page =
     | Install
     | Use
+    | LineChart
+
 
 [<RequireQualifiedAccess>]
 module Page =
@@ -15,6 +17,7 @@ module Page =
     let parseFromUrlSegments =
         function
         | [ "use" ] -> Use
+        | [ "linechart" ] -> LineChart
         | [] -> Install
         | _ -> defaultPage
 
@@ -23,6 +26,7 @@ module Page =
     let toUrlSegments =
         function
         | Install -> [] |> noQueryString
+        | LineChart -> ["linechart"] |> noQueryString
         | Use -> [ "use" ] |> noQueryString
 
 [<RequireQualifiedAccess>]

@@ -86,3 +86,11 @@ let codedNoExampleView (title: ReactElement) (code: string) =
         "mb-10"
         [ Html.divClassed "description" [ title ]
           Html.divClassed "flex flex-row w-full" [ Html.divClassed "grid flex-1 h-full" [ linedMockupCode code ] ] ]
+
+let fixDocsView fileName client =
+    Html.div [
+        Html.a [
+            prop.href (sprintf "https://github.com/tforkmann/Feliz.ChartJS/blob/main/src/Docs/views/Feliz.ChartJS/%s.fs" fileName)
+            prop.text ("Fix docs file " + fileName + " here")
+        ]
+    ]

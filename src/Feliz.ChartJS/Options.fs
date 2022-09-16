@@ -35,6 +35,9 @@ type plugin =
     static member inline datalabels(props: IDataLabelsProp seq) : IPluginsProp =
         Interop.mkPluginsProp "datalabels" (createObj !!props)
 
+    static member inline zoom(props: IZoomProp seq) : IPluginsProp =
+        Interop.mkPluginsProp "zoom" (createObj !!props)
+
 [<Erase>]
 type scale =
     static member inline x(props: IAxesProp seq) : IScalesProp =
@@ -85,6 +88,14 @@ type datalabels =
 
     static member inline formatter(context: IContextProperties -> ReactElement) : IDataLabelsProp =
         Interop.mkDataLabelsProp "formatter" context
+[<Erase>]
+type zoom =
+    static member inline wheel props : IZoomProp =
+        Interop.mkZoomProp "wheel" (createObj !!props)
+
+[<Erase>]
+type wheel =
+    static member inline enabled(enabled: bool) : IWheelProp = Interop.mkWheelProp "enabled" enabled
 
 [<Erase>]
 type font =
