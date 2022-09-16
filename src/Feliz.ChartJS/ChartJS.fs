@@ -26,15 +26,3 @@ type ChartJS =
 
     static member inline children(children: ReactElement list) =
         unbox<IChartJSProp> (prop.children children)
-    static member inline register () =
-        Interop.ChartJS?register(Interop.CategoryScale)
-        Interop.ChartJS?register(Interop.LinearScale)
-        Interop.ChartJS?register(Interop.PointElement)
-        Interop.ChartJS?register(Interop.LineElement)
-        Interop.ChartJS?register(Interop.BarElement)
-        Interop.ChartJS?register(Interop.ArcElement)
-        Interop.ChartJS?register(Interop.Tooltip)
-        Interop.ChartJS?register(Interop.Legend)
-        Interop.ChartJS?register(Interop.Title)
-        Interop.ChartJS?register(Interop.ChartDataLabels)
-

@@ -43,3 +43,13 @@ module Interop =
     let line : obj = import "Line" "react-chartjs-2"
     let doughnut : obj = import "Doughnut" "react-chartjs-2"
     let bar : obj = import "Bar" "react-chartjs-2"
+    ChartJS?register(CategoryScale)
+    ChartJS?register(LinearScale)
+    ChartJS?register(PointElement)
+    ChartJS?register(LineElement)
+    ChartJS?register(BarElement)
+    ChartJS?register(ArcElement)
+    ChartJS?register(Tooltip)
+    ChartJS?register(Legend)
+    ChartJS?register(Title)
+    ChartJS?register(ChartDataLabels)
