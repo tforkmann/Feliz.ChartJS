@@ -18,7 +18,7 @@ let update msg (model: Model) =
     match msg with
     | UpdateTxt txt -> { model with Txt = txt }, Cmd.none
 
-Feliz.ChartJS.Interop.register()
+ChartJS.register()
 
 [<ReactComponent>]
 let ChartJSLineChart () =
