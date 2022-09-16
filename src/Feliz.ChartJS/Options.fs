@@ -4,13 +4,6 @@ open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
 
-[<StringEnum>]
-type Position =
-    | Top
-    | Left
-    | Bottom
-    | Right
-
 [<Erase>]
 type option =
     static member inline responsive(resp: bool) : IOptionsProp = Interop.mkOptionsProp "responsive" resp
@@ -46,9 +39,21 @@ type scale =
     static member inline y(props: IAxesProp seq) : IScalesProp =
         Interop.mkScalesProp "y" (createObj !!props)
 
+    static member inline yLeft(props: IAxesProp seq) : IScalesProp =
+        Interop.mkScalesProp "YLeft" (createObj !!props)
+
+    static member inline yRight(props: IAxesProp seq) : IScalesProp =
+        Interop.mkScalesProp "YRight" (createObj !!props)
+
 [<Erase>]
 type axes =
     static member inline stacked(stacked: bool) : IAxesProp = Interop.mkAxesProp "stacked" stacked
+    static member inline position(position: Position) : IAxesProp = Interop.mkAxesProp "position" position
+    static member inline reverse(reverse: bool) : IAxesProp = Interop.mkAxesProp "reverse" reverse
+    static member inline ticks(handler: ITicksProperties -> unit) = Interop.mkAxesProp "ticks" handler
+
+    static member inline title(props: ITitleProp seq) : IAxesProp =
+        Interop.mkAxesProp "title" (createObj !!props)
 
 [<Erase>]
 type title =
@@ -69,8 +74,8 @@ type datalabels =
 
     static member inline display(display: bool) : IDataLabelsProp =
         Interop.mkDataLabelsProp "display" display
-    static member inline clamp(clamp: bool) : IDataLabelsProp =
-        Interop.mkDataLabelsProp "clamp" clamp
+
+    static member inline clamp(clamp: bool) : IDataLabelsProp = Interop.mkDataLabelsProp "clamp" clamp
 
     static member inline color(color: string) : IDataLabelsProp = Interop.mkDataLabelsProp "color" color
 
@@ -88,6 +93,7 @@ type datalabels =
 
     static member inline formatter(context: IContextProperties -> ReactElement) : IDataLabelsProp =
         Interop.mkDataLabelsProp "formatter" context
+
 [<Erase>]
 type zoom =
     static member inline wheel props : IZoomProp =

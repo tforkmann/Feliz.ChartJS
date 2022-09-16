@@ -18,11 +18,39 @@ let update msg (model: Model) =
     match msg with
     | UpdateTxt txt -> { model with Txt = txt }, Cmd.none
 
+// let renderTicks (ticks: ITicksProperties) =
+//     React.useCallback((fun (context) ->
+//             "test"
+//         ), [| |])
+
+
 [<ReactComponent>]
 let ChartJSLineChart () =
     ChartJS.line [
         line.options [
             option.responsive true
+            option.scales [
+                scale.y [
+                    axes.position Left
+                    axes.title [
+                        title.display true
+                        title.text "test"
+                    ]
+                    // axes.title [
+                    //     title.display true
+                    //     title.text "test"
+                    //     ]
+                    // ]
+                ]
+                scale.yRight [
+                    axes.position Right
+                    axes.reverse true
+                ]
+                // [Feliz.ChartJS
+                //     // axes.ticks (fun layout -> console.log "test")
+
+                //  ]
+            ]
             option.plugins[plugin.datalabels [
                                datalabels.display true
                                datalabels.allign Bottom
@@ -59,7 +87,7 @@ let ChartJSLineChart () =
                         "2"
                         "3"
                         "4"
-                        "5"
+                        "312"
                         "6"
                     |]
                 ]
@@ -73,8 +101,9 @@ let ChartJSLineChart () =
                         "3"
                         "4"
                         "4"
-                        "6"
+                        "1500"
                     |]
+                    lineDataSet.yAxisID "yRight"
                 ]
             |]
         ]

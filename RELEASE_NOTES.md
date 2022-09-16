@@ -1,3 +1,5 @@
+#### 0.2.6 - 2022-09-16
+* Add Scale props
 #### 0.2.5 - 2022-09-16
 * Move back to auto register
 #### 0.2.4 - 2022-09-16

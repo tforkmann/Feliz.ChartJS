@@ -19,6 +19,9 @@ type IScalesProp =
 type IAxesProp =
     interface
     end
+type ITicksProp =
+    interface
+    end
 
 type ILegendProp =
     interface
@@ -86,3 +89,19 @@ type IContextProperties =
     abstract outerRadius : float
     abstract percent : float
     abstract index : int
+[<Erase>]
+type ITicksProperties =
+    abstract value : string
+    abstract index : int
+    abstract ticks : int
+
+[<StringEnum>]
+type Position =
+    | Top
+    | Left
+    | Bottom
+    | Right
+[<StringEnum>]
+type YAxis =
+    | YLeft
+    | YRight

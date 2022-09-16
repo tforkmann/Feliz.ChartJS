@@ -18,7 +18,6 @@ type lineData =
     static member inline labels(labels: string array) : ILineDataProp = !!("labels" ==> labels)
     static member inline datasets(props: ILineDataSetsProp seq) = (!!("datasets" ==> props))
     static member inline dataset props : ILineDataSetsProp = !!(createObj !!props)
-
 [<Erase>]
 type lineDataSet =
     static member inline label(label: string): ILineDataSetsProp =
@@ -29,3 +28,5 @@ type lineDataSet =
         Interop.mkLineDataSetsProp "backgroundColor" backgroundColor
     static member inline data(data: string []): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "data" data
+    static member inline yAxisID(yAxisID: string): ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "yAxisID" yAxisID

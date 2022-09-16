@@ -1,8 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "postcss:watch": "postcss ./src/Docs/styles/additional_styles.css -o ./src/Docs/styles/output.css --env development -w",
-        "postcss:build": "postcss ./src/Docs/styles/additional_styles.css -o ./src/Docs/styles/output.css --env production",
+        "postcss:watch": "postcss ./src/Client/styles/additional_styles.css -o ./src/Client/styles/output.css --env development -w",
+        "postcss:build": "postcss ./src/Client/styles/additional_styles.css -o ./src/Client/styles/output.css --env production",
         "parcel:serve": "parcel serve ./src/Client/index.html --port 8080",
         "prestart": "dotnet tool restore",
         "startdocs": "cross-os startdocs",
