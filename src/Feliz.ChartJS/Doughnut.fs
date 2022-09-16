@@ -24,7 +24,8 @@ type doughnutData =
 type doughnutDataSet =
     static member inline label(label: string) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "label" label
-
+    static member inline mixedType(mixedType: string) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "type" mixedType
     static member inline borderAlign(borderAlign: string) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "borderAlign" borderAlign
 

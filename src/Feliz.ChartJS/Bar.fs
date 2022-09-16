@@ -22,6 +22,9 @@ type barData =
 
 [<Erase>]
 type barDataSet =
+    static member inline mixedType(mixedType: string) : IBarDataSetsProp =
+        Interop.mkBarDataSetsProp "type" mixedType
+
     static member inline label(label: string) : IBarDataSetsProp = Interop.mkBarDataSetsProp "label" label
 
     static member inline borderColor(borderColor: string) : IBarDataSetsProp =

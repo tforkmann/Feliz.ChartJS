@@ -22,6 +22,8 @@ type lineData =
 type lineDataSet =
     static member inline label(label: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "label" label
+    static member inline mixedType(mixedType: string) : ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "type" mixedType
     static member inline borderColor(borderColor: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "borderColor" borderColor
     static member inline backgroundColor(backgroundColor: string): ILineDataSetsProp =
