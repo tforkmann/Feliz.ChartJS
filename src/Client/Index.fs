@@ -18,6 +18,8 @@ let update msg (model: Model) =
     match msg with
     | UpdateTxt txt -> { model with Txt = txt }, Cmd.none
 
+Feliz.ChartJS.Interop.register()
+
 [<ReactComponent>]
 let ChartJSLineChart () =
     ChartJS.line [
@@ -78,6 +80,7 @@ let ChartJSLineChart () =
 [<ReactComponent>]
 let ChartJSBarChart () =
     ChartJS.bar [
+        // bar.register()
         bar.options [
             option.responsive true
             option.scales [

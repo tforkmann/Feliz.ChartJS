@@ -39,16 +39,17 @@ module Interop =
 
     let ChartDataLabels : obj = importAll "chartjs-plugin-datalabels"
 
-    ChartJS?register(CategoryScale)
-    ChartJS?register(LinearScale)
-    ChartJS?register(PointElement)
-    ChartJS?register(LineElement)
-    ChartJS?register(BarElement)
-    ChartJS?register(ArcElement)
-    ChartJS?register(Tooltip)
-    ChartJS?register(Legend)
-    ChartJS?register(Title)
-    ChartJS?register(ChartDataLabels)
+    let register () =
+        ChartJS?register(CategoryScale)
+        ChartJS?register(LinearScale)
+        ChartJS?register(PointElement)
+        ChartJS?register(LineElement)
+        ChartJS?register(BarElement)
+        ChartJS?register(ArcElement)
+        ChartJS?register(Tooltip)
+        ChartJS?register(Legend)
+        ChartJS?register(Title)
+        ChartJS?register(ChartDataLabels)
 
     let chart : obj = import "Chart" "react-chartjs-2"
     let line : obj = import "Line" "react-chartjs-2"
