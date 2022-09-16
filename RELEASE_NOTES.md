@@ -1,3 +1,5 @@
+#### 0.2.4 - 2022-09-16
+* Moving register to ChartJS
 #### 0.2.3 - 2022-09-16
 * Register as a function
 #### 0.2.2 - 2022-09-15
