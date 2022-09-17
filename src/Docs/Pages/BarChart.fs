@@ -67,7 +67,6 @@ let ChartJSChart =
         ChartJSBarChart()
     ]
 
-let title = Html.text "Line Chart"
 
 let code =
     """
@@ -126,15 +125,13 @@ let code =
     ]
     """
 
+let title = Html.text "Bar Chart"
+
 [<ReactComponent>]
 let BarChartView () =
     Html.div [
-        Bulma.title.h1 [
-            Html.text "Feliz.ChartJS Example"
-        ]
         Bulma.content [
-            Html.p "Here is an example how to use ChartJS"
             codedView title code ChartJSChart
         ]
-        fixDocsView "LineChart" false
+        fixDocsView "BarChart" false
     ]
