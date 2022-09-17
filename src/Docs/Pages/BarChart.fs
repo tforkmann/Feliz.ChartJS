@@ -9,7 +9,6 @@ open Docs.SharedView
 [<ReactComponent>]
 let ChartJSBarChart () =
     ChartJS.bar [
-        // bar.register()
         bar.options [
             option.responsive true
             option.scales [
@@ -73,7 +72,6 @@ let title = Html.text "Line Chart"
 let code =
     """
     ChartJS.bar [
-        // bar.register()
         bar.options [
             option.responsive true
             option.scales [

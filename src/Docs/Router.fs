@@ -9,6 +9,8 @@ type Page =
     | Use
     | LineChart
     | BarChart
+    | DoughnutChart
+    | MixedChart
 
 
 [<RequireQualifiedAccess>]
@@ -20,6 +22,8 @@ module Page =
         | [ "use" ] -> Use
         | [ "linechart" ] -> LineChart
         | [ "barchart" ] -> BarChart
+        | [ "doughnutchart" ] -> DoughnutChart
+        | [ "mixedchart" ] -> MixedChart
         | [] -> Install
         | _ -> defaultPage
 
@@ -30,6 +34,8 @@ module Page =
         | Install -> [] |> noQueryString
         | LineChart -> ["linechart"] |> noQueryString
         | BarChart -> ["barchart"] |> noQueryString
+        | DoughnutChart -> ["doughnutchart"] |> noQueryString
+        | MixedChart -> ["mixedchart"] |> noQueryString
         | Use -> [ "use" ] |> noQueryString
 
 [<RequireQualifiedAccess>]

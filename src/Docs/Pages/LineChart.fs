@@ -51,7 +51,6 @@ let ChartJSChart =
         ChartJSLineChart()
     ]
 
-let title = Html.text "Line Chart"
 
 let code =
     """
@@ -107,9 +106,9 @@ let code =
     ]
     """
 
+let title = Html.text "Line Chart"
+
 [<ReactComponent>]
 let LineChartView () =
-    Html.div [ Bulma.title.h1 [ Html.text "Feliz.ChartJS Example" ]
-               Bulma.content [ Html.p "Here is an example how to use ChartJS"
-                               codedView title code ChartJSChart ]
+    Html.div [ Bulma.content [ codedView title code ChartJSChart ]
                fixDocsView "LineChart" false ]

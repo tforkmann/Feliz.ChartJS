@@ -121,7 +121,10 @@ let private leftSide (p: Page) =
                         mi "Install" Install
                         mi "Use" Use
                         mi "LineChart" LineChart
-                    ]
+                        mi "BarChart" BarChart
+                        mi "DoughnutChart" DoughnutChart
+                        mi "MixedChart" MixedChart
+                        ]
                 ]
             ]
         ]
@@ -156,6 +159,9 @@ let AppView (state: State) (dispatch: Msg -> unit) =
         | Install -> "Installation", "/docs/install", Pages.Install.InstallView()
         | Use -> "How to use", "/docs/use", Pages.Use.UseView()
         | LineChart -> "LineChart", "/linechart", Pages.LineChart.LineChartView()
+        | BarChart -> "BarChart", "/barchart", Pages.BarChart.BarChartView()
+        | DoughnutChart -> "DoughnutChart", "/linechart", Pages.DoughnutChart.DoughnutChartView()
+        | MixedChart -> "MixedChart", "/linechart", Pages.MixedChart.MixedChartView()
 
     React.router [
         router.hashMode
