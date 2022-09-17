@@ -239,7 +239,6 @@ let dependencies = [
         ==> "RunDocs"
 
     "InstallDocs"
-        ==> "ExecuteTests"
         ==> "PublishDocs"
 ]
 
