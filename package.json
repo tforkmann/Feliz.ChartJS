@@ -8,7 +8,8 @@
         "startdocs": "cross-os startdocs",
         "test:build": "dotnet fable tests/Client --outDir tests/Client/output --run webpack -p --config webpack.tests.config.js",
         "test:live": "dotnet fable tests/Client --outDir tests/Client/output --run webpack-dev-server --config webpack.tests.config.js",
-        "start": "cross-os start"
+        "start": "cross-os start",
+        "build": "dotnet fable ./src/Docs --outDir ./.fable-build && webpack"
     },
     "cross-os": {
         "startdocs": {

@@ -200,10 +200,7 @@ Target.create "InstallDocs" (fun _ ->
     run npm "install --frozen-lockfile" docsSrcPath
     run dotnet "restore" docsSrcPath )
 
-Target.create "PublishDocs" (fun _ ->
-    [ docsDeployPath] |> Shell.cleanDirs
-    run dotnet "fable --run webpack-cli -p" docsSrcPath
-)
+Target.create "PublishDocs" (fun _ -> run npm "run build" ".")
 
 Target.create "RunDocs" (fun _ ->
     run npm "run startdocs" ".")
