@@ -22,8 +22,8 @@ jobs:
       - name: Install Tools
         run: dotnet tool restore
 
-      # - name: RunTests
-      #   run: dotnet run ExecuteTests
+      - name: Build
+        run: dotnet run PublishDocs
 
       - name: Publish Docs
         uses: actions/upload-artifact@v2
