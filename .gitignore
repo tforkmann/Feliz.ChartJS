@@ -1,5 +1,4 @@
 .fable/
-.fable-build/
 *.fs.js
 .fake/
 .farmer/
