@@ -155,5 +155,9 @@ let title = Html.text "Doughnut Chart"
 
 [<ReactComponent>]
 let DoughnutChartView () =
-    Html.div [ Bulma.content [ codedView title code ChartJSChart ]
-               fixDocsView "LineChart" false ]
+    Html.div [
+        Bulma.content [
+            codedView title code ChartJSChart
+        ]
+        fixDocsView "LineChart" false
+    ]

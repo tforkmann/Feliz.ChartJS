@@ -8,39 +8,60 @@ open Docs.SharedView
 
 [<ReactComponent>]
 let ChartJSMixedChart () =
-    ChartJS.bar [ bar.options [ option.responsive true
-                                option.scales [ scale.x [ axes.stacked true ]
-                                                scale.y [ axes.stacked true ] ]
-                                option.plugins [ plugin.legend [ legend.position Top ]
-                                                 plugin.title [ title.display true
-                                                                title.text "Chart.js Bar Chart" ]
-                                                 plugin.datalabels [ datalabels.display true
-                                                                     datalabels.allign Bottom
-                                                                     datalabels.borderRadius 3
-                                                                     datalabels.color "red"
-                                                                     datalabels.backgroundColor "green"
-                                                                     // datalabels.labels [
-                                                                     //     labels.value {|color="blue"|}
-                                                                     // ]
-                                                                     // datalabels.formatter renderCustomLabel
-                                                                      ] ] ]
-                  bar.data [ barData.labels [| "January"
-                                               "Feburary" |]
-                             barData.datasets [| barData.dataset [ barDataSet.label "My First Dataset"
-                                                                   barDataSet.borderColor "blue"
-                                                                   barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                                                   barDataSet.borderSkipped false
-                                                                   barDataSet.borderWidth 2
-                                                                   barDataSet.borderRadius 50
-                                                                   barDataSet.data [| "1"; "2" |] ]
-                                                 barData.dataset [ barDataSet.label "My Second Dataset"
-                                                                   barDataSet.mixedType "line"
-                                                                   barDataSet.borderColor "green"
-                                                                   barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                                                                   barDataSet.borderSkipped false
-                                                                   barDataSet.borderWidth 2
-                                                                   barDataSet.borderRadius 50
-                                                                   barDataSet.data [| "1"; "2" |] ] |] ] ]
+    ChartJS.bar [
+        bar.options [
+            option.responsive true
+            option.scales [
+                scale.x [ axes.stacked true ]
+                scale.y [ axes.stacked true ]
+            ]
+            option.plugins [
+                plugin.legend [ legend.position Top ]
+                plugin.title [
+                    title.display true
+                    title.text "Chart.js Bar Chart"
+                ]
+                plugin.datalabels [
+                    datalabels.display true
+                    datalabels.allign Bottom
+                    datalabels.borderRadius 3
+                    datalabels.color "red"
+                    datalabels.backgroundColor "green"
+                    // datalabels.labels [
+                    //     labels.value {|color="blue"|}
+                    // ]
+                    // datalabels.formatter renderCustomLabel
+                    ]
+            ]
+        ]
+        bar.data [
+            barData.labels [|
+                "January"
+                "Feburary"
+            |]
+            barData.datasets [|
+                barData.dataset [
+                    barDataSet.label "My First Dataset"
+                    barDataSet.borderColor "blue"
+                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    barDataSet.borderSkipped false
+                    barDataSet.borderWidth 2
+                    barDataSet.borderRadius 50
+                    barDataSet.data [| "1"; "2" |]
+                ]
+                barData.dataset [
+                    barDataSet.label "My Second Dataset"
+                    barDataSet.mixedType "line"
+                    barDataSet.borderColor "green"
+                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    barDataSet.borderSkipped false
+                    barDataSet.borderWidth 2
+                    barDataSet.borderRadius 50
+                    barDataSet.data [| "1"; "2" |]
+                ]
+            |]
+        ]
+    ]
 
 let ChartJSChart =
     div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
@@ -111,5 +132,9 @@ let title = Html.text "Mixed Chart"
 
 [<ReactComponent>]
 let MixedChartView () =
-    Html.div [ Bulma.content [ codedView title code ChartJSChart ]
-               fixDocsView "MixedChart" false ]
+    Html.div [
+        Bulma.content [
+            codedView title code ChartJSChart
+        ]
+        fixDocsView "MixedChart" false
+    ]

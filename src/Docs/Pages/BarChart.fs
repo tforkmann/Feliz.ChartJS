@@ -128,7 +128,13 @@ let code =
 
 [<ReactComponent>]
 let BarChartView () =
-    Html.div [ Bulma.title.h1 [ Html.text "Feliz.ChartJS Example" ]
-               Bulma.content [ Html.p "Here is an example how to use ChartJS"
-                               codedView title code ChartJSChart ]
-               fixDocsView "LineChart" false ]
+    Html.div [
+        Bulma.title.h1 [
+            Html.text "Feliz.ChartJS Example"
+        ]
+        Bulma.content [
+            Html.p "Here is an example how to use ChartJS"
+            codedView title code ChartJSChart
+        ]
+        fixDocsView "LineChart" false
+    ]
