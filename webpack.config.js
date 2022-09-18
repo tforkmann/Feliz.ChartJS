@@ -30,7 +30,7 @@ var CONFIG = {
     cssEntry: './src/Docs/styles/styles.css',
     outputDir: './publish/docs',
     assetsDir: './src/Docs/public',
-    devServerPort: 5050,
+    devServerPort: 8080,
     // When using webpack-dev-server, you may need to redirect some calls
     // to a external API server. See https://webpack.js.org/configuration/dev-server/#devserver-proxy
     devServerProxy: {

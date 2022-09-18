@@ -31,7 +31,7 @@
         "autoprefixer": "10.4.7",
         "babel-loader": "^8.0.5",
         "buffer": "^6.0.3",
-        "copy-webpack-plugin": "^6.1.0",
+        "copy-webpack-plugin": "^11.0.0",
         "core-js": "^3.3.2",
         "cross-os": "^1.4.0",
         "css-loader": "^4.2.1",
