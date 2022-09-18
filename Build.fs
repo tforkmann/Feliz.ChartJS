@@ -73,7 +73,7 @@ Target.create
     "UpdateTools"
     (fun _ ->
         run dotnet "tool update fable" __SOURCE_DIRECTORY__
-        run dotnet "tool update fantomas-tool" __SOURCE_DIRECTORY__
+        run dotnet "tool update fantomas" __SOURCE_DIRECTORY__
         run dotnet "tool update fake-cli" __SOURCE_DIRECTORY__
         run dotnet "tool update paket" __SOURCE_DIRECTORY__
 
