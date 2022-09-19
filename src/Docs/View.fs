@@ -135,7 +135,6 @@ let private inLayout state dispatch (title: string) (docLink: string) (p: Page) 
         prop.className "bg-base-100 text-base-content h-screen"
         theme.custom state.Theme
         prop.children [
-            Html.h1 "Test"
             Daisy.drawer [
                 drawer.mobile
                 prop.children [
