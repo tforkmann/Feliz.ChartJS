@@ -9,13 +9,13 @@
         "test:build": "dotnet fable tests/Client --outDir tests/Client/output --run webpack -p --config webpack.tests.config.js",
         "test:live": "dotnet fable tests/Client --outDir tests/Client/output --run webpack-dev-server --config webpack.tests.config.js",
         "start": "cross-os start",
-        "build": "dotnet fable ./src/Docs --outDir ./.fable-build && webpack"
+        "build": "dotnet fable ./src/Docs -outDir /src/Docs/output && webpack"
     },
     "cross-os": {
         "startdocs": {
-            "darwin": "NODE_ENV=development dotnet fable watch ./src/Docs --outDir ./.fable-build --run webpack serve",
-            "linux": "NODE_ENV=development dotnet fable watch ./src/Docs --outDir ./.fable-build --run webpack serve",
-            "win32": "set NODE_ENV=development& dotnet fable watch ./src/Docs --outDir ./.fable-build --run webpack serve"
+            "darwin": "NODE_ENV=development dotnet fable watch ./src/Docs --outDir src/Docs/output --run webpack serve",
+            "linux": "NODE_ENV=development dotnet fable watch ./src/Docs -outDir src/Docs/output --run webpack serve",
+            "win32": "set NODE_ENV=development& dotnet fable watch ./src/Docs -outDir src/Docs/output --run webpack serve"
         },
         "start": {
             "darwin": "NODE_ENV=development dotnet fable watch ./src/Client --outDir src/Client/output --run npm-run-all -s -p postcss:watch parcel:serve",

@@ -26,7 +26,7 @@ var CONFIG = {
     // The tags to include the generated JS and CSS will be automatically injected in the HTML template
     // See https://github.com/jantimon/html-webpack-plugin
     indexHtmlTemplate: './src/Docs/index.html',
-    fsharpEntry: './.fable-build/App.js',
+    fsharpEntry: './src/Docs/output/App.js',
     cssEntry: './src/Docs/styles/styles.css',
     outputDir: './publish/docs',
     assetsDir: './src/Docs/public',

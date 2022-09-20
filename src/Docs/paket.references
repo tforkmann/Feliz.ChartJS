@@ -1,4 +1,5 @@
 Fable.Elmish.React
+Fable.Elmish.HMR
 Feliz.Router
 Zanaptak.TypedCssClasses
 Feliz.Markdown
@@ -6,6 +7,5 @@ Fable.Elmish.Debugger
 Feliz.Bulma
 Feliz.DaisyUI
 Feliz.UseElmish
-Fable.Elmish.HMR
 Feliz.ChartJS
 Feliz.Tailwind
