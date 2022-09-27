@@ -17,7 +17,7 @@ type doughnut =
     static member inline onClick(handler: Events.DoughnutClickEvent -> unit) : IDoughnutChartProp =
         !!("onClick" ==> handler)
 
-    static member inline getElementAtEvent(handler:obj option -> obj) : IDoughnutChartProp =
+    static member inline getElementAtEvent(handler:obj -> obj) : IDoughnutChartProp =
         !!("getElementAtEvent" ==> handler)
 
 [<Erase>]
