@@ -3,7 +3,6 @@ namespace Feliz.ChartJS
 open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
-
 [<Erase>]
 type option =
     static member inline responsive(resp: bool) : IOptionsProp = Interop.mkOptionsProp "responsive" resp
