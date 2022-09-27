@@ -1,3 +1,5 @@
+#### 0.2.8 - 2022-09-27
+* Add EventsHelpers
 #### 0.2.7 - 2022-09-16
 * Supports Mixed Chart Types
 #### 0.2.6 - 2022-09-16

@@ -16,6 +16,12 @@ type IPluginsProp =
 type IScalesProp =
     interface
     end
+type ILayoutProp =
+    interface
+    end
+type IPaddingProp =
+    interface
+    end
 type IAxesProp =
     interface
     end

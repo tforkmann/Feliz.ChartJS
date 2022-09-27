@@ -14,6 +14,9 @@ type option =
     static member inline scales(props: IScalesProp seq) : IOptionsProp =
         Interop.mkOptionsProp "scales" (createObj !!props)
 
+    static member inline layout(props: ILayoutProp seq) : IOptionsProp =
+        Interop.mkOptionsProp "layout" (createObj !!props)
+
     static member inline plugins(props: IPluginsProp seq) : IOptionsProp =
         Interop.mkOptionsProp "plugins" (createObj !!props)
 
@@ -46,6 +49,11 @@ type scale =
         Interop.mkScalesProp "YRight" (createObj !!props)
 
 [<Erase>]
+type layout =
+    static member inline padding(props: IPaddingProp seq) : ILayoutProp =
+        Interop.mkLayoutProp "value" (createObj !!props)
+
+[<Erase>]
 type axes =
     static member inline stacked(stacked: bool) : IAxesProp = Interop.mkAxesProp "stacked" stacked
     static member inline position(position: Position) : IAxesProp = Interop.mkAxesProp "position" position
@@ -54,6 +62,10 @@ type axes =
 
     static member inline title(props: ITitleProp seq) : IAxesProp =
         Interop.mkAxesProp "title" (createObj !!props)
+
+[<Erase>]
+type padding =
+    static member inline bottom(bottom: int) : IPaddingProp = Interop.mkPaddingProp "bottom" bottom
 
 [<Erase>]
 type title =

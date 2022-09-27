@@ -13,8 +13,5 @@
     <ItemGroup>
         <ProjectReference Include="..\Feliz.ChartJS\Feliz.ChartJS.fsproj" />
     </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\Shared\Shared.fsproj" />
-    </ItemGroup>
     <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

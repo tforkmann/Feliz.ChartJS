@@ -82,9 +82,7 @@ Target.create
 Target.create "InstallClient" (fun _ -> run npm "install" ".")
 
 Target.create "Run" (fun _ ->
-    run dotnet "build" sharedPath
-    [ "server",  dotnet "watch run" serverPath
-      "client", npm "start" "."  ]
+    [  "client", npm "start" "."  ]
       |> runParallel
 
 )

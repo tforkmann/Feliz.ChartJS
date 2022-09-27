@@ -14,6 +14,12 @@ type doughnut =
 
     static member inline labels props : IDoughnutChartProp = !!(createObj !!props)
 
+    static member inline onClick(handler: Events.DoughnutClickEvent -> unit) : IDoughnutChartProp =
+        !!("onClick" ==> handler)
+
+    static member inline getElementAtEvent(handler:obj option -> obj) : IDoughnutChartProp =
+        !!("getElementAtEvent" ==> handler)
+
 [<Erase>]
 type doughnutData =
     static member inline labels(labels: string array) : IDoughnutDataProp = !!("labels" ==> labels)
@@ -24,18 +30,20 @@ type doughnutData =
 type doughnutDataSet =
     static member inline label(label: string) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "label" label
+
     static member inline mixedType(mixedType: string) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "type" mixedType
+
     static member inline borderAlign(borderAlign: string) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "borderAlign" borderAlign
 
     static member inline borderWidth(borderWidth: int) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "borderWidth" borderWidth
 
-    static member inline borderColor(borderColor: string []) : IDoughnutDataSetsProp =
+    static member inline borderColor(borderColor: string[]) : IDoughnutDataSetsProp =
         (!!("borderColor" ==> borderColor))
 
-    static member inline backgroundColor(backgroundColor: string []) : IDoughnutDataSetsProp =
+    static member inline backgroundColor(backgroundColor: string[]) : IDoughnutDataSetsProp =
         (!!("backgroundColor" ==> backgroundColor))
 
     static member inline hoverOffset(hoverOffset: int) : IDoughnutDataSetsProp =
@@ -44,7 +52,7 @@ type doughnutDataSet =
     static member inline weight(weight: int) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "weight" weight
 
-    static member inline data(data: int []) : IDoughnutDataSetsProp =
+    static member inline data(data: int[]) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "data" data
 
     static member inline datalabels props : IDoughnutDataSetsProp =

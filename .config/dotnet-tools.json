@@ -9,13 +9,13 @@
       ]
     },
     "fable": {
-      "version": "3.7.18",
+      "version": "3.7.20",
       "commands": [
         "fable"
       ]
     },
     "fantomas": {
-      "version": "5.0.0",
+      "version": "5.0.2",
       "commands": [
         "fantomas"
       ]

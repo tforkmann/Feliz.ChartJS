@@ -3,12 +3,11 @@
     "scripts": {
         "postcss:watch": "postcss ./src/Client/styles/additional_styles.css -o ./src/Client/styles/output.css --env development -w",
         "postcss:build": "postcss ./src/Client/styles/additional_styles.css -o ./src/Client/styles/output.css --env production",
-        "parcel:serve": "parcel serve ./src/Client/index.html --port 8080",
         "prestart": "dotnet tool restore",
         "startdocs": "cross-os startdocs",
         "test:build": "dotnet fable tests/Client --outDir tests/Client/output --run webpack -p --config webpack.tests.config.js",
         "test:live": "dotnet fable tests/Client --outDir tests/Client/output --run webpack-dev-server --config webpack.tests.config.js",
-        "start": "cross-os start",
+        "start": "dotnet fable watch ./src/Client --outDir src/Client/output --run parcel serve ./src/Client/index.html --port 8080",
         "build": "dotnet fable ./src/Docs -outDir /src/Docs/output && webpack"
     },
     "cross-os": {
@@ -16,11 +15,6 @@
             "darwin": "NODE_ENV=development dotnet fable watch ./src/Docs --outDir src/Docs/output --run webpack serve",
             "linux": "NODE_ENV=development dotnet fable watch ./src/Docs -outDir src/Docs/output --run webpack serve",
             "win32": "set NODE_ENV=development& dotnet fable watch ./src/Docs -outDir src/Docs/output --run webpack serve"
-        },
-        "start": {
-            "darwin": "NODE_ENV=development dotnet fable watch ./src/Client --outDir src/Client/output --run npm-run-all -s -p postcss:watch parcel:serve",
-            "linux": "NODE_ENV=development dotnet fable watch ./src/Client --outDir src/Client/output --run npm-run-all -s -p postcss:watch parcel:serve",
-            "win32": "set NODE_ENV=development& dotnet fable watch ./src/Client --outDir src/Client/output --run npm-run-all -s -p postcss:watch parcel:serve"
         }
     },
     "devDependencies": {

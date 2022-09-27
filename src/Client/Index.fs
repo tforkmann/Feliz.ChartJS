@@ -173,8 +173,16 @@ let renderCustomLabel (context: IContextProperties) =
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
     ChartJS.doughnut [
+        // doughnut.onClick(fun e ->
+        //     let x = doughnut.getElementAtEvent (e:obj option)
+        //     console.log e)
         doughnut.options [
             option.responsive true
+            option.layout [
+                layout.padding [
+                    padding.bottom 10
+                    ]
+            ]
             option.plugins [
                 plugin.legend [ legend.position Top ]
                 plugin.title [
@@ -215,6 +223,7 @@ let ChartJSDoughnutChart () =
                         "rgba(255, 159, 64, 1)"
                     |]
                     doughnutDataSet.borderWidth 1
+                    doughnutDataSet.hoverOffset 20
                     doughnutDataSet.backgroundColor [|
                         "rgba(255, 99, 132, 0.2)"
                         "rgba(54, 162, 235, 0.2)"
@@ -303,10 +312,10 @@ let view (model: Model) (dispatch: Msg -> unit) =
             style.width 600
         ]
         prop.children [
-            ChartJSLineChart()
-            ChartJSBarChart()
+            // ChartJSLineChart()
+            // ChartJSBarChart()
             ChartJSDoughnutChart()
-            ChartJSMixedTypeChart()
+            // ChartJSMixedTypeChart()
         ]
 
         ]
