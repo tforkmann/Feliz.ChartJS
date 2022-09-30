@@ -12,6 +12,9 @@ type doughnut =
     static member inline data props : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "data" (createObj !!props)
 
+    static member inline ref(ref:IRefValue<obj>) : IDoughnutChartProp =
+        Interop.mkDoughnutChartProp "ref" ref
+
     static member inline labels props : IDoughnutChartProp = !!(createObj !!props)
 
     static member inline onClick(handler: Events.DoughnutClickEvent -> unit) : IDoughnutChartProp =
