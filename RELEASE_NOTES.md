@@ -1,4 +1,4 @@
-#### 0.3.0 - 2022-09-30
+#### 0.3.9 - 2022-09-30
 * use correct ref
 #### 0.3.8 - 2022-09-30
 * Dataset to interaction item
