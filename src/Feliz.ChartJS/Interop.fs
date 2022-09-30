@@ -29,6 +29,7 @@ module Interop =
     let inline mkDoughnutDataSetsProp (key: string) (value: obj) : IDoughnutDataSetsProp = unbox (key, value)
     let inline mkLayoutProp (key: string) (value: obj) : ILayoutProp = unbox (key, value)
     let inline mkPaddingProp (key: string) (value: obj) : IPaddingProp = unbox (key, value)
+    let inline convertToInteractionItems (value: obj) : InteractionItem [] = unbox value
 
     let ChartJS: obj = import "Chart" "chart.js"
     let CategoryScale: obj = import "CategoryScale" "chart.js"

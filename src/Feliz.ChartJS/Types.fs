@@ -1,7 +1,6 @@
 namespace Feliz.ChartJS
 
 open Fable.Core
-
 /// This interface allows us to stop adding random props to the react chart js.
 type IChartJSProp =
     interface
@@ -85,6 +84,9 @@ type IDoughnutDataProp =
 type IDoughnutDataSetsProp =
     interface
     end
+type IInteractionItemProp =
+    interface
+    end
 
 [<Erase>]
 type IContextProperties =
@@ -111,3 +113,8 @@ type Position =
 type YAxis =
     | YLeft
     | YRight
+[<Erase>]
+type InteractionItem =
+    abstract element : obj
+    abstract datasetIndex : int
+    abstract index : int

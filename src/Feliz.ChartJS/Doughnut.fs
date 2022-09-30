@@ -22,9 +22,9 @@ type doughnut =
         !!("onClick" ==> handler)
 
     static member inline getDatasetAtEvent((chart: obj ,``event``: MouseEvent)) : obj =
-        createObj [ "getDatasetAtEvent" ==> (chart,event) ]
-    static member inline getElementAtEvent((chart: obj ,``event``: MouseEvent)) : obj =
-        createObj [ "getElementAtEvent" ==> (chart,event) ]
+        Interop.convertToInteractionItems (createObj [ "getDatasetAtEvent" ==> (chart,event) ])
+    static member inline getElementAtEvent((chart: obj ,``event``: MouseEvent)) : InteractionItem [] =
+        Interop.convertToInteractionItems (createObj [ "getElementAtEvent" ==> (chart,event) ])
 
 [<Erase>]
 type doughnutData =

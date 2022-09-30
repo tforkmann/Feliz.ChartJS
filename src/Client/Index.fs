@@ -7,7 +7,6 @@ open Feliz
 open Feliz.ChartJS
 open Browser.Dom
 open Fable.Core.JsInterop
-
 type Model = { Txt: string }
 
 type Msg = UpdateTxt of string

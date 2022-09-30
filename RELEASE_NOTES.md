@@ -1,3 +1,5 @@
+#### 0.3.7 - 2022-09-30
+* Convert to interaction item
 #### 0.3.6 - 2022-09-30
 * return objs for Eventhandlers
 #### 0.3.5 - 2022-09-30
