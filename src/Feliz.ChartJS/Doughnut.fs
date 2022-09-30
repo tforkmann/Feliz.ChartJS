@@ -20,9 +20,9 @@ type doughnut =
     static member inline onClick(handler: Events.DoughnutClickEvent -> unit) : IDoughnutChartProp =
         !!("onClick" ==> handler)
 
-    static member inline getDatasetAtEvent(handler:Events.DoughnutDataEvent -> obj) : IDoughnutChartProp =
+    static member inline getDatasetAtEvent(handler:obj * Events.DoughnutDataEvent-> obj) : IDoughnutChartProp =
         !!("getDatasetAtEvent" ==> handler)
-    static member inline getElementAtEvent(handler:Events.DoughnutElementEvent -> obj) : IDoughnutChartProp =
+    static member inline getElementAtEvent(handler:obj * Events.DoughnutElementEvent -> obj) : IDoughnutChartProp =
         !!("getElementAtEvent" ==> handler)
 
 [<Erase>]
