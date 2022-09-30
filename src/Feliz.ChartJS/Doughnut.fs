@@ -13,7 +13,7 @@ type doughnut =
     static member inline data props : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "data" (createObj !!props)
 
-    static member inline ref(ref:IRefValue<obj>) : IDoughnutChartProp =
+    static member inline ref(ref:IRefValue<#HTMLElement option>) : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "ref" ref
 
     static member inline labels props : IDoughnutChartProp = !!(createObj !!props)
