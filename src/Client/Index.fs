@@ -172,10 +172,12 @@ let renderCustomLabel (context: IContextProperties) =
 
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
+    let ref = React.useRef(null)
     ChartJS.doughnut [
+        doughnut.ref ref
         doughnut.onClick(fun e ->
-            let x = doughnut.getElementAtEvent (fun el -> console.log el.event)
-            let x = doughnut.getDatasetAtEvent (fun el -> console.log el.event)
+            let x = doughnut.getElementAtEvent (ref.current,e.event)
+            let x = doughnut.getDatasetAtEvent (ref.current,e.event)
             console.log e)
         doughnut.options [
             option.responsive true

@@ -3,6 +3,7 @@ namespace Feliz.ChartJS
 open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
+open Browser.Types
 
 [<Erase>]
 type doughnut =
@@ -20,10 +21,10 @@ type doughnut =
     static member inline onClick(handler: Events.DoughnutClickEvent -> unit) : IDoughnutChartProp =
         !!("onClick" ==> handler)
 
-    static member inline getDatasetAtEvent(handler:obj * Events.DoughnutDataEvent-> obj) : IDoughnutChartProp =
-        !!("getDatasetAtEvent" ==> handler)
-    static member inline getElementAtEvent(handler:obj * Events.DoughnutElementEvent -> obj) : IDoughnutChartProp =
-        !!("getElementAtEvent" ==> handler)
+    static member inline getDatasetAtEvent((chart: obj ,``event``: MouseEvent)) : obj =
+        createObj [ "getDatasetAtEvent" ==> (chart,event) ]
+    static member inline getElementAtEvent((chart: obj ,``event``: MouseEvent)) : obj =
+        createObj [ "getElementAtEvent" ==> (chart,event) ]
 
 [<Erase>]
 type doughnutData =
