@@ -1,3 +1,5 @@
+#### 0.4.1 - 2022-09-30
+* Get chart events working
 #### 0.4.0 - 2022-09-30
 * make chartjs as type
 #### 0.3.9 - 2022-09-30

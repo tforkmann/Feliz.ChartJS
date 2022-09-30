@@ -7,6 +7,7 @@ open Feliz
 open Feliz.ChartJS
 open Browser.Dom
 open Fable.Core.JsInterop
+open Browser.Types
 type Model = { Txt: string }
 
 type Msg = UpdateTxt of string
@@ -171,13 +172,21 @@ let renderCustomLabel (context: IContextProperties) =
 
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
-    let ref = React.useRef(null)
+    let chartRef : IRefValue<Interop.ChartJS option>= React.useRef (None)
+
+    let receiveChartRef () =
+        match chartRef.current with
+        | None -> failwithf "should be some"
+        | Some e -> e
     ChartJS.doughnut [
-        doughnut.ref ref
-        doughnut.onClick(fun e ->
-            let x = doughnut.getElementAtEvent (ref.current,e.event)
-            let x = doughnut.getDatasetAtEvent (ref.current,e.event)
-            console.log e)
+        doughnut.ref chartRef
+        doughnut.onClick(fun (e) ->
+            let ref = receiveChartRef ()
+            printfn "receivedChartRef %A" ref
+            console.log ref
+            console.log e
+            let dataSet = Interop.eventOperations.getDatasetAtEvent(ref, e)
+            console.log dataSet)
         doughnut.options [
             option.responsive true
             option.layout [

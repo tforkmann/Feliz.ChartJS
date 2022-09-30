@@ -2,6 +2,9 @@ namespace Feliz.ChartJS
 
 open Fable.Core
 open Fable.Core.JsInterop
+open Browser.Types
+open Fable.Core
+
 
 [<Erase; RequireQualifiedAccess>]
 module Interop =
@@ -52,6 +55,12 @@ module Interop =
     let line: obj = import "Line" "react-chartjs-2"
     let doughnut: obj = import "Doughnut" "react-chartjs-2"
     let bar: obj = import "Bar" "react-chartjs-2"
+    type IEventOperations =
+        abstract getDatasetAtEvent: ChartJS * MouseEvent -> InteractionItem []
+        abstract getElementAtEvent: ChartJS * MouseEvent -> InteractionItem []
+        abstract getElementsAtEvent: ChartJS * MouseEvent -> InteractionItem []
+
+    let eventOperations: IEventOperations = importAll "react-chartjs-2"
 
     // ChartJS?register (ZoomPlugin)
     ChartJS?register (CategoryScale)

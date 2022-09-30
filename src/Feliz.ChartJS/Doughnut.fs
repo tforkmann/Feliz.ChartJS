@@ -18,14 +18,8 @@ type doughnut =
 
     static member inline labels props : IDoughnutChartProp = !!(createObj !!props)
 
-    static member inline onClick(handler: Events.DoughnutClickEvent -> unit) : IDoughnutChartProp =
+    static member inline onClick(handler: MouseEvent -> unit) : IDoughnutChartProp =
         !!("onClick" ==> handler)
-
-    static member inline getDatasetAtEvent((chart: obj ,``event``: MouseEvent)) : InteractionItem [] =
-        Interop.convertToInteractionItems (createObj [ "getDatasetAtEvent" ==> (chart,event) ])
-    static member inline getElementAtEvent((chart: obj ,``event``: MouseEvent)) : InteractionItem [] =
-        Interop.convertToInteractionItems (createObj [ "getElementAtEvent" ==> (chart,event) ])
-
 [<Erase>]
 type doughnutData =
     static member inline labels(labels: string array) : IDoughnutDataProp = !!("labels" ==> labels)
