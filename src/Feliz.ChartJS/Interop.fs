@@ -31,7 +31,9 @@ module Interop =
     let inline mkPaddingProp (key: string) (value: obj) : IPaddingProp = unbox (key, value)
     let inline convertToInteractionItems (value: obj) : InteractionItem [] = unbox value
 
-    let ChartJS: obj = import "Chart" "chart.js"
+    type ChartJS = obj
+
+    let ChartJS: ChartJS = import "Chart" "chart.js"
     let CategoryScale: obj = import "CategoryScale" "chart.js"
     let LinearScale: obj = import "LinearScale" "chart.js"
     let LineElement: obj = import "LineElement" "chart.js"
