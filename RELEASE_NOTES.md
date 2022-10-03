@@ -1,3 +1,5 @@
+#### 0.4.2 - 2022-10-03
+* add Cutout for doughnut chart
 #### 0.4.1 - 2022-09-30
 * Get chart events working
 #### 0.4.0 - 2022-09-30

@@ -13,13 +13,13 @@ type doughnut =
     static member inline data props : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "data" (createObj !!props)
 
-    static member inline ref(ref:IRefValue<Interop.ChartJS option>) : IDoughnutChartProp =
+    static member inline ref(ref: IRefValue<Interop.ChartJS option>) : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "ref" ref
 
     static member inline labels props : IDoughnutChartProp = !!(createObj !!props)
 
-    static member inline onClick(handler: MouseEvent -> unit) : IDoughnutChartProp =
-        !!("onClick" ==> handler)
+    static member inline onClick(handler: MouseEvent -> unit) : IDoughnutChartProp = !!("onClick" ==> handler)
+
 [<Erase>]
 type doughnutData =
     static member inline labels(labels: string array) : IDoughnutDataProp = !!("labels" ==> labels)
@@ -42,6 +42,9 @@ type doughnutDataSet =
 
     static member inline borderColor(borderColor: string[]) : IDoughnutDataSetsProp =
         (!!("borderColor" ==> borderColor))
+
+    static member inline cutout(cutout: int) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "cutout" cutout
 
     static member inline backgroundColor(backgroundColor: string[]) : IDoughnutDataSetsProp =
         (!!("backgroundColor" ==> backgroundColor))
