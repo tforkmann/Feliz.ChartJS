@@ -2,7 +2,9 @@ namespace Feliz.ChartJS
 
 open Fable.Core.JsInterop
 open Fable.Core
+open Fable.React.Types
 open Feliz
+open Feliz.ReactApi
 
 type Event = Browser.Types.Event
 

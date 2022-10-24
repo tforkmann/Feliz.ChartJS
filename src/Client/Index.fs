@@ -323,9 +323,9 @@ let view (model: Model) (dispatch: Msg -> unit) =
             style.width 600
         ]
         prop.children [
-            // ChartJSLineChart()
+            ChartJSLineChart()
             // ChartJSBarChart()
-            ChartJSDoughnutChart()
+            // ChartJSDoughnutChart()
             // ChartJSMixedTypeChart()
         ]
 

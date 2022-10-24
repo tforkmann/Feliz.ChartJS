@@ -15,6 +15,9 @@ type IPluginsProp =
 type IToolTipsProp =
     interface
     end
+type IToolTipCallbackProp =
+    interface
+    end
 type IScalesProp =
     interface
     end
