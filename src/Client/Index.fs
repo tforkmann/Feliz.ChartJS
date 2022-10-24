@@ -18,14 +18,87 @@ let update msg (model: Model) =
     match msg with
     | UpdateTxt txt -> { model with Txt = txt }, Cmd.none
 
-// let renderTicks (ticks: ITicksProperties) =
-//     React.useCallback((fun (context) ->
-//             "test"
-//         ), [| |])
-
-
 [<ReactComponent>]
 let ChartJSLineChart () =
+    ChartJS.line [
+        line.options [
+            option.responsive true
+            option.scales [
+                scale.y [
+                    axes.position Left
+                    axes.title [
+                        title.display true
+                        title.text "test"
+                    ]
+                ]
+                scale.yRight [
+                    axes.position Right
+                    axes.reverse true
+                ]
+            ]
+            option.tooltips [
+                tooltip.callbacks [
+                    callback.label (fun (context) ->
+                        "test"
+                    )
+                ]
+            ]
+            option.plugins[plugin.datalabels [
+                               datalabels.display true
+                               datalabels.allign Bottom
+                               datalabels.borderRadius 3
+                               datalabels.color "red"
+                               datalabels.backgroundColor "green"
+                               ]
+                           plugin.zoom [
+                               zoom.wheel [
+                                   wheel.enabled true
+                               ]
+                           ]]
+        ]
+        line.data [
+            lineData.labels [|
+                "Red"
+                "Blue"
+                "Yellow"
+                "Green"
+                "Purple"
+                "Orange"
+            |]
+            lineData.datasets [|
+                lineData.dataset [
+                    lineDataSet.label "My First Dataset"
+                    lineDataSet.borderColor "rgb(53, 162, 235)"
+                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    lineDataSet.data [|
+                        "1"
+                        "2"
+                        "3"
+                        "4"
+                        "312"
+                        "6"
+                    |]
+                ]
+                lineData.dataset [
+                    lineDataSet.label "My Second Dataset"
+                    lineDataSet.borderColor "yellow"
+                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    lineDataSet.data [|
+                        "1"
+                        "2"
+                        "3"
+                        "4"
+                        "4"
+                        "1500"
+                    |]
+                    lineDataSet.yAxisID "yRight"
+                ]
+            |]
+        ]
+    ]
+
+[<ReactComponent>]
+let ChartJSLineChartWithCustomToolTips () =
     ChartJS.line [
         line.options [
             option.responsive true
@@ -323,7 +396,8 @@ let view (model: Model) (dispatch: Msg -> unit) =
             style.width 600
         ]
         prop.children [
-            ChartJSLineChart()
+            // ChartJSLineChart()
+            ChartJSLineChartWithCustomToolTips()
             // ChartJSBarChart()
             // ChartJSDoughnutChart()
             // ChartJSMixedTypeChart()
