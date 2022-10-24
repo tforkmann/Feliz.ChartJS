@@ -21,7 +21,7 @@ type option =
     static member inline plugins(props: IPluginsProp seq) : IOptionsProp =
         Interop.mkOptionsProp "plugins" (createObj !!props)
 
-    static member inline toolTips(props: IToolTipsProp seq) : IOptionsProp =
+    static member inline tooltips(props: IToolTipsProp seq) : IOptionsProp =
         Interop.mkOptionsProp "tooltips" (createObj !!props)
 
 [<Erase>]
@@ -54,13 +54,12 @@ type tooltip =
 
     static member inline bodyFontSize(bodyFontSize: int) : IToolTipsProp =
         Interop.mkToolTipsProp "bodyFontSize" bodyFontSize
-
-    static member inline callbacks(context: TooltipContext -> unit) : IToolTipsProp = !!("callbacks" ==> context)
+    static member inline callbacks(props: IToolTipCallbackProp seq) : IToolTipsProp =
+        Interop.mkToolTipsProp "callbacks" (createObj !!props)
 
 [<Erase>]
 type tooltipcallback =
-    static member inline beforeTitle(backgroundColor: string) : IToolTipCallbackProp =
-        Interop.mkToolTipCallback "beforeTitle" backgroundColor
+    static member inline beforeTitle(context: TooltipContext -> unit) : IToolTipCallbackProp = !!("beforeTitle" ==> context)
 
 
 [<Erase>]
