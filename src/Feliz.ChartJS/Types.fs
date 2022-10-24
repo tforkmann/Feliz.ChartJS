@@ -120,6 +120,11 @@ type ToolTipPosition =
     | Nearest
     | Average
 [<StringEnum;RequireQualifiedAccess>]
+type TextAlignment =
+    | Left
+    | Right
+    | Center
+[<StringEnum;RequireQualifiedAccess>]
 type YAxis =
     | YLeft
     | YRight

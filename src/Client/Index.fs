@@ -84,9 +84,14 @@ let ChartJSLineChartWithCustomToolTips () =
                            ]
 
                            plugin.tooltip [
+                               tooltip.borderColor "red"
+                               tooltip.caretSize 15
                                tooltip.backgroundColor "pink"
-                               tooltip.title "Awesome Tooltip"
-                               tooltip.callbacks [ tooltipcallback.beforeTitle (fun (context) -> printfn "test") ]
+                               tooltip.titleColor "green"
+                               tooltip.bodyColor "yellow"
+                               tooltip.callbacks [ tooltipcallback.beforeTitle (fun items ->
+                                    for item in items do
+                                        printfn "test %A" item.label) ]
                                tooltip.position ToolTipPosition.Nearest
                            ]
 

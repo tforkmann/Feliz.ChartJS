@@ -42,19 +42,23 @@ type plugin =
 type tooltip =
     static member inline backgroundColor(backgroundColor: string) : IToolTipsProp =
         Interop.mkToolTipsProp "backgroundColor" backgroundColor
-    static member inline title(title: string) : IToolTipsProp =
-        Interop.mkToolTipsProp "title" title
+    static member inline borderColor(borderColor: string) : IToolTipsProp =
+        Interop.mkToolTipsProp "borderColor" borderColor
+    static member inline caretSize(caretSize: int) : IToolTipsProp =
+        Interop.mkToolTipsProp "caretSize" caretSize
     static member inline position(position: ToolTipPosition) : IToolTipsProp =
         Interop.mkToolTipsProp "position" position
 
-    static member inline titleFontSize(titleFontSize: int) : IToolTipsProp =
-        Interop.mkToolTipsProp "titleFontSize" titleFontSize
+    static member inline titleFont(titleFont: string) : IToolTipsProp = //TODO: Should be a font
+        Interop.mkToolTipsProp "titleFont" titleFont
 
-    static member inline titleFontColor(titleFontColor: string) : IToolTipsProp =
-        Interop.mkToolTipsProp "titleFontColor" titleFontColor
+    static member inline titleColor(titleColor: string) : IToolTipsProp =
+        Interop.mkToolTipsProp "titleColor" titleColor
+    static member inline titleAlign(titleAlign: TextAlignment) : IToolTipsProp =
+        Interop.mkToolTipsProp "titleAlign" titleAlign
 
-    static member inline bodyFontColor(bodyFontColor: string) : IToolTipsProp =
-        Interop.mkToolTipsProp "bodyFontColor" bodyFontColor
+    static member inline bodyColor(bodyColor: string) : IToolTipsProp =
+        Interop.mkToolTipsProp "bodyColor" bodyColor
 
     static member inline bodyFontSize(bodyFontSize: int) : IToolTipsProp =
         Interop.mkToolTipsProp "bodyFontSize" bodyFontSize
@@ -63,7 +67,7 @@ type tooltip =
 
 [<Erase>]
 type tooltipcallback =
-    static member inline beforeTitle(context: TooltipContext -> unit) : IToolTipCallbackProp = !!("beforeTitle" ==> context)
+    static member inline beforeTitle(toolTipItems: TooltipItem [] -> unit) : IToolTipCallbackProp = !!("beforeTitle" ==> toolTipItems)
 
 
 [<Erase>]
