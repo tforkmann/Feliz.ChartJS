@@ -109,13 +109,16 @@ type ITicksProperties =
     abstract index : int
     abstract ticks : int
 
-[<StringEnum>]
+[<StringEnum;RequireQualifiedAccess>]
 type Position =
     | Top
     | Left
     | Bottom
     | Right
-[<StringEnum>]
+[<StringEnum;RequireQualifiedAccess>]
+type ToolTipPosition =
+    | Nearest
+[<StringEnum;RequireQualifiedAccess>]
 type YAxis =
     | YLeft
     | YRight

@@ -42,6 +42,10 @@ type plugin =
 type tooltip =
     static member inline backgroundColor(backgroundColor: string) : IToolTipsProp =
         Interop.mkToolTipsProp "backgroundColor" backgroundColor
+    static member inline title(title: string) : IToolTipsProp =
+        Interop.mkToolTipsProp "title" title
+    static member inline position(position: ToolTipPosition) : IToolTipsProp =
+        Interop.mkToolTipsProp "position" position
 
     static member inline titleFontSize(titleFontSize: int) : IToolTipsProp =
         Interop.mkToolTipsProp "titleFontSize" titleFontSize
