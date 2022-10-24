@@ -1,3 +1,5 @@
+#### 0.4.3 - 2022-10-24
+* add tooltips
 #### 0.4.2 - 2022-10-03
 * add Cutout for doughnut chart
 #### 0.4.1 - 2022-09-30

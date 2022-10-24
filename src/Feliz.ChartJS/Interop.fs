@@ -19,6 +19,7 @@ module Interop =
     let inline mkAxesProp (key: string) (value: obj) : IAxesProp = unbox (key, value)
     let inline mkLegendProp (key: string) (value: obj) : ILegendProp = unbox (key, value)
     let inline mkDataLabelsProp (key: string) (value: obj) : IDataLabelsProp = unbox (key, value)
+    let inline mkToolTipsProp (key: string) (value: obj) : IToolTipsProp = unbox (key, value)
     let inline mkZoomProp (key: string) (value: obj) : IZoomProp = unbox (key, value)
     let inline mkDataLabelProp (key: string) (value: obj) : IDataLabelProp = unbox (key, value)
     let inline mkLabelsProp (key: string) (value: obj) : ILabelsProp = unbox (key, value)

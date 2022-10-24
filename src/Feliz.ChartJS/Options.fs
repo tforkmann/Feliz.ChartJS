@@ -19,6 +19,9 @@ type option =
     static member inline plugins(props: IPluginsProp seq) : IOptionsProp =
         Interop.mkOptionsProp "plugins" (createObj !!props)
 
+    static member inline toolTips(props: IToolTipsProp seq) : IOptionsProp =
+        Interop.mkOptionsProp "tooltips" (createObj !!props)
+
 [<Erase>]
 type plugin =
     static member inline title(props: ITitleProp seq) : IPluginsProp =
@@ -32,6 +35,22 @@ type plugin =
 
     static member inline zoom(props: IZoomProp seq) : IPluginsProp =
         Interop.mkPluginsProp "zoom" (createObj !!props)
+[<Erase>]
+type tooltip =
+    static member inline backgroundColor(backgroundColor: string) : IToolTipsProp =
+        Interop.mkToolTipsProp "backgroundColor" backgroundColor
+
+    static member inline titleFontSize(titleFontSize: int) : IToolTipsProp =
+        Interop.mkToolTipsProp "titleFontSize" titleFontSize
+
+    static member inline titleFontColor(titleFontColor: string) : IToolTipsProp =
+        Interop.mkToolTipsProp "titleFontColor" titleFontColor
+
+    static member inline bodyFontColor(bodyFontColor: string) : IToolTipsProp =
+        Interop.mkToolTipsProp "bodyFontColor" bodyFontColor
+
+    static member inline bodyFontSize(bodyFontSize: int) : IToolTipsProp =
+        Interop.mkToolTipsProp "bodyFontSize" bodyFontSize
 
 [<Erase>]
 type scale =
