@@ -3,6 +3,8 @@ namespace Feliz.ChartJS
 open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
+open TooltipCallbacks
+
 [<Erase>]
 type option =
     static member inline responsive(resp: bool) : IOptionsProp = Interop.mkOptionsProp "responsive" resp
@@ -53,11 +55,11 @@ type tooltip =
     static member inline bodyFontSize(bodyFontSize: int) : IToolTipsProp =
         Interop.mkToolTipsProp "bodyFontSize" bodyFontSize
 
-    static member inline callbacks(context: TooltipContext -> unit) : IToolTipsProp = !!("callbacks" ==> handler)
+    static member inline callbacks(context: TooltipContext -> unit) : IToolTipsProp = !!("callbacks" ==> context)
 
 [<Erase>]
 type tooltipcallback =
-    static member inline beforeTitle(backgroundColor: string) : IToolTipsProp =
+    static member inline beforeTitle(backgroundColor: string) : IToolTipCallbackProp =
         Interop.mkToolTipCallback "beforeTitle" backgroundColor
 
 

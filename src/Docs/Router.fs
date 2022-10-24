@@ -1,6 +1,5 @@
 module Docs.Router
 
-open Fable.React.Types
 open Browser.Types
 open Feliz.Router
 open Fable.Core.JsInterop
