@@ -118,6 +118,7 @@ type Position =
 [<StringEnum;RequireQualifiedAccess>]
 type ToolTipPosition =
     | Nearest
+    | Average
 [<StringEnum;RequireQualifiedAccess>]
 type YAxis =
     | YLeft

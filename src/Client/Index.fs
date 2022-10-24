@@ -25,7 +25,10 @@ let ChartJSLineChart () =
         line.options [
             option.responsive true
             option.scales [
-                scale.y [ axes.position Position.Left; axes.title [ title.display true; title.text "test" ] ]
+                scale.y [
+                    axes.position Position.Left
+                    axes.title [ title.display true; title.text "test" ]
+                ]
                 scale.yRight [ axes.position Position.Right; axes.reverse true ]
             ]
 
@@ -65,25 +68,26 @@ let ChartJSLineChartWithCustomToolTips () =
         line.options [
             option.responsive true
             option.scales [
-                scale.y [ axes.position Position.Left; axes.title [ title.display true; title.text "test" ] ]
+                scale.y [
+                    axes.position Position.Left
+                    axes.title [ title.display true; title.text "test" ]
+                ]
                 scale.yRight [ axes.position Position.Right; axes.reverse true ]
             ]
-            option.tooltips [
-                tooltip.backgroundColor "pink"
-                tooltip.title "Awesome Tooltip"
-                tooltip.callbacks [ tooltipcallback.beforeTitle (fun (context) -> printfn "test") ]
-                tooltip.position ToolTipPosition.Nearest
-            ]
+
             option.plugins[plugin.datalabels [
                                datalabels.display true
                                datalabels.allign Position.Bottom
                                datalabels.borderRadius 3
                                datalabels.color "red"
                                datalabels.backgroundColor "green"
-                           // datalabels.labels [
-                           //     labels.value {|color="blue"|}
-                           // ]
-                           // datalabels.formatter renderCustomLabel
+                           ]
+
+                           plugin.tooltip [
+                               tooltip.backgroundColor "pink"
+                               tooltip.title "Awesome Tooltip"
+                               tooltip.callbacks [ tooltipcallback.beforeTitle (fun (context) -> printfn "test") ]
+                               tooltip.position ToolTipPosition.Nearest
                            ]
 
                            plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]

@@ -21,8 +21,6 @@ type option =
     static member inline plugins(props: IPluginsProp seq) : IOptionsProp =
         Interop.mkOptionsProp "plugins" (createObj !!props)
 
-    static member inline tooltips(props: IToolTipsProp seq) : IOptionsProp =
-        Interop.mkOptionsProp "tooltips" (createObj !!props)
 
 [<Erase>]
 type plugin =
@@ -37,6 +35,8 @@ type plugin =
 
     static member inline zoom(props: IZoomProp seq) : IPluginsProp =
         Interop.mkPluginsProp "zoom" (createObj !!props)
+    static member inline tooltip(props: IToolTipsProp seq) : IPluginsProp =
+        Interop.mkPluginsProp "tooltip" (createObj !!props)
 
 [<Erase>]
 type tooltip =
