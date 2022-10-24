@@ -35,6 +35,7 @@ type plugin =
 
     static member inline zoom(props: IZoomProp seq) : IPluginsProp =
         Interop.mkPluginsProp "zoom" (createObj !!props)
+
 [<Erase>]
 type tooltip =
     static member inline backgroundColor(backgroundColor: string) : IToolTipsProp =
@@ -51,6 +52,14 @@ type tooltip =
 
     static member inline bodyFontSize(bodyFontSize: int) : IToolTipsProp =
         Interop.mkToolTipsProp "bodyFontSize" bodyFontSize
+
+    static member inline callbacks(context: TooltipContext -> unit) : IToolTipsProp = !!("callbacks" ==> handler)
+
+[<Erase>]
+type tooltipcallback =
+    static member inline beforeTitle(backgroundColor: string) : IToolTipsProp =
+        Interop.mkToolTipCallback "beforeTitle" backgroundColor
+
 
 [<Erase>]
 type scale =
