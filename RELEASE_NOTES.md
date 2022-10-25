@@ -1,3 +1,5 @@
+#### 0.4.5 - 2022-10-25
+* add more tooltip configs
 #### 0.4.4 - 2022-10-24
 * add tooltip callbacks
 #### 0.4.3 - 2022-10-24
