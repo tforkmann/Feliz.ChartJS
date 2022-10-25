@@ -2,11 +2,15 @@ namespace Feliz.ChartJS
 
 module TooltipCallbacks =
     open Feliz
-    type Dataset =
-        { label: string
-          data: obj array
-          backgroundColor: string
-          borderColor: string }
+    open Fable.Core
+
+    [<Erase>]
+    type IDataset =
+        abstract label : string
+        abstract data : obj array
+        abstract backgroundColor : string
+        abstract borderWidth : int
+        abstract borderColor : string
 
     type TooltipItem =
         abstract chart: Interop.ChartJS with get
@@ -14,7 +18,7 @@ module TooltipCallbacks =
         abstract parsed  : obj with get
         abstract raw  : obj with get
         abstract formattedValue  : obj with get
-        abstract dataset  : obj with get
+        abstract dataset  : IDataset with get
         abstract datasetIndex  : int with get
         abstract dataIndex  : int with get
         abstract element  : ReactElement with get
