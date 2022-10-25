@@ -18,7 +18,12 @@ type IToolTipsProp =
 type IToolTipCallbackProp =
     interface
     end
+
 type IScalesProp =
+    interface
+    end
+
+type IFontProp =
     interface
     end
 type ILayoutProp =
@@ -50,9 +55,6 @@ type ILabelsProp =
     interface
     end
 type IDataLabelProp =
-    interface
-    end
-type IFontProp =
     interface
     end
 type IWheelProp =

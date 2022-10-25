@@ -62,8 +62,8 @@ type tooltip =
     static member inline titleColor(titleColor: string) : IToolTipsProp =
         Interop.mkToolTipsProp "titleColor" titleColor
 
-    static member inline titleFont(titleFont: string) : IToolTipsProp = //TODO: Should be a font
-        Interop.mkToolTipsProp "titleFont" titleFont
+    static member inline titleFont(props: IFontProp seq) : IToolTipsProp =
+        Interop.mkToolTipsProp "titleFont" (createObj !!props)
 
     static member inline titleAlign(titleAlign: TextAlignment) : IToolTipsProp =
         Interop.mkToolTipsProp "titleAlign" titleAlign
@@ -77,8 +77,8 @@ type tooltip =
     static member inline bodyColor(bodyColor: string) : IToolTipsProp =
         Interop.mkToolTipsProp "bodyColor" bodyColor
 
-    static member inline bodyFont(bodyFont: string) : IToolTipsProp =
-        Interop.mkToolTipsProp "bodyFont" bodyFont
+    static member inline bodyFont(props: IFontProp seq) : IToolTipsProp =
+        Interop.mkToolTipsProp "bodyFont" (createObj !!props)
 
     static member inline bodyAlign(bodyAlign: TextAlignment) : IToolTipsProp =
         Interop.mkToolTipsProp "bodyAlign" bodyAlign
@@ -95,8 +95,20 @@ type tooltip =
     static member inline caretSize(caretSize: int) : IToolTipsProp =
         Interop.mkToolTipsProp "caretSize" caretSize
 
-    static member inline bodyFontSize(bodyFontSize: int) : IToolTipsProp =
-        Interop.mkToolTipsProp "bodyFontSize" bodyFontSize
+    static member inline footerFont(props: IFontProp seq) : IToolTipsProp =
+        Interop.mkToolTipsProp "footerFont" (createObj !!props)
+
+    static member inline footerAlign(props: IFontProp seq) : IToolTipsProp =
+        Interop.mkToolTipsProp "footerFont" (createObj !!props)
+
+    static member inline footerSpacing(footerSpacing: int) : IToolTipsProp =
+        Interop.mkToolTipsProp "footerSpacing" footerSpacing
+
+    static member inline footerMarginTop(footerMarginTop: int) : IToolTipsProp =
+        Interop.mkToolTipsProp "footerMarginTop" footerMarginTop
+
+    static member inline displayColors(displayColors: bool) : IToolTipsProp =
+        Interop.mkToolTipsProp "displayColors" displayColors
 
 [<Erase>]
 type tooltipcallback =
@@ -142,6 +154,16 @@ type tooltipcallback =
     static member inline afterFooter(toolTipItems: TooltipItem[] -> string[]) : IToolTipCallbackProp =
         !!("afterFooter" ==> toolTipItems)
 
+
+[<Erase>]
+type font =
+    static member inline family(family: string) : IFontProp = Interop.mkFontProp "family" family
+    static member inline size(size: int) : IFontProp = Interop.mkFontProp "size" size
+    static member inline style(style: string) : IFontProp = Interop.mkFontProp "style" style
+    static member inline weight(weight: string) : IFontProp = Interop.mkFontProp "weight" weight
+
+    static member inline lineHeight(lineHeight: int) : IFontProp =
+        Interop.mkFontProp "lineHeight" lineHeight
 
 [<Erase>]
 type scale =
@@ -223,10 +245,6 @@ type zoom =
 [<Erase>]
 type wheel =
     static member inline enabled(enabled: bool) : IWheelProp = Interop.mkWheelProp "enabled" enabled
-
-[<Erase>]
-type font =
-    static member inline size(size: int) : IFontProp = Interop.mkFontProp "allign" size
 
 [<Erase>]
 type labels =
