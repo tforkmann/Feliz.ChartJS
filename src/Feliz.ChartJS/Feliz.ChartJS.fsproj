@@ -7,6 +7,7 @@
     <Compile Include="Types.fs" />
     <Compile Include="Interop.fs" />
     <Compile Include="Events.fs" />
+    <Compile Include="TooltipCallbacks.fs" />
     <Compile Include="Options.fs" />
     <Compile Include="Line.fs" />
     <Compile Include="Bar.fs" />

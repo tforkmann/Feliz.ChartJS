@@ -15,6 +15,9 @@ type IPluginsProp =
 type IToolTipsProp =
     interface
     end
+type IToolTipCallbackProp =
+    interface
+    end
 type IScalesProp =
     interface
     end
@@ -106,13 +109,22 @@ type ITicksProperties =
     abstract index : int
     abstract ticks : int
 
-[<StringEnum>]
+[<StringEnum;RequireQualifiedAccess>]
 type Position =
     | Top
     | Left
     | Bottom
     | Right
-[<StringEnum>]
+[<StringEnum;RequireQualifiedAccess>]
+type ToolTipPosition =
+    | Nearest
+    | Average
+[<StringEnum;RequireQualifiedAccess>]
+type TextAlignment =
+    | Left
+    | Right
+    | Center
+[<StringEnum;RequireQualifiedAccess>]
 type YAxis =
     | YLeft
     | YRight
