@@ -67,7 +67,20 @@ type tooltip =
 
 [<Erase>]
 type tooltipcallback =
-    static member inline beforeTitle(toolTipItems: TooltipItem [] -> unit) : IToolTipCallbackProp = !!("beforeTitle" ==> toolTipItems)
+    static member inline beforeTitle(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("beforeTitle" ==> toolTipItems)
+    static member inline title(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("title" ==> toolTipItems)
+    static member inline afterTitle(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("afterTitle" ==> toolTipItems)
+    static member inline beforeBody(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("beforeBody" ==> toolTipItems)
+    static member inline beforeLable(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("beforeLable" ==> toolTipItems)
+    static member inline label(toolTipItems: TooltipItem -> string []) : IToolTipCallbackProp = !!("label" ==> toolTipItems)
+    static member inline labelColor(toolTipItems: TooltipItem -> obj) : IToolTipCallbackProp = !!("labelColor" ==> toolTipItems)
+    static member inline labelTextColor(toolTipItems: TooltipItem -> obj) : IToolTipCallbackProp = !!("labelTextColor" ==> toolTipItems)
+    static member inline labelPointStyle(toolTipItems: TooltipItem -> obj) : IToolTipCallbackProp = !!("labelPointStyle" ==> toolTipItems)
+    static member inline afterLabel(toolTipItems: TooltipItem -> string []) : IToolTipCallbackProp = !!("afterLabel" ==> toolTipItems)
+    static member inline afterBody(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("afterBody" ==> toolTipItems)
+    static member inline beforeFooter(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("beforeFooter" ==> toolTipItems)
+    static member inline footer(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("footer" ==> toolTipItems)
+    static member inline afterFooter(toolTipItems: TooltipItem [] -> string []) : IToolTipCallbackProp = !!("afterFooter" ==> toolTipItems)
 
 
 [<Erase>]
