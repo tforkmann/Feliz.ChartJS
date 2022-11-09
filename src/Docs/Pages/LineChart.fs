@@ -1,6 +1,5 @@
 module Docs.Pages.LineChart
 
-open Fable.React
 open Feliz
 open Feliz.Bulma
 open Feliz.ChartJS

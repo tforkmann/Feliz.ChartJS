@@ -2,7 +2,6 @@ module Index
 
 open System
 open Elmish
-open Fable.React
 open Feliz
 open Feliz.ChartJS
 open Browser.Dom
