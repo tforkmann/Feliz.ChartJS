@@ -3,7 +3,6 @@ namespace Feliz.ChartJS
 module TooltipCallbacks =
     open Feliz
     open Fable.Core
-
     [<Erase>]
     type IDataset =
         abstract label : string

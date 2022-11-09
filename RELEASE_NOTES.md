@@ -1,3 +1,5 @@
+#### 0.5.0 - 2022-11-08
+* Support for .NET7 and new Feliz
 #### 0.4.7 - 2022-10-25
 * add dateset obj
 #### 0.4.6 - 2022-10-25

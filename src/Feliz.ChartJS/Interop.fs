@@ -4,8 +4,6 @@ open Fable.Core
 open Fable.Core.JsInterop
 open Browser.Types
 open Fable.Core
-
-
 [<Erase; RequireQualifiedAccess>]
 module Interop =
     let inline mkChartJSProp (key: string) (value: obj) : IChartJSProp = unbox (key, value)
