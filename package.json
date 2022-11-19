@@ -13,8 +13,8 @@
     "cross-os": {
         "startdocs": {
             "darwin": "NODE_ENV=development dotnet fable watch ./src/Docs --outDir src/Docs/output --run webpack serve",
-            "linux": "NODE_ENV=development dotnet fable watch ./src/Docs -outDir src/Docs/output --run webpack serve",
-            "win32": "set NODE_ENV=development& dotnet fable watch ./src/Docs -outDir src/Docs/output --run webpack serve"
+            "linux": "NODE_ENV=development dotnet fable watch ./src/Docs --outDir src/Docs/output --run webpack serve",
+            "win32": "set NODE_ENV=development& dotnet fable watch ./src/Docs --outDir src/Docs/output --run webpack serve"
         }
     },
     "devDependencies": {
