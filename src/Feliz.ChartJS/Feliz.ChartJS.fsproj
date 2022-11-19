@@ -2,6 +2,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>Feliz.ChartJS</PackageId>
+    <Description>Feliz Binding for ChartJS</Description>
+    <RepositoryUrl>https://github.com/tforkmann/Feliz.ChartJS</RepositoryUrl>
+    <PackageProjectUrl>https://tforkmann.github.io/Feliz.ChartJS/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/tforkmann/Feliz.ChartJS/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageTags>fsharp;fable;ChartJS;feliz;react;html</PackageTags>
+    <Authors>Tim Forkmann</Authors>
+    <Version>0.5.1</Version>
+    <PackageReleaseNotes>Make library searchable for Fable.Packages</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Types.fs" />

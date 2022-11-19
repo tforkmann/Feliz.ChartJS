@@ -1,3 +1,5 @@
+#### 0.5.1 - 2022-11-19
+* Make library searchable for Fable.Packages
 #### 0.5.0 - 2022-11-08
 * Support for .NET7 and new Feliz
 #### 0.4.7 - 2022-10-25
