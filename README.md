@@ -1,7 +1,7 @@
 # Feliz Binding for [ChartJS](https://github.com/reactchartjs/react-chartjs-2)
 
 [![Feliz.ChartJS on Nuget](https://buildstats.info/nuget/Feliz.ChartJS)](https://www.nuget.org/packages/Feliz.ChartJS/)
-[![Client](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml)
+[![Docs](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml/badge.svg)](https://github.com/tforkmann/Feliz.ChartJS/actions/workflows/Docs.yml)
 
 ## Installation
 Install the nuget package
