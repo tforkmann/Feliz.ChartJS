@@ -1,3 +1,5 @@
+#### 0.5.2 - 2022-11-19
+* Add tags to build script
 #### 0.5.1 - 2022-11-19
 * Make library searchable for Fable.Packages
 #### 0.5.0 - 2022-11-08
