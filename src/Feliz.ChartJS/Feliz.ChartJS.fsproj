@@ -9,9 +9,9 @@
     <PackageProjectUrl>https://tforkmann.github.io/Feliz.ChartJS/</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/tforkmann/Feliz.ChartJS/blob/main/LICENSE</PackageLicenseUrl>
     <PackageIconUrl></PackageIconUrl>
-    <PackageTags>fsharp;fable;ChartJS;feliz;react;html</PackageTags>
+    <PackageTags>fsharp;fable;ChartJS;feliz;react;charting</PackageTags>
     <Authors>Tim Forkmann</Authors>
-    <Version>0.5.1</Version>
+    <Version>0.5.2</Version>
     <PackageReleaseNotes>Make library searchable for Fable.Packages</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
