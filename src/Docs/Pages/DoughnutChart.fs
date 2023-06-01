@@ -11,14 +11,14 @@ let ChartJSDoughnutChart () =
         doughnut.options [
             option.responsive true
             option.plugins [
-                plugin.legend [ legend.position Top ]
+                plugin.legend [ legend.position Position.Top ]
                 plugin.title [
                     title.display true
                     title.text "Chart.js Doughnut Chart"
                 ]
                 plugin.datalabels [
                     datalabels.display true
-                    datalabels.allign Bottom
+                    datalabels.allign Position.Bottom
                     datalabels.borderRadius 3
                     datalabels.color "red"
                     datalabels.backgroundColor "green"
@@ -75,10 +75,12 @@ let ChartJSDoughnutChart () =
     ]
 
 let ChartJSChart =
-    div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
-        ChartJSDoughnutChart()
+    Html.div [
+        prop.style [ style.height 800 ]
+        prop.children [
+            ChartJSDoughnutChart()
+        ]
     ]
-
 
 let code =
     """

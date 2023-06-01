@@ -12,7 +12,7 @@ let ChartJSLineChart () =
             option.responsive true
             option.plugins[plugin.datalabels [
                                datalabels.display true
-                               datalabels.allign Bottom
+                               datalabels.allign Position.Bottom
                                datalabels.borderRadius 3
                                datalabels.color "red"
                                datalabels.backgroundColor "green"
@@ -63,8 +63,11 @@ let ChartJSLineChart () =
     ]
 
 let ChartJSChart =
-    div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
-        ChartJSLineChart()
+    Html.div [
+        prop.style [ style.height 800 ]
+        prop.children [
+            ChartJSLineChart()
+        ]
     ]
 
 

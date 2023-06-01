@@ -15,14 +15,14 @@ let ChartJSMixedChart () =
                 scale.y [ axes.stacked true ]
             ]
             option.plugins [
-                plugin.legend [ legend.position Top ]
+                plugin.legend [ legend.position Position.Top ]
                 plugin.title [
                     title.display true
                     title.text "Chart.js Bar Chart"
                 ]
                 plugin.datalabels [
                     datalabels.display true
-                    datalabels.allign Bottom
+                    datalabels.allign Position.Bottom
                     datalabels.borderRadius 3
                     datalabels.color "red"
                     datalabels.backgroundColor "green"
@@ -63,8 +63,11 @@ let ChartJSMixedChart () =
     ]
 
 let ChartJSChart =
-    div [ Props.Style [ Props.CSSProp.Height 800 ] ] [
-        ChartJSMixedChart()
+    Html.div [
+        prop.style [ style.height 800 ]
+        prop.children [
+            ChartJSMixedChart()
+        ]
     ]
 
 
