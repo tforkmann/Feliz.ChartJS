@@ -4,6 +4,7 @@ open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
 open TooltipCallbacks
+open PluginsCallbacks
 
 [<Erase>]
 type option =
@@ -18,29 +19,47 @@ type option =
     static member inline layout(props: ILayoutProp seq) : IOptionsProp =
         Interop.mkOptionsProp "layout" (createObj !!props)
 
-    static member inline plugins(props: IPluginsProp seq) : IOptionsProp =
+    static member inline plugins(props: IPluginProp seq) : IOptionsProp =
         Interop.mkOptionsProp "plugins" (createObj !!props)
+[<Erase>]
 
+type inlineplugin =
+    static member inline plugin (props: IInlinePluginProp seq) : IInlinePlugin =
+        !!(createObj !!props)
 
 [<Erase>]
 type plugin =
-    static member inline title(props: ITitleProp seq) : IPluginsProp =
-        Interop.mkPluginsProp "title" (createObj !!props)
+    static member inline title(props: ITitleProp seq) : IPluginProp =
+        Interop.mkPluginProp "title" (createObj !!props)
 
-    static member inline legend(props: ILegendProp seq) : IPluginsProp =
-        Interop.mkPluginsProp "legend" (createObj !!props)
+    static member inline legend(props: ILegendProp seq) : IPluginProp =
+        Interop.mkPluginProp "legend" (createObj !!props)
 
-    static member inline datalabels(props: IDataLabelsProp seq) : IPluginsProp =
-        Interop.mkPluginsProp "datalabels" (createObj !!props)
+    static member inline datalabels(props: IDataLabelsProp seq) : IPluginProp =
+        Interop.mkPluginProp "datalabels" (createObj !!props)
 
-    static member inline zoom(props: IZoomProp seq) : IPluginsProp =
-        Interop.mkPluginsProp "zoom" (createObj !!props)
+    static member inline zoom(props: IZoomProp seq) : IPluginProp =
+        Interop.mkPluginProp "zoom" (createObj !!props)
 
-    static member inline tooltip(props: IToolTipsProp seq) : IPluginsProp =
-        Interop.mkPluginsProp "tooltip" (createObj !!props)
+    static member inline tooltip(props: IToolTipsProp seq) : IPluginProp =
+        Interop.mkPluginProp "tooltip" (createObj !!props)
+[<Erase>]
+type inlineplugins =
+    static member inline id(id: string) : IInlinePluginProp =
+        Interop.mkInlinePluginProp "id" id
+    static member inline afterDatasetDraw(afterDatasetDraw: BeforeDrawItems  -> unit) : IInlinePluginProp =
+         !!("afterDatasetDraw" ==> afterDatasetDraw)
 
+    static member inline beforeDraw(handler: {| ctx: CanvasRenderingContext ; args : obj ; options: obj |} -> unit) : IInlinePluginProp =
+        !!("beforeDraw" ==> handler)
 
+    static member inline afterDraw(handler: {| ctx: CanvasRenderingContext ; args : obj ; options: obj |} -> unit) : IInlinePluginProp =
+        !!("afterDraw" ==> handler)
+    static member inline beforeInit(handler: {| ctx: CanvasRenderingContext ; args : obj ; options: obj |} -> unit) : IInlinePluginProp =
+        !!("beforeInit" ==> handler)
 
+    static member inline defaults(defaults: IDefaultsProp seq) : IInlinePluginProp =
+        Interop.mkInlinePluginProp "defaults" (createObj !!defaults)
 
 [<Erase>]
 type tooltip =
@@ -244,9 +263,15 @@ type zoom =
 
 [<Erase>]
 type wheel =
-    static member inline enabled(enabled: bool) : IWheelProp = Interop.mkWheelProp "enabled" enabled
+    static member inline enabled(enabled: bool) : IWheelProp =
+        Interop.mkWheelProp "enabled" enabled
 
 [<Erase>]
 type labels =
     static member inline value props : ILabelsProp =
         Interop.mkLabelsProp "value" (createObj !!props)
+
+[<Erase>]
+type defaults =
+    static member inline color(color: string) : IDefaultsProp =
+        Interop.mkDefaultsProp "color" color

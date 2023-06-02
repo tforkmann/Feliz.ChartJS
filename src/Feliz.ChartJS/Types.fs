@@ -9,13 +9,26 @@ type IChartJSProp =
 type IOptionsProp =
     interface
     end
-type IPluginsProp =
+
+type IInlinePluginProp =
     interface
     end
+type IInlinePlugin =
+    interface
+    end
+type IPluginProp =
+    interface
+    end
+
 type IToolTipsProp =
     interface
     end
+
 type IToolTipCallbackProp =
+    interface
+    end
+
+type IDefaultsProp =
     interface
     end
 
@@ -26,15 +39,19 @@ type IScalesProp =
 type IFontProp =
     interface
     end
+
 type ILayoutProp =
     interface
     end
+
 type IPaddingProp =
     interface
     end
+
 type IAxesProp =
     interface
     end
+
 type ITicksProp =
     interface
     end
@@ -48,12 +65,15 @@ type ITitleProp =
 type IDataLabelsProp =
     interface
     end
+
 type IZoomProp =
     interface
     end
+
 type ILabelsProp =
     interface
     end
+
 type IDataLabelProp =
     interface
     end
@@ -64,6 +84,7 @@ type IWheelProp =
 type ILineChartProp =
     interface
     end
+
 type IBarChartProp =
     interface
     end
@@ -78,6 +99,7 @@ type ILineDataProp =
 type ILineDataSetsProp =
     interface
     end
+
 type IBarDataProp =
     interface
     end
@@ -85,6 +107,7 @@ type IBarDataProp =
 type IBarDataSetsProp =
     interface
     end
+
 type IDoughnutDataProp =
     interface
     end
@@ -92,6 +115,7 @@ type IDoughnutDataProp =
 type IDoughnutDataSetsProp =
     interface
     end
+
 type IInteractionItemProp =
     interface
     end

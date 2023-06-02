@@ -3,7 +3,7 @@ namespace Feliz.ChartJS
 open Fable.Core
 open Fable.Core.JsInterop
 open Browser.Types
-open Fable.Core
+
 [<Erase; RequireQualifiedAccess>]
 module Interop =
     let inline mkChartJSProp (key: string) (value: obj) : IChartJSProp = unbox (key, value)
@@ -11,7 +11,9 @@ module Interop =
     let inline mkBarChartProp (key: string) (value: obj) : IBarChartProp = unbox (key, value)
     let inline mkDoughnutChartProp (key: string) (value: obj) : IDoughnutChartProp = unbox (key, value)
     let inline mkOptionsProp (key: string) (value: obj) : IOptionsProp = unbox (key, value)
-    let inline mkPluginsProp (key: string) (value: obj) : IPluginsProp = unbox (key, value)
+    let inline mkPluginProp (key: string) (value: obj) : IPluginProp = unbox (key, value)
+    let inline mkInlinePlugin (key: string) (value: obj) : IInlinePlugin = unbox (key, value)
+    let inline mkInlinePluginProp (key: string) (value: obj) : IInlinePluginProp = unbox (key, value)
     let inline mkScalesProp (key: string) (value: obj) : IScalesProp = unbox (key, value)
     let inline mkTitleProp (key: string) (value: obj) : ITitleProp = unbox (key, value)
     let inline mkAxesProp (key: string) (value: obj) : IAxesProp = unbox (key, value)
@@ -24,6 +26,7 @@ module Interop =
     let inline mkLabelsProp (key: string) (value: obj) : ILabelsProp = unbox (key, value)
     let inline mkFontProp (key: string) (value: obj) : IFontProp = unbox (key, value)
     let inline mkWheelProp (key: string) (value: obj) : IWheelProp = unbox (key, value)
+    let inline mkDefaultsProp (key: string) (value: obj) : IDefaultsProp = unbox (key, value)
     let inline mkLineDataProp (key: string) (value: obj) : ILineDataProp = unbox (key, value)
     let inline mkLineDataSetsProp (key: string) (value: obj) : ILineDataSetsProp = unbox (key, value)
     let inline mkBarDataProp (key: string) (value: obj) : IBarDataProp = unbox (key, value)

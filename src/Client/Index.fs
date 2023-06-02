@@ -7,6 +7,7 @@ open Feliz.ChartJS
 open Browser.Dom
 open Fable.Core.JsInterop
 open Browser.Types
+open PluginsCallbacks
 
 type Model = { Txt: string }
 
@@ -18,160 +19,159 @@ let update msg (model: Model) =
     match msg with
     | UpdateTxt txt -> { model with Txt = txt }, Cmd.none
 
-[<ReactComponent>]
-let ChartJSLineChart () =
-    ChartJS.line [
-        line.options [
-            option.responsive true
-            option.scales [
-                scale.y [
-                    axes.position Position.Left
-                    axes.title [ title.display true; title.text "test" ]
-                ]
-                scale.yRight [ axes.position Position.Right; axes.reverse true ]
-            ]
+// [<ReactComponent>]
+// let ChartJSLineChart () =
+//     ChartJS.line [
+//         line.options [
+//             option.responsive true
+//             option.scales [
+//                 scale.y [
+//                     axes.position Position.Left
+//                     axes.title [ title.display true; title.text "test" ]
+//                 ]
+//                 scale.yRight [ axes.position Position.Right; axes.reverse true ]
+//             ]
 
-            option.plugins[plugin.datalabels [
-                               datalabels.display true
-                               datalabels.allign Position.Bottom
-                               datalabels.borderRadius 3
-                               datalabels.color "red"
-                               datalabels.backgroundColor "green"
-                           ]
+//             option.plugins[plugin.datalabels [
+//                                datalabels.display true
+//                                datalabels.allign Position.Bottom
+//                                datalabels.borderRadius 3
+//                                datalabels.color "red"
+//                                datalabels.backgroundColor "green"
+//                            ]
 
-                           plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]
-        ]
-        line.data [
-            lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
-            lineData.datasets [|
-                lineData.dataset [
-                    lineDataSet.label "My First Dataset"
-                    lineDataSet.borderColor "rgb(53, 162, 235)"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
-                ]
-                lineData.dataset [
-                    lineDataSet.label "My Second Dataset"
-                    lineDataSet.borderColor "yellow"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "1500" |]
-                    lineDataSet.yAxisID "yRight"
-                ]
-            |]
-        ]
-    ]
+//                            plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]
+//         ]
+//         line.data [
+//             lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
+//             lineData.datasets [|
+//                 lineData.dataset [
+//                     lineDataSet.label "My First Dataset"
+//                     lineDataSet.borderColor "rgb(53, 162, 235)"
+//                     lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
+//                 ]
+//                 lineData.dataset [
+//                     lineDataSet.label "My Second Dataset"
+//                     lineDataSet.borderColor "yellow"
+//                     lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "1500" |]
+//                     lineDataSet.yAxisID "yRight"
+//                 ]
+//             |]
+//         ]
+//     ]
 
-[<ReactComponent>]
-let ChartJSLineChartWithCustomToolTips () =
-    ChartJS.line [
-        line.options [
-            option.responsive true
-            option.scales [
-                scale.y [
-                    axes.position Position.Left
-                    axes.title [ title.display true; title.text "test" ]
-                ]
-                scale.yRight [ axes.position Position.Right; axes.reverse true ]
-            ]
+// [<ReactComponent>]
+// let ChartJSLineChartWithCustomToolTips () =
+//     ChartJS.line [
+//         line.options [
+//             option.responsive true
+//             option.scales [
+//                 scale.y [
+//                     axes.position Position.Left
+//                     axes.title [ title.display true; title.text "test" ]
+//                 ]
+//                 scale.yRight [ axes.position Position.Right; axes.reverse true ]
+//             ]
 
-            option.plugins[plugin.datalabels [
-                               datalabels.display true
-                               datalabels.allign Position.Bottom
-                               datalabels.borderRadius 3
-                               datalabels.color "red"
-                               datalabels.backgroundColor "green"
-                           ]
+//             option.plugins[plugin.datalabels [
+//                                datalabels.display true
+//                                datalabels.allign Position.Bottom
+//                                datalabels.borderRadius 3
+//                                datalabels.color "red"
+//                                datalabels.backgroundColor "green"
+//                            ]
 
-                           plugin.tooltip [
-                               tooltip.borderColor "red"
-                               tooltip.caretSize 15
-                               tooltip.backgroundColor "pink"
-                               tooltip.titleColor "green"
-                               tooltip.bodyColor "yellow"
-                               tooltip.callbacks [
-                                   tooltipcallback.beforeTitle (fun items ->
-                                       printfn "dataset %A" (items |> Array.map (fun item -> item.dataset))
-                                       console.log items
-                                       items |> Array.map (fun item -> "BeforeTitle" + item.label))
-                                   tooltipcallback.title (fun items ->
-                                       items |> Array.map (fun item -> "Title" + item.label))
-                               ]
-                               tooltip.position ToolTipPosition.Nearest
-                           ]
+//                            plugin.tooltip [
+//                                tooltip.borderColor "red"
+//                                tooltip.caretSize 15
+//                                tooltip.backgroundColor "pink"
+//                                tooltip.titleColor "green"
+//                                tooltip.bodyColor "yellow"
+//                                tooltip.callbacks [
+//                                    tooltipcallback.beforeTitle (fun items ->
+//                                        console.log items
+//                                        items |> Array.map (fun item -> "BeforeTitle" + item.label))
+//                                    tooltipcallback.title (fun items ->
+//                                        items |> Array.map (fun item -> "Title" + item.label))
+//                                ]
+//                                tooltip.position ToolTipPosition.Nearest
+//                            ]
 
-                           plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]
-        ]
-        line.data [
-            lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
-            lineData.datasets [|
-                lineData.dataset [
-                    lineDataSet.label "My First Dataset"
-                    lineDataSet.borderColor "rgb(53, 162, 235)"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
-                ]
-                lineData.dataset [
-                    lineDataSet.label "My Second Dataset"
-                    lineDataSet.borderColor "yellow"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "1500" |]
-                    lineDataSet.yAxisID "yRight"
-                ]
-            |]
-        ]
-    ]
+//                            plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]
+//         ]
+//         line.data [
+//             lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
+//             lineData.datasets [|
+//                 lineData.dataset [
+//                     lineDataSet.label "My First Dataset"
+//                     lineDataSet.borderColor "rgb(53, 162, 235)"
+//                     lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
+//                 ]
+//                 lineData.dataset [
+//                     lineDataSet.label "My Second Dataset"
+//                     lineDataSet.borderColor "yellow"
+//                     lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "1500" |]
+//                     lineDataSet.yAxisID "yRight"
+//                 ]
+//             |]
+//         ]
+//     ]
 
-[<ReactComponent>]
-let ChartJSBarChart () =
-    ChartJS.bar [
-        // bar.register()
-        bar.options [
-            option.responsive true
-            option.scales [ scale.x [ axes.stacked true ]; scale.y [ axes.stacked true ] ]
-            option.plugins [
-                plugin.legend [ legend.position Position.Top ]
-                plugin.title [ title.display true; title.text "Chart.js Bar Chart" ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.allign Position.Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
-                // datalabels.labels [
-                //     labels.value {|color="blue"|}
-                // ]
-                // datalabels.formatter renderCustomLabel
-                ]
-            ]
-        ]
-        bar.data [
-            barData.labels [| "January"; "Feburary" |]
-            barData.datasets [|
-                barData.dataset [
-                    barDataSet.label "My First Dataset"
-                    barDataSet.borderColor "blue"
-                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    barDataSet.borderSkipped false
-                    barDataSet.borderWidth 2
-                    barDataSet.borderRadius 50
-                    barDataSet.data [| "1"; "2" |]
-                ]
-                barData.dataset [
-                    barDataSet.label "My Second Dataset"
-                    barDataSet.borderColor "green"
-                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    barDataSet.borderSkipped false
-                    barDataSet.borderWidth 2
-                    barDataSet.borderRadius 50
-                    barDataSet.data [| "1"; "2" |]
-                ]
-            |]
-        ]
-    ]
+// [<ReactComponent>]
+// let ChartJSBarChart () =
+//     ChartJS.bar [
+//         // bar.register()
+//         bar.options [
+//             option.responsive true
+//             option.scales [ scale.x [ axes.stacked true ]; scale.y [ axes.stacked true ] ]
+//             option.plugins [
+//                 plugin.legend [ legend.position Position.Top ]
+//                 plugin.title [ title.display true; title.text "Chart.js Bar Chart" ]
+//                 plugin.datalabels [
+//                     datalabels.display true
+//                     datalabels.allign Position.Bottom
+//                     datalabels.borderRadius 3
+//                     datalabels.color "red"
+//                     datalabels.backgroundColor "green"
+//                 // datalabels.labels [
+//                 //     labels.value {|color="blue"|}
+//                 // ]
+//                 // datalabels.formatter renderCustomLabel
+//                 ]
+//             ]
+//         ]
+//         bar.data [
+//             barData.labels [| "January"; "Feburary" |]
+//             barData.datasets [|
+//                 barData.dataset [
+//                     barDataSet.label "My First Dataset"
+//                     barDataSet.borderColor "blue"
+//                     barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     barDataSet.borderSkipped false
+//                     barDataSet.borderWidth 2
+//                     barDataSet.borderRadius 50
+//                     barDataSet.data [| "1"; "2" |]
+//                 ]
+//                 barData.dataset [
+//                     barDataSet.label "My Second Dataset"
+//                     barDataSet.borderColor "green"
+//                     barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     barDataSet.borderSkipped false
+//                     barDataSet.borderWidth 2
+//                     barDataSet.borderRadius 50
+//                     barDataSet.data [| "1"; "2" |]
+//                 ]
+//             |]
+//         ]
+//     ]
 
-let renderCustomLabel (context: IContextProperties) =
+// let renderCustomLabel (context: IContextProperties) =
 
-    Svg.text [ svg.text "test" ]
+//     Svg.text [ svg.text "test" ]
 
 [<ReactComponent>]
 let ChartJSDoughnutChart () =
@@ -181,12 +181,26 @@ let ChartJSDoughnutChart () =
         match chartRef.current with
         | None -> failwithf "should be some"
         | Some e -> e
-
+    let counter =
+        inlineplugin.plugin [
+            inlineplugins.id "counter"
+            inlineplugins.beforeDraw (fun handler ->
+                handler.ctx.save
+                handler.ctx.fillStyle <- "pink"
+                handler.ctx.font <- "60px Arial"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.fillText ( "97", 100, 100)
+                console.log handler.ctx
+                )
+        ]
     ChartJS.doughnut [
         doughnut.ref chartRef
+        doughnut.plugins [
+            counter
+
+        ]
         doughnut.onClick (fun (e) ->
             let ref = receiveChartRef ()
-            printfn "receivedChartRef %A" ref
             console.log ref
             console.log e
             let dataSet = Interop.eventOperations.getDatasetAtEvent (ref, e)
@@ -240,63 +254,63 @@ let ChartJSDoughnutChart () =
         ]
     ]
 
-[<ReactComponent>]
-let ChartJSMixedTypeChart () =
-    ChartJS.bar [
-        // bar.register()
-        bar.options [
-            option.responsive true
-            option.scales [ scale.x [ axes.stacked true ]; scale.y [ axes.stacked true ] ]
-            option.plugins [
-                plugin.legend [ legend.position Position.Top ]
-                plugin.title [ title.display true; title.text "Chart.js Bar Chart" ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.allign Position.Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
-                // datalabels.labels [
-                //     labels.value {|color="blue"|}
-                // ]
-                // datalabels.formatter renderCustomLabel
-                ]
-            ]
-        ]
-        bar.data [
-            barData.labels [| "January"; "Feburary" |]
-            barData.datasets [|
-                barData.dataset [
-                    barDataSet.label "My First Dataset"
-                    barDataSet.borderColor "blue"
-                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    barDataSet.borderSkipped false
-                    barDataSet.borderWidth 2
-                    barDataSet.borderRadius 50
-                    barDataSet.data [| "1"; "2" |]
-                ]
-                barData.dataset [
-                    barDataSet.label "My Second Dataset"
-                    barDataSet.mixedType "line"
-                    barDataSet.borderColor "green"
-                    barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    barDataSet.borderSkipped false
-                    barDataSet.borderWidth 2
-                    barDataSet.borderRadius 50
-                    barDataSet.data [| "1"; "2" |]
-                ]
-            |]
-        ]
-    ]
+// [<ReactComponent>]
+// let ChartJSMixedTypeChart () =
+//     ChartJS.bar [
+//         // bar.register()
+//         bar.options [
+//             option.responsive true
+//             option.scales [ scale.x [ axes.stacked true ]; scale.y [ axes.stacked true ] ]
+//             option.plugins [
+//                 plugin.legend [ legend.position Position.Top ]
+//                 plugin.title [ title.display true; title.text "Chart.js Bar Chart" ]
+//                 plugin.datalabels [
+//                     datalabels.display true
+//                     datalabels.allign Position.Bottom
+//                     datalabels.borderRadius 3
+//                     datalabels.color "red"
+//                     datalabels.backgroundColor "green"
+//                 // datalabels.labels [
+//                 //     labels.value {|color="blue"|}
+//                 // ]
+//                 // datalabels.formatter renderCustomLabel
+//                 ]
+//             ]
+//         ]
+//         bar.data [
+//             barData.labels [| "January"; "Feburary" |]
+//             barData.datasets [|
+//                 barData.dataset [
+//                     barDataSet.label "My First Dataset"
+//                     barDataSet.borderColor "blue"
+//                     barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     barDataSet.borderSkipped false
+//                     barDataSet.borderWidth 2
+//                     barDataSet.borderRadius 50
+//                     barDataSet.data [| "1"; "2" |]
+//                 ]
+//                 barData.dataset [
+//                     barDataSet.label "My Second Dataset"
+//                     barDataSet.mixedType "line"
+//                     barDataSet.borderColor "green"
+//                     barDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+//                     barDataSet.borderSkipped false
+//                     barDataSet.borderWidth 2
+//                     barDataSet.borderRadius 50
+//                     barDataSet.data [| "1"; "2" |]
+//                 ]
+//             |]
+//         ]
+//     ]
 
 let view (model: Model) (dispatch: Msg -> unit) =
     Html.div [
         prop.style [ style.height 600; style.width 600 ]
         prop.children [
             // ChartJSLineChart()
-            ChartJSLineChartWithCustomToolTips()
+            // ChartJSLineChartWithCustomToolTips()
         // ChartJSBarChart()
-        // ChartJSDoughnutChart()
+        ChartJSDoughnutChart()
         // ChartJSMixedTypeChart()
         ]
 
