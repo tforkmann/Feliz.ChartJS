@@ -1,3 +1,5 @@
+#### 0.6.2 - 2023-06-2
+* Add PlugIns
 #### 0.6.1 - 2023-03-16
 * Update packages
 #### 0.6.0 - 2023-02-19
@@ -64,8 +66,6 @@
 * Add Formatter and chartjs-plugin-datalabels
 #### 0.2.0 - 2022-09-13
 * Use string
-#### 0.2.0 - 2023-06-2
-* Add PlugIns
 #### 0.1.9 - 2022-09-13
 * Fix doughnut chart
 #### 0.1.8 - 2022-09-13
