@@ -1,3 +1,5 @@
+#### 0.6.4 - 2023-06-5
+* Fix ChartArea content
 #### 0.6.3 - 2023-06-5
 * Add ChartArea info
 #### 0.6.2 - 2023-06-2
