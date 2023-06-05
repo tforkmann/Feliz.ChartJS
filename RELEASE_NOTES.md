@@ -1,3 +1,5 @@
+#### 0.6.5 - 2023-06-5
+* Add float fillText
 #### 0.6.4 - 2023-06-5
 * Fix ChartArea content
 #### 0.6.3 - 2023-06-5

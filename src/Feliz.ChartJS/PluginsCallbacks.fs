@@ -15,6 +15,7 @@ module PluginsCallbacks =
         abstract textAlign: string with get, set
         abstract font: string with get, set
         abstract fillText: string * int * int -> unit
+        abstract fillText: string * float * float -> unit
 
     [<Erase>]
     type ChartArea =
