@@ -189,6 +189,8 @@ let ChartJSDoughnutChart () =
                 handler.ctx.fillStyle <- "pink"
                 handler.ctx.font <- "60px Arial"
                 handler.ctx.textAlign <- "center"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.textAlign <- "center"
                 handler.ctx.fillText ( "97", 100, 100)
                 console.log handler.ctx
                 )
@@ -197,7 +199,6 @@ let ChartJSDoughnutChart () =
         doughnut.ref chartRef
         doughnut.plugins [
             counter
-
         ]
         doughnut.onClick (fun (e) ->
             let ref = receiveChartRef ()

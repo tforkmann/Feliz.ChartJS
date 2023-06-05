@@ -3,5 +3,4 @@ indent_style = space
 indent_size = 4
 insert_final_newline = true
 
-fsharp_multiline_block_brackets_on_same_column = true
-fsharp_experimental_stroustrup_style = true
+fsharp_multiline_bracket_style = stroustrup

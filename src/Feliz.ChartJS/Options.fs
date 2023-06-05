@@ -21,11 +21,11 @@ type option =
 
     static member inline plugins(props: IPluginProp seq) : IOptionsProp =
         Interop.mkOptionsProp "plugins" (createObj !!props)
+
 [<Erase>]
 
 type inlineplugin =
-    static member inline plugin (props: IInlinePluginProp seq) : IInlinePlugin =
-        !!(createObj !!props)
+    static member inline plugin(props: IInlinePluginProp seq) : IInlinePlugin = !!(createObj !!props)
 
 [<Erase>]
 type plugin =
@@ -43,19 +43,57 @@ type plugin =
 
     static member inline tooltip(props: IToolTipsProp seq) : IPluginProp =
         Interop.mkPluginProp "tooltip" (createObj !!props)
+
 [<Erase>]
 type inlineplugins =
-    static member inline id(id: string) : IInlinePluginProp =
-        Interop.mkInlinePluginProp "id" id
-    static member inline afterDatasetDraw(afterDatasetDraw: BeforeDrawItems  -> unit) : IInlinePluginProp =
-         !!("afterDatasetDraw" ==> afterDatasetDraw)
+    static member inline id(id: string) : IInlinePluginProp = Interop.mkInlinePluginProp "id" id
 
-    static member inline beforeDraw(handler: {| ctx: CanvasRenderingContext ; args : obj ; options: obj |} -> unit) : IInlinePluginProp =
+    static member inline afterDatasetDraw
+        (handler:
+            {|
+                ctx: CanvasRenderingContext
+                chartArea: ChartArea
+                args: obj
+                options: obj
+            |}
+                -> unit)
+        : IInlinePluginProp =
+        !!("afterDatasetDraw" ==> handler)
+
+    static member inline beforeDraw
+        (handler:
+            {|
+                ctx: CanvasRenderingContext
+                chartArea: ChartArea
+                args: obj
+                options: obj
+            |}
+                -> unit)
+        : IInlinePluginProp =
         !!("beforeDraw" ==> handler)
 
-    static member inline afterDraw(handler: {| ctx: CanvasRenderingContext ; args : obj ; options: obj |} -> unit) : IInlinePluginProp =
+    static member inline afterDraw
+        (handler:
+            {|
+                ctx: CanvasRenderingContext
+                chartArea: ChartArea
+                args: obj
+                options: obj
+            |}
+                -> unit)
+        : IInlinePluginProp =
         !!("afterDraw" ==> handler)
-    static member inline beforeInit(handler: {| ctx: CanvasRenderingContext ; args : obj ; options: obj |} -> unit) : IInlinePluginProp =
+
+    static member inline beforeInit
+        (handler:
+            {|
+                ctx: CanvasRenderingContext
+                chartArea: ChartArea
+                args: obj
+                options: obj
+            |}
+                -> unit)
+        : IInlinePluginProp =
         !!("beforeInit" ==> handler)
 
     static member inline defaults(defaults: IDefaultsProp seq) : IInlinePluginProp =
@@ -263,8 +301,7 @@ type zoom =
 
 [<Erase>]
 type wheel =
-    static member inline enabled(enabled: bool) : IWheelProp =
-        Interop.mkWheelProp "enabled" enabled
+    static member inline enabled(enabled: bool) : IWheelProp = Interop.mkWheelProp "enabled" enabled
 
 [<Erase>]
 type labels =
@@ -273,5 +310,4 @@ type labels =
 
 [<Erase>]
 type defaults =
-    static member inline color(color: string) : IDefaultsProp =
-        Interop.mkDefaultsProp "color" color
+    static member inline color(color: string) : IDefaultsProp = Interop.mkDefaultsProp "color" color
