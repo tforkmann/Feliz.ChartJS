@@ -277,9 +277,8 @@ type legend =
         Interop.mkLegendProp "position" position
 
     static member inline display(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
-    static member inline color(color: string) : ILegendProp = Interop.mkLegendProp "color" color
-    static member inline padding(padding: int) : ILegendProp = Interop.mkLegendProp "padding" padding
-    static member inline textAlign(textAlign: TextAlignment) : ILegendProp = Interop.mkLegendProp "textAlign" textAlign
+    static member inline labels(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
+    static member inline labels(props:ILabelsProp seq) : ILegendProp = Interop.mkLegendProp "labels" (createObj !!props)
 
 [<Erase>]
 type datalabels =
@@ -319,8 +318,12 @@ type wheel =
 
 [<Erase>]
 type labels =
-    static member inline value props : ILabelsProp =
-        Interop.mkLabelsProp "value" (createObj !!props)
+    static member inline value props : ILabelsProp = Interop.mkLabelsProp "value" (createObj !!props)
+    static member inline color(color: string) : ILabelsProp = Interop.mkLabelsProp "color" color
+    static member inline padding(padding: int) : ILabelsProp = Interop.mkLabelsProp "padding" padding
+    static member inline textAlign(textAlign: TextAlignment) : ILabelsProp = Interop.mkLabelsProp "textAlign" textAlign
+
+
 
 [<Erase>]
 type defaults =
