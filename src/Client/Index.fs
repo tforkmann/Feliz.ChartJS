@@ -19,48 +19,56 @@ let update msg (model: Model) =
     match msg with
     | UpdateTxt txt -> { model with Txt = txt }, Cmd.none
 
-// [<ReactComponent>]
-// let ChartJSLineChart () =
-//     ChartJS.line [
-//         line.options [
-//             option.responsive true
-//             option.scales [
-//                 scale.y [
-//                     axes.position Position.Left
-//                     axes.title [ title.display true; title.text "test" ]
-//                 ]
-//                 scale.yRight [ axes.position Position.Right; axes.reverse true ]
-//             ]
+[<ReactComponent>]
+let ChartJSLineChart () =
+    ChartJS.line [
+        line.options [
+            option.responsive true
+            option.scales [
+                scale.y [
+                    axes.ticks [
+                        ticks.color "red"
+                    ]
+                    axes.position Position.Left
+                    axes.title [ title.display true; title.text "test" ]
+                ]
+                scale.x [
+                    axes.ticks [
+                        ticks.color "green"
+                    ]
+                ]
+                scale.yRight [ axes.position Position.Right; axes.reverse true ]
+            ]
 
-//             option.plugins[plugin.datalabels [
-//                                datalabels.display true
-//                                datalabels.allign Position.Bottom
-//                                datalabels.borderRadius 3
-//                                datalabels.color "red"
-//                                datalabels.backgroundColor "green"
-//                            ]
+            option.plugins[plugin.datalabels [
+                               datalabels.display true
+                               datalabels.allign Position.Bottom
+                               datalabels.borderRadius 3
+                               datalabels.color "red"
+                               datalabels.backgroundColor "green"
+                           ]
 
-//                            plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]
-//         ]
-//         line.data [
-//             lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
-//             lineData.datasets [|
-//                 lineData.dataset [
-//                     lineDataSet.label "My First Dataset"
-//                     lineDataSet.borderColor "rgb(53, 162, 235)"
-//                     lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-//                     lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
-//                 ]
-//                 lineData.dataset [
-//                     lineDataSet.label "My Second Dataset"
-//                     lineDataSet.borderColor "yellow"
-//                     lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-//                     lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "1500" |]
-//                     lineDataSet.yAxisID "yRight"
-//                 ]
-//             |]
-//         ]
-//     ]
+                           plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]
+        ]
+        line.data [
+            lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
+            lineData.datasets [|
+                lineData.dataset [
+                    lineDataSet.label "My First Dataset"
+                    lineDataSet.borderColor "rgb(53, 162, 235)"
+                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
+                ]
+                lineData.dataset [
+                    lineDataSet.label "My Second Dataset"
+                    lineDataSet.borderColor "yellow"
+                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "1500" |]
+                    lineDataSet.yAxisID "yRight"
+                ]
+            |]
+        ]
+    ]
 
 // [<ReactComponent>]
 // let ChartJSLineChartWithCustomToolTips () =
@@ -181,6 +189,7 @@ let ChartJSDoughnutChart () =
         match chartRef.current with
         | None -> failwithf "should be some"
         | Some e -> e
+
     let counter =
         inlineplugin.plugin [
             inlineplugins.id "counter"
@@ -191,15 +200,13 @@ let ChartJSDoughnutChart () =
                 handler.ctx.textAlign <- "center"
                 handler.ctx.textAlign <- "center"
                 handler.ctx.textAlign <- "center"
-                handler.ctx.fillText ( "97", 100, 100)
-                console.log handler.ctx
-                )
+                handler.ctx.fillText ("97", 100, 100)
+                console.log handler.ctx)
         ]
+
     ChartJS.doughnut [
         doughnut.ref chartRef
-        doughnut.plugins [
-            counter
-        ]
+        doughnut.plugins [ counter ]
         doughnut.onClick (fun (e) ->
             let ref = receiveChartRef ()
             console.log ref
@@ -308,10 +315,10 @@ let view (model: Model) (dispatch: Msg -> unit) =
     Html.div [
         prop.style [ style.height 600; style.width 600 ]
         prop.children [
-            // ChartJSLineChart()
-            // ChartJSLineChartWithCustomToolTips()
+            ChartJSLineChart()
+        // ChartJSLineChartWithCustomToolTips()
         // ChartJSBarChart()
-        ChartJSDoughnutChart()
+        // ChartJSDoughnutChart()
         // ChartJSMixedTypeChart()
         ]
 

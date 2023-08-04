@@ -248,8 +248,14 @@ type axes =
     static member inline reverse(reverse: bool) : IAxesProp = Interop.mkAxesProp "reverse" reverse
     static member inline ticks(handler: ITicksProperties -> unit) = Interop.mkAxesProp "ticks" handler
 
-    static member inline title(props: ITitleProp seq) : IAxesProp =
+    static member inline ticks(props:ITicksProp seq) : IAxesProp =
+        Interop.mkAxesProp "ticks" (createObj !!props)
+    static member inline title(props:  ITitleProp  seq) : IAxesProp =
         Interop.mkAxesProp "title" (createObj !!props)
+
+[<Erase>]
+type ticks =
+    static member inline color(color: string) : ITicksProp = Interop.mkTicksProp "color" color
 
 [<Erase>]
 type padding =
