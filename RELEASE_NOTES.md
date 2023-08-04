@@ -1,3 +1,5 @@
+#### 0.6.8 - 2023-08-4
+* Extend legend props
 #### 0.6.7 - 2023-08-4
 * Extend axes props
 #### 0.6.6 - 2023-08-4

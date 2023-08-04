@@ -277,6 +277,9 @@ type legend =
         Interop.mkLegendProp "position" position
 
     static member inline display(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
+    static member inline color(color: string) : ILegendProp = Interop.mkLegendProp "color" color
+    static member inline padding(padding: int) : ILegendProp = Interop.mkLegendProp "padding" padding
+    static member inline textAlign(textAlign: TextAlignment) : ILegendProp = Interop.mkLegendProp "textAlign" textAlign
 
 [<Erase>]
 type datalabels =
