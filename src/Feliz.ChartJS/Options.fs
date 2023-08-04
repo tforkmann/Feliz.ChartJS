@@ -265,6 +265,11 @@ type padding =
 type title =
     static member inline display(display: bool) : ITitleProp = Interop.mkTitleProp "display" display
     static member inline text(text: string) : ITitleProp = Interop.mkTitleProp "text" text
+    static member inline color(color: string) : ITitleProp = Interop.mkTitleProp "color" color
+    static member inline padding props : ITitleProp =
+        Interop.mkTitleProp "padding" (createObj !!props)
+    static member inline font props : ITitleProp =
+        Interop.mkTitleProp "font" (createObj !!props)
 
 [<Erase>]
 type legend =
