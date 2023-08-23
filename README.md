@@ -81,3 +81,5 @@ ChartJS.line [
         ]
     ]
 ```fs
+
+More example you can find [here](https://tforkmann.github.io/Feliz.ChartJS/)
