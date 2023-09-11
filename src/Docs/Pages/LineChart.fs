@@ -12,7 +12,7 @@ let ChartJSLineChart () =
             option.responsive true
             option.plugins[plugin.datalabels [
                                datalabels.display true
-                               datalabels.allign Position.Bottom
+                               datalabels.align Position.Bottom
                                datalabels.borderRadius 3
                                datalabels.color "red"
                                datalabels.backgroundColor "green"
@@ -78,7 +78,7 @@ let code =
             option.responsive true
             option.plugins[plugin.datalabels [
                                datalabels.display true
-                               datalabels.allign Bottom
+                               datalabels.align Bottom
                                datalabels.borderRadius 3
                                datalabels.color "red"
                                datalabels.backgroundColor "green"

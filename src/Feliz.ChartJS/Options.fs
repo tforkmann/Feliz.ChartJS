@@ -282,8 +282,8 @@ type legend =
 
 [<Erase>]
 type datalabels =
-    static member inline allign(allign: Position) : IDataLabelsProp =
-        Interop.mkDataLabelsProp "allign" allign
+    static member inline align(align: Position) : IDataLabelsProp =
+        Interop.mkDataLabelsProp "align" align
 
     static member inline display(display: bool) : IDataLabelsProp =
         Interop.mkDataLabelsProp "display" display
