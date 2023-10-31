@@ -42,7 +42,7 @@ let ChartJSLineChart () =
 
             option.plugins[plugin.datalabels [
                                datalabels.display true
-                               datalabels.alignn Position.Bottom
+                               datalabels.align Position.Bottom
                                datalabels.borderRadius 3
                                datalabels.color "red"
                                datalabels.backgroundColor "green"
@@ -221,7 +221,7 @@ let ChartJSDoughnutChart () =
                 plugin.title [ title.display true; title.text "Chart.js Doughnut Chart" ]
                 plugin.datalabels [
                     datalabels.display true
-                    datalabels.alignn Position.Bottom
+                    datalabels.align Position.Bottom
                     datalabels.borderRadius 3
                     datalabels.color "red"
                     datalabels.backgroundColor "green"

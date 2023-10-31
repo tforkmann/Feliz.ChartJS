@@ -10,6 +10,8 @@ open PluginsCallbacks
 type option =
     static member inline responsive(resp: bool) : IOptionsProp = Interop.mkOptionsProp "responsive" resp
 
+    static member inline aspectRatio(aspectRatio: int) : IOptionsProp = Interop.mkOptionsProp "aspectRatio" aspectRatio
+
     static member inline maintainAspectRatio(ratio: bool) : IOptionsProp =
         Interop.mkOptionsProp "maintainAspectRatio" ratio
 
