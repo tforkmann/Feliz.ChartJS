@@ -1,3 +1,5 @@
+#### 0.7.8 - 2023-11-15
+* API from ChartJS
 #### 0.7.7 - 2023-11-15
 * Add correct parameters
 #### 0.7.6 - 2023-11-15

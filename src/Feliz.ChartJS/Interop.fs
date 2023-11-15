@@ -63,9 +63,12 @@ module Interop =
         abstract getDatasetAtEvent: ChartJS * MouseEvent -> InteractionItem []
         abstract getElementAtEvent: ChartJS * MouseEvent -> InteractionItem
         abstract getElementsAtEvent: ChartJS * MouseEvent -> InteractionItem []
-        abstract getElementsAtEventForMode: ChartJS * MouseEvent * obj * bool -> InteractionItem []
+    type IEventChartJSOperations =
+
+        abstract getElementsAtEventForMode: ChartJS * MouseEvent * Mode * obj * bool -> InteractionItem []
 
     let eventOperations: IEventOperations = importAll "react-chartjs-2"
+    let eventChartJSOperations: IEventChartJSOperations = importAll "chart.js"
 
     // ChartJS?register (ZoomPlugin)
     ChartJS?register (CategoryScale)

@@ -142,6 +142,16 @@ type Position =
     | Bottom
     | Right
 [<StringEnum;RequireQualifiedAccess>]
+type Mode =
+    | Nearest
+    | Point
+    | Index
+    | Dataset
+    | X
+    | Y
+    | Intersect
+
+[<StringEnum;RequireQualifiedAccess>]
 type ToolTipPosition =
     | Nearest
     | Average
