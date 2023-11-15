@@ -1,3 +1,5 @@
+#### 0.7.6 - 2023-11-15
+* Add getElementsAtEventForMode
 #### 0.7.5 - 2023-11-15
 * getElementAtEvent only returns one item
 #### 0.7.4 - 2023-11-15
