@@ -1,3 +1,5 @@
+#### 0.7.7 - 2023-11-15
+* Add correct parameters
 #### 0.7.6 - 2023-11-15
 * Add getElementsAtEventForMode
 #### 0.7.5 - 2023-11-15
