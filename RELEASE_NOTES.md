@@ -1,3 +1,5 @@
+#### 0.7.4 - 2023-11-15
+* Add ref to bar and line chart
 #### 0.7.3 - 2023-11-15
 * Update to .net8
 #### 0.7.2 - 2023-11-15

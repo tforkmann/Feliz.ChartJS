@@ -14,6 +14,9 @@ type line =
         Interop.mkLineChartProp "data" (createObj !!props)
     static member inline labels props : ILineDataProp = !!(createObj !!props)
 
+    static member inline ref(ref: IRefValue<Interop.ChartJS option>) : ILineChartProp =
+        Interop.mkLineChartProp "ref" ref
+
     static member inline onClick(handler: MouseEvent -> unit) : ILineDataProp = !!("onClick" ==> handler)
 
 [<Erase>]

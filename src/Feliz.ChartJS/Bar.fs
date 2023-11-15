@@ -15,6 +15,9 @@ type bar =
 
     static member inline labels props : IBarChartProp = !!(createObj !!props)
 
+    static member inline ref(ref: IRefValue<Interop.ChartJS option>) : IBarChartProp =
+        Interop.mkBarChartProp "ref" ref
+
     static member inline onClick(handler: MouseEvent -> unit) : IBarChartProp = !!("onClick" ==> handler)
 
 [<Erase>]
