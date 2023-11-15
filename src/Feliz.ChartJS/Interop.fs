@@ -61,7 +61,7 @@ module Interop =
     let bar: obj = import "Bar" "react-chartjs-2"
     type IEventOperations =
         abstract getDatasetAtEvent: ChartJS * MouseEvent -> InteractionItem []
-        abstract getElementAtEvent: ChartJS * MouseEvent -> InteractionItem []
+        abstract getElementAtEvent: ChartJS * MouseEvent -> InteractionItem
         abstract getElementsAtEvent: ChartJS * MouseEvent -> InteractionItem []
 
     let eventOperations: IEventOperations = importAll "react-chartjs-2"
