@@ -1,3 +1,5 @@
+#### 0.7.2 - 2023-11-15
+* Add on click event for bar and line chart
 #### 0.7.1 - 2023-10-31
 * typo align
 #### 0.7.0 - 2023-09-11

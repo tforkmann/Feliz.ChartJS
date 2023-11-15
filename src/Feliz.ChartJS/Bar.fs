@@ -3,6 +3,7 @@ namespace Feliz.ChartJS
 open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
+open Browser.Types
 
 [<Erase>]
 type bar =
@@ -13,6 +14,8 @@ type bar =
         Interop.mkBarChartProp "data" (createObj !!props)
 
     static member inline labels props : IBarChartProp = !!(createObj !!props)
+
+    static member inline onClick(handler: MouseEvent -> unit) : IBarChartProp = !!("onClick" ==> handler)
 
 [<Erase>]
 type barData =
