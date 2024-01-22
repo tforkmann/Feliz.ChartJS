@@ -129,6 +129,7 @@ type IContextProperties =
     abstract outerRadius : float
     abstract percent : float
     abstract index : int
+
 [<Erase>]
 type ITicksProperties =
     abstract value : string
@@ -141,6 +142,7 @@ type Position =
     | Left
     | Bottom
     | Right
+
 [<StringEnum;RequireQualifiedAccess>]
 type Mode =
     | Nearest
@@ -155,15 +157,18 @@ type Mode =
 type ToolTipPosition =
     | Nearest
     | Average
+
 [<StringEnum;RequireQualifiedAccess>]
 type TextAlignment =
     | Left
     | Right
     | Center
+
 [<StringEnum;RequireQualifiedAccess>]
 type YAxis =
     | YLeft
     | YRight
+
 [<Erase>]
 type InteractionItem =
     abstract element : obj
