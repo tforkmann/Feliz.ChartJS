@@ -262,6 +262,110 @@ let ChartJSDoughnutChart () =
         ]
     ]
 
+[<ReactComponent>]
+let ChartJSMultiDoughnutChart () =
+    let chartRef: IRefValue<Interop.ChartJS option> = React.useRef (None)
+
+    let receiveChartRef () =
+        match chartRef.current with
+        | None -> failwithf "should be some"
+        | Some e -> e
+
+    let counter =
+        inlineplugin.plugin [
+            inlineplugins.id "counter"
+            inlineplugins.beforeDraw (fun handler ->
+                handler.ctx.save
+                handler.ctx.fillStyle <- "pink"
+                handler.ctx.font <- "60px Arial"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.fillText ("97", 100, 100)
+                console.log handler.ctx)
+        ]
+
+    ChartJS.doughnut [
+        doughnut.ref chartRef
+        doughnut.plugins [ counter ]
+        doughnut.onClick (fun (e) ->
+            let ref = receiveChartRef ()
+            console.log ref
+            console.log e
+            let dataSet = Interop.eventOperations.getDatasetAtEvent (ref, e)
+            console.log dataSet)
+        doughnut.options [
+            option.responsive true
+            option.layout [ layout.padding [ padding.bottom 10 ] ]
+            option.plugins [
+                plugin.legend [ legend.position Position.Top ]
+                plugin.title [ title.display true; title.text "Chart.js Doughnut Chart" ]
+                plugin.datalabels [
+                    datalabels.display true
+                    datalabels.align Position.Bottom
+                    datalabels.borderRadius 3
+                    datalabels.color "red"
+                    datalabels.backgroundColor "green"
+                // datalabels.labels [
+                //     labels.value {|color="blue"|}
+                // ]
+                // datalabels.formatter renderCustomLabel
+                ]
+            ]
+        ]
+        doughnut.data [
+            doughnutData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
+            doughnutData.datasets [|
+                doughnutData.dataset [
+                    doughnutDataSet.label "# of Votes"
+                    doughnutDataSet.borderColor [|
+                        "rgba(255, 99, 132, 1)"
+                        "rgba(54, 162, 235, 1)"
+                        "rgba(255, 206, 86, 1)"
+                        "rgba(75, 192, 192, 1)"
+                        "rgba(153, 102, 255, 1)"
+                        "rgba(255, 159, 64, 1)"
+                    |]
+                    doughnutDataSet.borderWidth 1
+                    doughnutDataSet.hoverOffset 20
+                    doughnutDataSet.backgroundColor [|
+                        "rgba(255, 99, 132, 0.2)"
+                        "rgba(54, 162, 235, 0.2)"
+                        "rgba(255, 206, 86, 0.2)"
+                        "rgba(75, 192, 192, 0.2)"
+                        "rgba(153, 102, 255, 0.2)"
+                        "rgba(255, 159, 64, 0.2)"
+                    |]
+                    doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
+                    doughnutDataSet.datalabels [| datalabel.anchor "end" |]
+                ]
+                doughnutData.dataset [
+                    doughnutDataSet.label "Detailed of Votes"
+                    doughnutDataSet.borderColor [|
+                        "rgba(255, 99, 132, 1)"
+                        "rgba(54, 162, 235, 1)"
+                        "rgba(255, 206, 86, 1)"
+                        "rgba(75, 192, 192, 1)"
+                        "rgba(153, 102, 255, 1)"
+                        "rgba(255, 159, 64, 1)"
+                    |]
+                    doughnutDataSet.borderWidth 1
+                    doughnutDataSet.hoverOffset 20
+                    doughnutDataSet.backgroundColor [|
+                        "rgba(255, 99, 132, 0.2)"
+                        "rgba(54, 162, 235, 0.2)"
+                        "rgba(255, 206, 86, 0.2)"
+                        "rgba(75, 192, 192, 0.2)"
+                        "rgba(153, 102, 255, 0.2)"
+                        "rgba(255, 159, 64, 0.2)"
+                    |]
+                    doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
+                    doughnutDataSet.datalabels [| datalabel.anchor "end" |]
+                ]
+            |]
+        ]
+    ]
+
 // [<ReactComponent>]
 // let ChartJSMixedTypeChart () =
 //     ChartJS.bar [
@@ -315,10 +419,11 @@ let view (model: Model) (dispatch: Msg -> unit) =
     Html.div [
         prop.style [ style.height 600; style.width 600 ]
         prop.children [
-            ChartJSLineChart()
+            // ChartJSLineChart()
         // ChartJSLineChartWithCustomToolTips()
         // ChartJSBarChart()
         // ChartJSDoughnutChart()
+            ChartJSMultiDoughnutChart()
         // ChartJSMixedTypeChart()
         ]
 
