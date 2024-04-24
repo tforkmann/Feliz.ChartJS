@@ -265,8 +265,8 @@ type y =
     static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
 [<Erase>]
 type x =
-    static member inline min(min: int) : IXProp = Interop.mkYProp "min" min
-    static member inline max(max: int) : IXProp = Interop.mkYProp "max" max
+    static member inline min(min: int) : IXProp = Interop.mkXProp "min" min
+    static member inline max(max: int) : IXProp = Interop.mkXProp "max" max
 
 [<Erase>]
 type padding =
