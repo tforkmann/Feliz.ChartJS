@@ -1,4 +1,4 @@
-#### 0.8.0 - 2024-04-24
+#### 0.8.1 - 2024-04-24
 * y axis and x axis min and max
 #### 0.7.9 - 2023-11-15
 * getElementAtEvent returns more than one item

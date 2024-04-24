@@ -226,10 +226,10 @@ type font =
 
 [<Erase>]
 type scale =
-    static member inline x(props: IAxesProp seq) : IScalesProp =
+    static member inline x(props: IXProp seq) : IScalesProp =
         Interop.mkScalesProp "x" (createObj !!props)
 
-    static member inline y(props: IAxesProp seq) : IScalesProp =
+    static member inline y(props: IYProp seq) : IScalesProp =
         Interop.mkScalesProp "y" (createObj !!props)
 
     static member inline yLeft(props: IAxesProp seq) : IScalesProp =
@@ -265,8 +265,8 @@ type y =
     static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
 [<Erase>]
 type x =
-    static member inline min(min: int) : IYProp = Interop.mkYProp "min" min
-    static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
+    static member inline min(min: int) : IXProp = Interop.mkYProp "min" min
+    static member inline max(max: int) : IXProp = Interop.mkYProp "max" max
 
 [<Erase>]
 type padding =
