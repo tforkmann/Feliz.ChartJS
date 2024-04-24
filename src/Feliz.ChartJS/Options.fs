@@ -260,6 +260,15 @@ type ticks =
     static member inline color(color: string) : ITicksProp = Interop.mkTicksProp "color" color
 
 [<Erase>]
+type y =
+    static member inline min(min: int) : IYProp = Interop.mkYProp "min" min
+    static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
+[<Erase>]
+type x =
+    static member inline min(min: int) : IYProp = Interop.mkYProp "min" min
+    static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
+
+[<Erase>]
 type padding =
     static member inline bottom(bottom: int) : IPaddingProp = Interop.mkPaddingProp "bottom" bottom
 
