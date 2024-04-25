@@ -1,3 +1,5 @@
+#### 0.8.3 - 2024-04-25
+* Bring back xAxes and yAxes
 #### 0.8.2 - 2024-04-24
 * y axis and x axis min and max
 #### 0.7.9 - 2023-11-15
