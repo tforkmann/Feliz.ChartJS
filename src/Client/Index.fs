@@ -25,14 +25,14 @@ let ChartJSLineChart () =
         line.options [
             option.responsive true
             option.scales [
-                scale.yAxes [
+                scale.yWithAxes [
                     axes.ticks [
                         ticks.color "red"
                     ]
                     axes.position Position.Left
                     axes.title [ title.display true; title.text "test" ]
                 ]
-                scale.xAxes [
+                scale.xWithAxes [
                     axes.ticks [
                         ticks.color "green"
                     ]

@@ -1,3 +1,5 @@
+#### 0.8.4 - 2024-04-26
+* Add xWithAxes and yWithAxes
 #### 0.8.3 - 2024-04-25
 * Bring back xAxes and yAxes
 #### 0.8.2 - 2024-04-24
