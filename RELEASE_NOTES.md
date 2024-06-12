@@ -1,3 +1,5 @@
+#### 0.8.8 - 2024-06-12
+* try scriptable options
 #### 0.8.7 - 2024-06-12
 * Add backgroundcolors
 #### 0.8.4 - 2024-04-26

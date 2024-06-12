@@ -4,7 +4,7 @@ open Feliz
 open Fable.Core.JsInterop
 open Fable.Core
 open Browser.Types
-
+open ScriptableOptions
 [<Erase>]
 type line =
     static member inline options props : ILineChartProp =
@@ -44,3 +44,5 @@ type lineDataSet =
         Interop.mkLineDataSetsProp "data" data
     static member inline yAxisID(yAxisID: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "yAxisID" yAxisID
+    static member inline borderColor(iColor: IColor[] -> string[]) : ILineDataSetsProp =
+        !!("color" ==> iColor)
