@@ -28,6 +28,8 @@ type lineData =
 type lineDataSet =
     static member inline label(label: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "label" label
+    static member inline stepped(stepped: bool): ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "stepped" stepped
     static member inline mixedType(mixedType: string) : ILineDataSetsProp =
         Interop.mkLineDataSetsProp "type" mixedType
     static member inline borderColor(borderColor: string): ILineDataSetsProp =
