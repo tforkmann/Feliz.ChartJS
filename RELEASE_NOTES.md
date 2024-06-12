@@ -1,3 +1,5 @@
+#### 0.8.5 - 2024-06-12
+* Add backgroundcolors
 #### 0.8.4 - 2024-04-26
 * Add xWithAxes and yWithAxes
 #### 0.8.3 - 2024-04-25

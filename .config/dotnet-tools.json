@@ -6,25 +6,29 @@
       "version": "8.0.0",
       "commands": [
         "paket"
-      ]
+      ],
+      "rollForward": false
     },
     "fable": {
-      "version": "4.17.0",
+      "version": "4.19.0",
       "commands": [
         "fable"
-      ]
+      ],
+      "rollForward": false
     },
     "fantomas": {
-      "version": "6.3.4",
+      "version": "6.3.9",
       "commands": [
         "fantomas"
-      ]
+      ],
+      "rollForward": false
     },
     "fake-cli": {
       "version": "6.0.0",
       "commands": [
         "fake"
-      ]
+      ],
+      "rollForward": false
     }
   }
 }
