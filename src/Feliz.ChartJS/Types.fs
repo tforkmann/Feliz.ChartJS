@@ -105,6 +105,9 @@ type ILineDataProp =
 type ILineDataSetsProp =
     interface
     end
+type ILineSegmentProp =
+    interface
+    end
 
 type IBarDataProp =
     interface

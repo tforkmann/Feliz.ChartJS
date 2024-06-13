@@ -47,4 +47,13 @@ type lineDataSet =
     static member inline yAxisID(yAxisID: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "yAxisID" yAxisID
     static member inline borderColor(iColor: IColor -> string) : ILineDataSetsProp =
+        !!("borderColor" ==> iColor)
+    static member inline color(iColor: IColor -> string) : ILineDataSetsProp =
         !!("color" ==> iColor)
+    static member inline lineSegment props : ILineDataSetsProp = (!!("segment" ==> props))
+
+[<Erase>]
+type lineSegment =
+    static member inline borderColor(context: IColor -> string) : ILineSegmentProp =
+        !!("borderColor" ==> context)
+

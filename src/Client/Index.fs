@@ -26,17 +26,11 @@ let ChartJSLineChart () =
             option.responsive true
             option.scales [
                 scale.yWithAxes [
-                    axes.ticks [
-                        ticks.color "red"
-                    ]
+                    axes.ticks [ ticks.color "red" ]
                     axes.position Position.Left
                     axes.title [ title.display true; title.text "test" ]
                 ]
-                scale.xWithAxes [
-                    axes.ticks [
-                        ticks.color "green"
-                    ]
-                ]
+                scale.xWithAxes [ axes.ticks [ ticks.color "green" ] ]
                 scale.yRight [ axes.position Position.Right; axes.reverse true ]
             ]
 
@@ -53,16 +47,45 @@ let ChartJSLineChart () =
         line.data [
             lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
             lineData.datasets [|
-                lineData.dataset [
-                    lineDataSet.label "My First Dataset"
-                    lineDataSet.borderColor "rgb(53, 162, 235)"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
-                ]
+                // lineData.dataset [
+                //     lineDataSet.label "My First Dataset"
+                //     lineDataSet.borderColor "rgb(53, 162, 235)"
+                //     lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                //     lineDataSet.data [| "1"; "2"; "3"; "4"; "312"; "6" |]
+                // ]
                 lineData.dataset [
                     lineDataSet.label "My Second Dataset"
-                    lineDataSet.borderColor "yellow"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                    // lineDataSet.borderColor "yellow"
+                    // lineDataSet.borderColor (fun colorHandler ->
+                    //     console.log ("colorHandler", colorHandler)
+                    //     let index = colorHandler.dataIndex
+                    //     let value = colorHandler.dataset.data.[index]
+                    //     console.log ("value", value)
+
+                    //     if value < 0 then "red"
+                    //     else if index % 2 = 0 then "purple"
+                    //     else "green")
+                    lineDataSet.lineSegment [
+                        lineSegment.borderColor (fun colorHandler ->
+                            console.log ("colorHandler", colorHandler)
+                            let index = colorHandler.dataIndex
+                            let value = colorHandler.dataset.data.[index]
+                            console.log ("value", value)
+
+                            if value < 0 then "red"
+                            else if index % 2 = 0 then "purple"
+                            else "green")
+                    ]
+                    // lineDataSet.color (fun colorHandler ->
+                    // console.log ("colorHandler" ,colorHandler)
+                    // let index = colorHandler.dataIndex
+                    // let value = colorHandler.dataset.data.[index]
+                    // console.log ("value", value)
+
+                    // if value < 0 then "red"
+                    // else if index % 2 = 0 then "blue"
+                    // else "green")
+                    // lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
                     lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "1500" |]
                     lineDataSet.yAxisID "yRight"
                 ]
@@ -419,11 +442,11 @@ let view (model: Model) (dispatch: Msg -> unit) =
     Html.div [
         prop.style [ style.height 600; style.width 600 ]
         prop.children [
-            // ChartJSLineChart()
+            ChartJSLineChart()
         // ChartJSLineChartWithCustomToolTips()
         // ChartJSBarChart()
         // ChartJSDoughnutChart()
-            ChartJSMultiDoughnutChart()
+        // ChartJSMultiDoughnutChart()
         // ChartJSMixedTypeChart()
         ]
 
