@@ -8,7 +8,7 @@ module ScriptableOptions =
         [<Erase>]
     type IDataset =
         abstract label : string
-        abstract data : obj array
+        abstract data : int array
         abstract backgroundColor : string
         abstract borderWidth : int
         abstract borderColor : string
