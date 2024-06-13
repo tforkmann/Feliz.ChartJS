@@ -46,5 +46,5 @@ type lineDataSet =
         Interop.mkLineDataSetsProp "data" data
     static member inline yAxisID(yAxisID: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "yAxisID" yAxisID
-    static member inline borderColor(iColor: IColor[] -> string) : ILineDataSetsProp =
+    static member inline borderColor(iColor: IColor -> string) : ILineDataSetsProp =
         !!("color" ==> iColor)
