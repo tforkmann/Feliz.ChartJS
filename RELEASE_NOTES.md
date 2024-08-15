@@ -1,3 +1,5 @@
+#### 0.8.16 - 2024-08-15
+* add axestype
 #### 0.8.15 - 2024-08-15
 * add suggestedMin and suggestedMax
 #### 0.8.12 - 2024-06-12

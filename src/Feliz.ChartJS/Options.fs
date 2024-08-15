@@ -256,6 +256,9 @@ type layout =
     static member inline padding(props: IPaddingProp seq) : ILayoutProp =
         Interop.mkLayoutProp "value" (createObj !!props)
 
+
+
+
 [<Erase>]
 type axes =
     static member inline stacked(stacked: bool) : IAxesProp = Interop.mkAxesProp "stacked" stacked
@@ -264,6 +267,7 @@ type axes =
     static member inline ticks(handler: ITicksProperties -> unit) = Interop.mkAxesProp "ticks" handler
     static member inline min(min: int) : IAxesProp = Interop.mkAxesProp "min" min
     static member inline max(max: int) : IAxesProp = Interop.mkAxesProp "max" max
+    static member inline ``type``(axesType: AxesType) : IAxesProp = Interop.mkAxesProp "type" axesType
 
     static member inline suggestedMin(suggestedMin: int) : IAxesProp =
         Interop.mkAxesProp "suggestedMin" suggestedMin

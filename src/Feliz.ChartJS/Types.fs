@@ -178,6 +178,12 @@ type YAxis =
     | YLeft
     | YRight
 
+[<StringEnum;RequireQualifiedAccess>]
+type AxesType =
+    | Time
+    | Logarithmic
+
+[<StringEnum;RequireQualifiedAccess>]
 [<Erase>]
 type InteractionItem =
     abstract element : obj
