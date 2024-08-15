@@ -10,7 +10,8 @@ open PluginsCallbacks
 type option =
     static member inline responsive(resp: bool) : IOptionsProp = Interop.mkOptionsProp "responsive" resp
 
-    static member inline aspectRatio(aspectRatio: int) : IOptionsProp = Interop.mkOptionsProp "aspectRatio" aspectRatio
+    static member inline aspectRatio(aspectRatio: int) : IOptionsProp =
+        Interop.mkOptionsProp "aspectRatio" aspectRatio
 
     static member inline maintainAspectRatio(ratio: bool) : IOptionsProp =
         Interop.mkOptionsProp "maintainAspectRatio" ratio
@@ -231,11 +232,13 @@ type scale =
 
     static member inline y(props: IYProp seq) : IScalesProp =
         Interop.mkScalesProp "y" (createObj !!props)
+
     static member inline xWithAxes(props: IAxesProp seq) : IScalesProp =
         Interop.mkScalesProp "x" (createObj !!props)
 
     static member inline yWithAxes(props: IAxesProp seq) : IScalesProp =
         Interop.mkScalesProp "y" (createObj !!props)
+
     static member inline xAxes(props: IAxesProp seq) : IScalesProp =
         Interop.mkScalesProp "xAxes" (createObj !!props)
 
@@ -259,31 +262,47 @@ type axes =
     static member inline position(position: Position) : IAxesProp = Interop.mkAxesProp "position" position
     static member inline reverse(reverse: bool) : IAxesProp = Interop.mkAxesProp "reverse" reverse
     static member inline ticks(handler: ITicksProperties -> unit) = Interop.mkAxesProp "ticks" handler
+    static member inline min(min: int) : IAxesProp = Interop.mkAxesProp "min" min
+    static member inline max(max: int) : IAxesProp = Interop.mkAxesProp "max" max
 
-    static member inline ticks(props:ITicksProp seq) : IAxesProp =
+    static member inline suggestedMin(suggestedMin: int) : IAxesProp =
+        Interop.mkAxesProp "suggestedMin" suggestedMin
+
+    static member inline suggestedMax(suggestedMax: int) : IAxesProp =
+        Interop.mkAxesProp "suggestedMax" suggestedMax
+
+    static member inline ticks(props: ITicksProp seq) : IAxesProp =
         Interop.mkAxesProp "ticks" (createObj !!props)
-    static member inline title(props:  ITitleProp  seq) : IAxesProp =
+
+    static member inline title(props: ITitleProp seq) : IAxesProp =
         Interop.mkAxesProp "title" (createObj !!props)
 
 [<Erase>]
 type ticks =
     static member inline color(color: string) : ITicksProp = Interop.mkTicksProp "color" color
-    static member inline stepSize(stepSize:int) : ITicksProp = Interop.mkTicksProp "stepSize" stepSize
+    static member inline stepSize(stepSize: int) : ITicksProp = Interop.mkTicksProp "stepSize" stepSize
 
 [<Erase>]
 type y =
     static member inline min(min: int) : IYProp = Interop.mkYProp "min" min
     static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
 
-    static member inline suggestedMin(suggestedMin: int) : IAxesProp = Interop.mkAxesProp "suggestedMin" suggestedMin
-    static member inline suggestedMax(suggestedMax: int) : IAxesProp = Interop.mkAxesProp "suggestedMax" suggestedMax
+    static member inline suggestedMin(suggestedMin: int) : IYProp =
+        Interop.mkYProp "suggestedMin" suggestedMin
+
+    static member inline suggestedMax(suggestedMax: int) : IYProp =
+        Interop.mkYProp "suggestedMax" suggestedMax
+
 [<Erase>]
 type x =
     static member inline min(min: int) : IXProp = Interop.mkXProp "min" min
     static member inline max(max: int) : IXProp = Interop.mkXProp "max" max
 
-    static member inline suggestedMin(suggestedMin: int) : IAxesProp = Interop.mkAxesProp "suggestedMin" suggestedMin
-    static member inline suggestedMax(suggestedMax: int) : IAxesProp = Interop.mkAxesProp "suggestedMax" suggestedMax
+    static member inline suggestedMin(suggestedMin: int) : IAxesProp =
+        Interop.mkAxesProp "suggestedMin" suggestedMin
+
+    static member inline suggestedMax(suggestedMax: int) : IAxesProp =
+        Interop.mkAxesProp "suggestedMax" suggestedMax
 
 [<Erase>]
 type padding =
@@ -294,8 +313,10 @@ type title =
     static member inline display(display: bool) : ITitleProp = Interop.mkTitleProp "display" display
     static member inline text(text: string) : ITitleProp = Interop.mkTitleProp "text" text
     static member inline color(color: string) : ITitleProp = Interop.mkTitleProp "color" color
+
     static member inline padding props : ITitleProp =
         Interop.mkTitleProp "padding" (createObj !!props)
+
     static member inline font props : ITitleProp =
         Interop.mkTitleProp "font" (createObj !!props)
 
@@ -306,12 +327,13 @@ type legend =
 
     static member inline display(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
     static member inline labels(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
-    static member inline labels(props:ILabelsProp seq) : ILegendProp = Interop.mkLegendProp "labels" (createObj !!props)
+
+    static member inline labels(props: ILabelsProp seq) : ILegendProp =
+        Interop.mkLegendProp "labels" (createObj !!props)
 
 [<Erase>]
 type datalabels =
-    static member inline align(align: Position) : IDataLabelsProp =
-        Interop.mkDataLabelsProp "align" align
+    static member inline align(align: Position) : IDataLabelsProp = Interop.mkDataLabelsProp "align" align
 
     static member inline display(display: bool) : IDataLabelsProp =
         Interop.mkDataLabelsProp "display" display
@@ -346,10 +368,14 @@ type wheel =
 
 [<Erase>]
 type labels =
-    static member inline value props : ILabelsProp = Interop.mkLabelsProp "value" (createObj !!props)
+    static member inline value props : ILabelsProp =
+        Interop.mkLabelsProp "value" (createObj !!props)
+
     static member inline color(color: string) : ILabelsProp = Interop.mkLabelsProp "color" color
     static member inline padding(padding: int) : ILabelsProp = Interop.mkLabelsProp "padding" padding
-    static member inline textAlign(textAlign: TextAlignment) : ILabelsProp = Interop.mkLabelsProp "textAlign" textAlign
+
+    static member inline textAlign(textAlign: TextAlignment) : ILabelsProp =
+        Interop.mkLabelsProp "textAlign" textAlign
 
 
 
