@@ -1,5 +1,5 @@
-#### 0.8.20 - 2024-08-15
-* add axestype
+#### 0.8.21 - 2024-08-15
+* add axestype and register time scale
 #### 0.8.15 - 2024-08-15
 * add suggestedMin and suggestedMax
 #### 0.8.12 - 2024-06-12

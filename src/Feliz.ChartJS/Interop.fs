@@ -46,6 +46,7 @@ module Interop =
     let ChartJS: ChartJS = import "Chart" "chart.js"
     let CategoryScale: obj = import "CategoryScale" "chart.js"
     let LinearScale: obj = import "LinearScale" "chart.js"
+    let TimeScale: obj = import "TimeScale" "chart.js"
     let LineElement: obj = import "LineElement" "chart.js"
     let PointElement: obj = import "PointElement" "chart.js"
     let BarElement: obj = import "BarElement" "chart.js"
@@ -76,6 +77,7 @@ module Interop =
     // ChartJS?register (ZoomPlugin)
     ChartJS?register (CategoryScale)
     ChartJS?register (LinearScale)
+    ChartJS?register (TimeScale)
     ChartJS?register (PointElement)
     ChartJS?register (LineElement)
     ChartJS?register (BarElement)
