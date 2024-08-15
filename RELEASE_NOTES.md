@@ -1,3 +1,5 @@
+#### 0.8.13 - 2024-08-15
+* add suggestedMin and suggestedMax
 #### 0.8.12 - 2024-06-12
 * add stepped
 #### 0.8.8 - 2024-06-12

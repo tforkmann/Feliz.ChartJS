@@ -1,14 +1,9 @@
 module Index
 
-open System
 open Elmish
 open Feliz
 open Feliz.ChartJS
 open Browser.Dom
-open Fable.Core.JsInterop
-open Browser.Types
-open PluginsCallbacks
-
 type Model = { Txt: string }
 
 type Msg = UpdateTxt of string

@@ -268,15 +268,22 @@ type axes =
 [<Erase>]
 type ticks =
     static member inline color(color: string) : ITicksProp = Interop.mkTicksProp "color" color
+    static member inline stepSize(stepSize:int) : ITicksProp = Interop.mkTicksProp "stepSize" stepSize
 
 [<Erase>]
 type y =
     static member inline min(min: int) : IYProp = Interop.mkYProp "min" min
     static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
+
+    static member inline suggestedMin(suggestedMin: int) : IAxesProp = Interop.mkAxesProp "suggestedMin" suggestedMin
+    static member inline suggestedMax(suggestedMax: int) : IAxesProp = Interop.mkAxesProp "suggestedMax" suggestedMax
 [<Erase>]
 type x =
     static member inline min(min: int) : IXProp = Interop.mkXProp "min" min
     static member inline max(max: int) : IXProp = Interop.mkXProp "max" max
+
+    static member inline suggestedMin(suggestedMin: int) : IAxesProp = Interop.mkAxesProp "suggestedMin" suggestedMin
+    static member inline suggestedMax(suggestedMax: int) : IAxesProp = Interop.mkAxesProp "suggestedMax" suggestedMax
 
 [<Erase>]
 type padding =
