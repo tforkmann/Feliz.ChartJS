@@ -56,6 +56,7 @@ module Interop =
     let Tooltip: obj = import "Tooltip" "chart.js"
 
     let ChartDataLabels: obj = importAll "chartjs-plugin-datalabels"
+    let MomentAdapter: obj = importAll "chartjs-adapter-moment"
     // let hammerJS: obj = importAll "hammerjs"
     // let ZoomPlugin: obj = importAll "chartjs-plugin-zoom"
 
@@ -86,3 +87,4 @@ module Interop =
     ChartJS?register (Legend)
     ChartJS?register (Title)
     ChartJS?register (ChartDataLabels)
+    ChartJS?register (MomentAdapter)
