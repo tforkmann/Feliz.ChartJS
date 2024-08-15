@@ -18,6 +18,7 @@ module Interop =
     let inline mkTitleProp (key: string) (value: obj) : ITitleProp = unbox (key, value)
     let inline mkAxesProp (key: string) (value: obj) : IAxesProp = unbox (key, value)
     let inline mkTicksProp (key: string) (value: obj) : ITicksProp = unbox (key, value)
+    let inline mkTimeProp (key: string) (value: obj) : ITimeProp = unbox (key, value)
     let inline mkYProp (key: string) (value: obj) : IYProp = unbox (key, value)
     let inline mkXProp (key: string) (value: obj) : IXProp = unbox (key, value)
     let inline mkLegendProp (key: string) (value: obj) : ILegendProp = unbox (key, value)

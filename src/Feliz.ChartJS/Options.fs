@@ -267,7 +267,7 @@ type axes =
     static member inline ticks(handler: ITicksProperties -> unit) = Interop.mkAxesProp "ticks" handler
     static member inline min(min: int) : IAxesProp = Interop.mkAxesProp "min" min
     static member inline max(max: int) : IAxesProp = Interop.mkAxesProp "max" max
-    static member inline ``type``(axesType: AxesType) : IAxesProp = Interop.mkAxesProp "type" axesType
+    static member inline ``type``(props: ITimeProp seq) : IAxesProp =  Interop.mkAxesProp "ticks" (createObj !!props)
 
     static member inline suggestedMin(suggestedMin: int) : IAxesProp =
         Interop.mkAxesProp "suggestedMin" suggestedMin
@@ -285,6 +285,10 @@ type axes =
 type ticks =
     static member inline color(color: string) : ITicksProp = Interop.mkTicksProp "color" color
     static member inline stepSize(stepSize: int) : ITicksProp = Interop.mkTicksProp "stepSize" stepSize
+
+[<Erase>]
+type time =
+    static member inline tooltipFormat(format: string) : ITimeProp = Interop.mkTimeProp "tooltipFormat" format
 
 [<Erase>]
 type y =

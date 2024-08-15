@@ -55,6 +55,10 @@ type IAxesProp =
 type ITicksProp =
     interface
     end
+type ITimeProp =
+    interface
+    end
+
 type IYProp =
     interface
     end
