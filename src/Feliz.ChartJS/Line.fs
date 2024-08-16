@@ -38,6 +38,8 @@ type lineDataSet =
         Interop.mkLineDataSetsProp "borderColor" borderColors
     static member inline backgroundColor(backgroundColor: string): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "backgroundColor" backgroundColor
+    static member inline borderWidth(borderWidth: int): ILineDataSetsProp =
+        Interop.mkLineDataSetsProp "borderWidth" borderWidth
     static member inline colors(colors: string []): ILineDataSetsProp =
         Interop.mkLineDataSetsProp "color" colors
     static member inline backgroundColors(backgroundColors: string []): ILineDataSetsProp =
