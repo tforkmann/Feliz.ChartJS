@@ -1,4 +1,4 @@
-#### 0.9.1 - 2024-08-16
+#### 0.9.2 - 2024-08-16
 * add y axis with ID
 #### 0.8.22 - 2024-08-15
 * add axestype and register time scale
