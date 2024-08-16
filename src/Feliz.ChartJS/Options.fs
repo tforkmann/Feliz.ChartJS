@@ -238,6 +238,8 @@ type scale =
 
     static member inline yWithAxes(props: IAxesProp seq) : IScalesProp =
         Interop.mkScalesProp "y" (createObj !!props)
+    static member inline yWithAxesSecondary(props: IAxesProp seq) : IScalesProp =
+        Interop.mkScalesProp "y1" (createObj !!props)
 
     static member inline xAxes(props: IAxesProp seq) : IScalesProp =
         Interop.mkScalesProp "xAxes" (createObj !!props)

@@ -1,3 +1,5 @@
+#### 0.9.0 - 2024-08-16
+* add secondary y axis
 #### 0.8.22 - 2024-08-15
 * add axestype and register time scale
 #### 0.8.15 - 2024-08-15
