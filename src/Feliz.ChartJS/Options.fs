@@ -338,7 +338,6 @@ type legend =
         Interop.mkLegendProp "position" position
 
     static member inline display(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
-    static member inline labels(display: bool) : ILegendProp = Interop.mkLegendProp "display" display
 
     static member inline labels(props: ILabelsProp seq) : ILegendProp =
         Interop.mkLegendProp "labels" (createObj !!props)
