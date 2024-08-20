@@ -273,10 +273,10 @@ type axes =
     static member inline ``type``(axesType: AxesType) : IAxesProp = Interop.mkAxesProp "type" axesType
     static member inline time(props: ITimeProp seq) : IAxesProp =  Interop.mkAxesProp "time" (createObj !!props)
 
-    static member inline suggestedMin(suggestedMin: int) : IAxesProp =
+    static member inline suggestedMin(suggestedMin: float) : IAxesProp =
         Interop.mkAxesProp "suggestedMin" suggestedMin
 
-    static member inline suggestedMax(suggestedMax: int) : IAxesProp =
+    static member inline suggestedMax(suggestedMax: float) : IAxesProp =
         Interop.mkAxesProp "suggestedMax" suggestedMax
 
     static member inline ticks(props: ITicksProp seq) : IAxesProp =
@@ -299,10 +299,10 @@ type y =
     static member inline min(min: int) : IYProp = Interop.mkYProp "min" min
     static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
 
-    static member inline suggestedMin(suggestedMin: int) : IYProp =
+    static member inline suggestedMin(suggestedMin: float) : IYProp =
         Interop.mkYProp "suggestedMin" suggestedMin
 
-    static member inline suggestedMax(suggestedMax: int) : IYProp =
+    static member inline suggestedMax(suggestedMax: float) : IYProp =
         Interop.mkYProp "suggestedMax" suggestedMax
 
 [<Erase>]
@@ -310,10 +310,10 @@ type x =
     static member inline min(min: int) : IXProp = Interop.mkXProp "min" min
     static member inline max(max: int) : IXProp = Interop.mkXProp "max" max
 
-    static member inline suggestedMin(suggestedMin: int) : IAxesProp =
+    static member inline suggestedMin(suggestedMin: float) : IAxesProp =
         Interop.mkAxesProp "suggestedMin" suggestedMin
 
-    static member inline suggestedMax(suggestedMax: int) : IAxesProp =
+    static member inline suggestedMax(suggestedMax: float) : IAxesProp =
         Interop.mkAxesProp "suggestedMax" suggestedMax
 
 [<Erase>]
