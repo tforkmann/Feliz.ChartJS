@@ -13,6 +13,9 @@ type option =
     static member inline aspectRatio(aspectRatio: int) : IOptionsProp =
         Interop.mkOptionsProp "aspectRatio" aspectRatio
 
+    static member inline locale(locale: string) : IOptionsProp =
+        Interop.mkOptionsProp "locale" locale
+
     static member inline maintainAspectRatio(ratio: bool) : IOptionsProp =
         Interop.mkOptionsProp "maintainAspectRatio" ratio
 

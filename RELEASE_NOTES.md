@@ -1,3 +1,5 @@
+#### 0.9.5 - 2024-08-20
+*  Add local
 #### 0.9.4 - 2024-08-20
 * suggestedMin and suggestedMax for y axis as float
 #### 0.9.3 - 2024-08-16
