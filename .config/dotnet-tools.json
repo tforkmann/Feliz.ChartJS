@@ -10,21 +10,21 @@
       "rollForward": false
     },
     "fable": {
-      "version": "4.19.3",
+      "version": "4.24.0",
       "commands": [
         "fable"
       ],
       "rollForward": false
     },
     "fantomas": {
-      "version": "6.3.11",
+      "version": "7.0.0",
       "commands": [
         "fantomas"
       ],
       "rollForward": false
     },
     "fake-cli": {
-      "version": "6.1.0",
+      "version": "6.1.3",
       "commands": [
         "fake"
       ],

@@ -39,6 +39,9 @@ type barDataSet =
     static member inline backgroundColor(backgroundColor: string) : IBarDataSetsProp =
         Interop.mkBarDataSetsProp "backgroundColor" backgroundColor
 
+    static member inline backgroundColor(backgroundColor: string []) : IBarDataSetsProp =
+        Interop.mkBarDataSetsProp "backgroundColor" backgroundColor
+
     static member inline borderWidth(borderWidth: int) : IBarDataSetsProp =
         Interop.mkBarDataSetsProp "borderWidth" borderWidth
 
