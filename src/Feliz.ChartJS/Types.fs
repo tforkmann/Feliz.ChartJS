@@ -187,8 +187,6 @@ type AxesType =
     | Time
     | Logarithmic
 
-[<StringEnum;RequireQualifiedAccess>]
-[<Erase>]
 type InteractionItem =
     abstract element : obj
     abstract datasetIndex : int
