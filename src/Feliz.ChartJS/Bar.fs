@@ -36,6 +36,20 @@ type barDataSet =
     static member inline borderColor(borderColor: string) : IBarDataSetsProp =
         Interop.mkBarDataSetsProp "borderColor" borderColor
 
+    static member inline barThickness(barThickness: int) : IBarDataSetsProp =
+        Interop.mkBarDataSetsProp "barThickness" barThickness
+
+    static member inline maxBarThickness (maxBarThickness: int) : IBarDataSetsProp =
+        Interop.mkBarDataSetsProp "maxBarThickness" maxBarThickness
+
+    static member inline minBarLength (minBarLength: int) : IBarDataSetsProp =
+        Interop.mkBarDataSetsProp "minBarLength" minBarLength
+
+    static member inline categoryPercentage(categoryPercentage: float) : IBarDataSetsProp =
+        Interop.mkBarDataSetsProp "categoryPercentage" categoryPercentage
+
+    static member inline barPercentage(barPercentage: float) : IBarDataSetsProp =
+        Interop.mkBarDataSetsProp "barPercentage" barPercentage
     static member inline backgroundColor(backgroundColor: string) : IBarDataSetsProp =
         Interop.mkBarDataSetsProp "backgroundColor" backgroundColor
 

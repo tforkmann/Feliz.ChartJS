@@ -10,8 +10,8 @@ let ChartJSBarChart () =
         bar.options [
             option.responsive true
             option.scales [
-                scale.x [ axes.stacked true ]
-                scale.y [ axes.stacked true ]
+                scale.xWithAxes [ axes.stacked true ]
+                scale.yWithAxes [ axes.stacked true ]
             ]
             option.plugins [
                 plugin.legend [ legend.position Position.Top ]

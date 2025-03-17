@@ -10,17 +10,18 @@ let ChartJSLineChart () =
     ChartJS.line [
         line.options [
             option.responsive true
-            option.plugins[plugin.datalabels [
-                               datalabels.display true
-                               datalabels.align Position.Bottom
-                               datalabels.borderRadius 3
-                               datalabels.color "red"
-                               datalabels.backgroundColor "green"
-                               // datalabels.labels [
-                               //     labels.value {|color="blue"|}
-                               // ]
-                               // datalabels.formatter renderCustomLabel
-                               ]]
+            option.plugins [
+                plugin.datalabels [
+                    datalabels.display true
+                    datalabels.align Position.Bottom
+                    datalabels.borderRadius 3
+                    datalabels.color "red"
+                    datalabels.backgroundColor "green"
+                    // datalabels.labels [
+                    //     labels.value {|color="blue"|}
+                    // ]
+                    // datalabels.formatter renderCustomLabel
+                    ]]
         ]
         line.data [
             lineData.labels [|
