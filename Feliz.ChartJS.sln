@@ -4,7 +4,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Docs", "src\Docs\Docs.fspro
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.ChartJS", "src\Feliz.ChartJS\Feliz.ChartJS.fsproj", "{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client", "src\Client\Client.fsproj", "{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client", "src\Client\Client.fsproj", "{C8EE7A0E-8F3D-4468-8652-0EA49EC01690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,10 @@ Global
 		{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F7A6B8B-594C-4E1B-8374-722B2B3D8342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8EE7A0E-8F3D-4468-8652-0EA49EC01690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EE7A0E-8F3D-4468-8652-0EA49EC01690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EE7A0E-8F3D-4468-8652-0EA49EC01690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EE7A0E-8F3D-4468-8652-0EA49EC01690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
