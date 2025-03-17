@@ -1,3 +1,5 @@
+#### 1.0.3 - 2025-03-17
+*  Update Github location
 #### 1.0.2 - 2025-03-17
 *  Extend bar chart props
 #### 1.0.0-alpha.1 - 2025-01-22
