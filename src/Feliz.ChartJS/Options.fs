@@ -174,7 +174,7 @@ type tooltip =
         Interop.mkToolTipsProp "displayColors" displayColors
 
 [<Erase>]
-type tooltipcallback =
+type toolTipCallback =
     static member inline beforeTitle(toolTipItems: TooltipItem[] -> string[]) : IToolTipCallbackProp =
         !!("beforeTitle" ==> toolTipItems)
 
