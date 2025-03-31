@@ -8,6 +8,7 @@ type Page =
     | Install
     | Use
     | LineChart
+    | BubbleChart
     | BarChart
     | DoughnutChart
     | MixedChart

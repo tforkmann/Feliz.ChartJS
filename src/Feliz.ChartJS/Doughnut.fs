@@ -14,7 +14,7 @@ type doughnut =
         Interop.mkDoughnutChartProp "data" (createObj !!props)
 
     static member inline plugins (plugins:IInlinePlugin seq) : IDoughnutChartProp =
-        (!!("plugins" ==> plugins))
+        !!("plugins" ==> plugins)
 
     static member inline ref(ref: IRefValue<Interop.ChartJS option>) : IDoughnutChartProp =
         Interop.mkDoughnutChartProp "ref" ref
@@ -61,7 +61,7 @@ type doughnutDataSet =
     static member inline data(data: int[]) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "data" data
 
-    static member inline datalabels props : IDoughnutDataSetsProp =
+    static member inline dataLabels props : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "datalabels" (createObj !!props)
 
 [<Erase>]

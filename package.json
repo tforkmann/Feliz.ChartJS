@@ -7,7 +7,7 @@
         "startdocs": "cross-os startdocs",
         "test:build": "dotnet fable tests/Client --outDir tests/Client/output --run webpack -p --config webpack.tests.config.js",
         "test:live": "dotnet fable tests/Client --outDir tests/Client/output --run webpack-dev-server --config webpack.tests.config.js",
-        "start": "dotnet fable watch ./src/Client --outDir src/Client/output --run parcel serve ./src/Client/index.html --port 8080",
+        "start": "dotnet fable watch ./src/Client --outDir src/Client/output --run parcel serve ./src/Client/index.html --port 5010",
         "build": "dotnet fable ./src/Docs --outDir src/Docs/output && webpack"
     },
     "cross-os": {

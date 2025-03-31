@@ -98,6 +98,11 @@ type ILineChartProp =
 type IBarChartProp =
     interface
     end
+
+type IBubbleChartProp =
+    interface
+    end
+
 type IDoughnutChartProp =
     interface
     end
@@ -118,6 +123,13 @@ type IBarDataProp =
     end
 
 type IBarDataSetsProp =
+    interface
+    end
+type IBubbleDataProp =
+    interface
+    end
+
+type IBubbleDataSetsProp =
     interface
     end
 

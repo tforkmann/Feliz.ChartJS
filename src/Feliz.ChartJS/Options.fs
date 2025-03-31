@@ -30,7 +30,7 @@ type option =
 
 [<Erase>]
 
-type inlineplugin =
+type inlinePlugin =
     static member inline plugin(props: IInlinePluginProp seq) : IInlinePlugin = !!(createObj !!props)
 
 [<Erase>]
@@ -41,7 +41,7 @@ type plugin =
     static member inline legend(props: ILegendProp seq) : IPluginProp =
         Interop.mkPluginProp "legend" (createObj !!props)
 
-    static member inline datalabels(props: IDataLabelsProp seq) : IPluginProp =
+    static member inline dataLabels(props: IDataLabelsProp seq) : IPluginProp =
         Interop.mkPluginProp "datalabels" (createObj !!props)
 
     static member inline zoom(props: IZoomProp seq) : IPluginProp =
@@ -51,7 +51,7 @@ type plugin =
         Interop.mkPluginProp "tooltip" (createObj !!props)
 
 [<Erase>]
-type inlineplugins =
+type inlinePlugins =
     static member inline id(id: string) : IInlinePluginProp = Interop.mkInlinePluginProp "id" id
 
     static member inline afterDatasetDraw
@@ -346,7 +346,7 @@ type legend =
         Interop.mkLegendProp "labels" (createObj !!props)
 
 [<Erase>]
-type datalabels =
+type dataLabels =
     static member inline align(align: Position) : IDataLabelsProp = Interop.mkDataLabelsProp "align" align
 
     static member inline display(display: bool) : IDataLabelsProp =

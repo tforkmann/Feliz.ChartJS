@@ -29,15 +29,16 @@ let ChartJSLineChart () =
                 scale.yRight [ axes.position Position.Right; axes.reverse true ]
             ]
 
-            option.plugins[plugin.datalabels [
-                               datalabels.display true
-                               datalabels.align Position.Bottom
-                               datalabels.borderRadius 3
-                               datalabels.color "red"
-                               datalabels.backgroundColor "green"
-                           ]
-
-                           plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]]
+            option.plugins [
+                plugin.dataLabels [
+                            dataLabels.display true
+                            dataLabels.align Position.Bottom
+                            dataLabels.borderRadius 3
+                            dataLabels.color "red"
+                            dataLabels.backgroundColor "green"
+                        ]
+                plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]
+            ]
         ]
         line.data [
             lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
@@ -209,9 +210,9 @@ let ChartJSDoughnutChart () =
         | Some e -> e
 
     let counter =
-        inlineplugin.plugin [
-            inlineplugins.id "counter"
-            inlineplugins.beforeDraw (fun handler ->
+        inlinePlugin.plugin [
+            inlinePlugins.id "counter"
+            inlinePlugins.beforeDraw (fun handler ->
                 handler.ctx.save
                 handler.ctx.fillStyle <- "pink"
                 handler.ctx.font <- "60px Arial"
@@ -237,12 +238,12 @@ let ChartJSDoughnutChart () =
             option.plugins [
                 plugin.legend [ legend.position Position.Top ]
                 plugin.title [ title.display true; title.text "Chart.js Doughnut Chart" ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.align Position.Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
+                plugin.dataLabels [
+                    dataLabels.display true
+                    dataLabels.align Position.Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
                 // datalabels.labels [
                 //     labels.value {|color="blue"|}
                 // ]
@@ -263,9 +264,81 @@ let ChartJSDoughnutChart () =
                         "rgba(153, 102, 255, 1)"
                         "rgba(255, 159, 64, 1)"
                     |]
-                    doughnutDataSet.borderWidth 1
-                    doughnutDataSet.hoverOffset 20
-                    doughnutDataSet.backgroundColor [|
+                    doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
+                    doughnutDataSet.dataLabels [| datalabel.anchor "end" |]
+                ]
+            |]
+        ]
+    ]
+
+
+
+
+[<ReactComponent>]
+let ChartJSBubbleChart () =
+    let chartRef: IRefValue<Interop.ChartJS option> = React.useRef (None)
+
+    let receiveChartRef () =
+        match chartRef.current with
+        | None -> failwithf "should be some"
+        | Some e -> e
+
+    let counter =
+        inlinePlugin.plugin [
+            inlinePlugins.id "counter"
+            inlinePlugins.beforeDraw (fun handler ->
+                handler.ctx.save
+                handler.ctx.fillStyle <- "pink"
+                handler.ctx.font <- "60px Arial"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.textAlign <- "center"
+                handler.ctx.fillText ("97", 100, 100)
+                console.log handler.ctx)
+        ]
+    ChartJS.bubble [
+        bubble.ref chartRef
+        bubble.plugins [ counter ]
+        bubble.onClick (fun (e) ->
+            let ref = receiveChartRef ()
+            console.log ref
+            console.log e
+            let dataSet = Interop.eventOperations.getDatasetAtEvent (ref, e)
+            console.log dataSet)
+        bubble.options [
+            option.responsive true
+            option.layout [ layout.padding [ padding.bottom 10 ] ]
+            option.plugins [
+                plugin.legend [ legend.position Position.Top ]
+                plugin.title [ title.display true; title.text "Chart.js Doughnut Chart" ]
+                plugin.dataLabels [
+                    dataLabels.display true
+                    dataLabels.align Position.Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
+                // datalabels.labels [
+                //     labels.value {|color="blue"|}
+                // ]
+                // datalabels.formatter renderCustomLabel
+                ]
+            ]
+        ]
+        bubble.data [
+            bubbleData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
+            bubbleData.datasets [|
+                bubbleData.dataset [
+                    bubbleDataSet.label "# of Votes"
+                    // bubbleDataSet.borderColor [|
+                    //     "rgba(255, 99, 132, 1)"
+                    //     "rgba(54, 162, 235, 1)"
+                    //     "rgba(255, 206, 86, 1)"
+                    //     "rgba(75, 192, 192, 1)"
+                    //     "rgba(153, 102, 255, 1)"
+                    //     "rgba(255, 159, 64, 1)"
+                    // |]
+                    bubbleDataSet.borderWidth 1
+                    bubbleDataSet.backgroundColor [|
                         "rgba(255, 99, 132, 0.2)"
                         "rgba(54, 162, 235, 0.2)"
                         "rgba(255, 206, 86, 0.2)"
@@ -273,8 +346,8 @@ let ChartJSDoughnutChart () =
                         "rgba(153, 102, 255, 0.2)"
                         "rgba(255, 159, 64, 0.2)"
                     |]
-                    doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
-                    doughnutDataSet.datalabels [| datalabel.anchor "end" |]
+                    bubbleDataSet.data [| "12"; "19"; "3"; "5"; "2"; "3" |]
+                    bubbleDataSet.dataLabels [| datalabel.anchor "end" |]
                 ]
             |]
         ]
@@ -290,9 +363,9 @@ let ChartJSMultiDoughnutChart () =
         | Some e -> e
 
     let counter =
-        inlineplugin.plugin [
-            inlineplugins.id "counter"
-            inlineplugins.beforeDraw (fun handler ->
+        inlinePlugin.plugin [
+            inlinePlugins.id "counter"
+            inlinePlugins.beforeDraw (fun handler ->
                 handler.ctx.save
                 handler.ctx.fillStyle <- "pink"
                 handler.ctx.font <- "60px Arial"
@@ -318,12 +391,12 @@ let ChartJSMultiDoughnutChart () =
             option.plugins [
                 plugin.legend [ legend.position Position.Top ]
                 plugin.title [ title.display true; title.text "Chart.js Doughnut Chart" ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.align Position.Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
+                plugin.dataLabels [
+                    dataLabels.display true
+                    dataLabels.align Position.Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
                 // datalabels.labels [
                 //     labels.value {|color="blue"|}
                 // ]
@@ -355,7 +428,7 @@ let ChartJSMultiDoughnutChart () =
                         "rgba(255, 159, 64, 0.2)"
                     |]
                     doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
-                    doughnutDataSet.datalabels [| datalabel.anchor "end" |]
+                    doughnutDataSet.dataLabels [| datalabel.anchor "end" |]
                 ]
                 doughnutData.dataset [
                     doughnutDataSet.label "Detailed of Votes"
@@ -378,7 +451,7 @@ let ChartJSMultiDoughnutChart () =
                         "rgba(255, 159, 64, 0.2)"
                     |]
                     doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
-                    doughnutDataSet.datalabels [| datalabel.anchor "end" |]
+                    doughnutDataSet.dataLabels [| datalabel.anchor "end" |]
                 ]
             |]
         ]
@@ -437,9 +510,10 @@ let view (model: Model) (dispatch: Msg -> unit) =
     Html.div [
         prop.style [ style.height 600; style.width 600 ]
         prop.children [
-            ChartJSLineChart()
+            // ChartJSLineChart()
         // ChartJSLineChartWithCustomToolTips()
-        // ChartJSBarChart()
+            ChartJSBubbleChart()
+        // ChartJSBubbleChart()
         // ChartJSDoughnutChart()
         // ChartJSMultiDoughnutChart()
         // ChartJSMixedTypeChart()

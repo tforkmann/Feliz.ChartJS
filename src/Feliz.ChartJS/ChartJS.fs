@@ -20,6 +20,9 @@ type ChartJS =
     static member inline doughnut(props: IDoughnutChartProp seq) =
         Interop.reactApi.createElement (Interop.doughnut, createObj !!props)
 
+    static member inline bubble(props: IBubbleChartProp seq) =
+        Interop.reactApi.createElement (Interop.bubble, createObj !!props)
+
     static member inline option props : IOptionsProp = !!(createObj !!props)
 
     static member inline plugins(props: obj seq) = (!!("plugins" ==> props))
