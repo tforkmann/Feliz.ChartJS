@@ -26,7 +26,7 @@ type doughnut =
 [<Erase>]
 type doughnutData =
     static member inline labels(labels: string array) : IDoughnutDataProp = !!("labels" ==> labels)
-    static member inline datasets(props: IDoughnutDataSetsProp seq) = (!!("datasets" ==> props))
+    static member inline datasets(props: IDoughnutDataSetsProp seq) = !!("datasets" ==> props)
     static member inline dataset props : IDoughnutDataSetsProp = !!(createObj !!props)
 
 [<Erase>]

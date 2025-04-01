@@ -22,7 +22,7 @@ type line =
 [<Erase>]
 type lineData =
     static member inline labels(labels: string array) : ILineDataProp = !!("labels" ==> labels)
-    static member inline datasets(props: ILineDataSetsProp seq) = (!!("datasets" ==> props))
+    static member inline datasets(props: ILineDataSetsProp seq) = !!("datasets" ==> props)
     static member inline dataset props : ILineDataSetsProp = !!(createObj !!props)
 [<Erase>]
 type lineDataSet =

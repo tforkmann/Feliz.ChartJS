@@ -80,7 +80,7 @@ Target.create
 Target.create "InstallClient" (fun _ -> run npm "install" ".")
 
 Target.create "Run" (fun _ ->
-    [  "client", npm "start" "."  ]
+    [  "client", npm "run start::client" "."  ]
       |> runParallel
 
 )

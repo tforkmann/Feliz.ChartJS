@@ -301,6 +301,8 @@ type time =
 type y =
     static member inline min(min: int) : IYProp = Interop.mkYProp "min" min
     static member inline max(max: int) : IYProp = Interop.mkYProp "max" max
+    static member inline beginAtZero(beginAtZero: bool) : IYProp =
+        Interop.mkYProp "beginAtZero" beginAtZero
 
     static member inline suggestedMin(suggestedMin: float) : IYProp =
         Interop.mkYProp "suggestedMin" suggestedMin

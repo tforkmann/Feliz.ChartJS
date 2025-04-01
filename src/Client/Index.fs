@@ -4,6 +4,7 @@ open Elmish
 open Feliz
 open Feliz.ChartJS
 open Browser.Dom
+
 type Model = { Txt: string }
 
 type Msg = UpdateTxt of string
@@ -31,12 +32,12 @@ let ChartJSLineChart () =
 
             option.plugins [
                 plugin.dataLabels [
-                            dataLabels.display true
-                            dataLabels.align Position.Bottom
-                            dataLabels.borderRadius 3
-                            dataLabels.color "red"
-                            dataLabels.backgroundColor "green"
-                        ]
+                    dataLabels.display true
+                    dataLabels.align Position.Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
+                ]
                 plugin.zoom [ zoom.wheel [ wheel.enabled true ] ]
             ]
         ]
@@ -283,22 +284,8 @@ let ChartJSBubbleChart () =
         | None -> failwithf "should be some"
         | Some e -> e
 
-    let counter =
-        inlinePlugin.plugin [
-            inlinePlugins.id "counter"
-            inlinePlugins.beforeDraw (fun handler ->
-                handler.ctx.save
-                handler.ctx.fillStyle <- "pink"
-                handler.ctx.font <- "60px Arial"
-                handler.ctx.textAlign <- "center"
-                handler.ctx.textAlign <- "center"
-                handler.ctx.textAlign <- "center"
-                handler.ctx.fillText ("97", 100, 100)
-                console.log handler.ctx)
-        ]
     ChartJS.bubble [
         bubble.ref chartRef
-        bubble.plugins [ counter ]
         bubble.onClick (fun (e) ->
             let ref = receiveChartRef ()
             console.log ref
@@ -308,45 +295,74 @@ let ChartJSBubbleChart () =
         bubble.options [
             option.responsive true
             option.layout [ layout.padding [ padding.bottom 10 ] ]
+            option.scales [ scale.y [ y.beginAtZero true ] ]
             option.plugins [
                 plugin.legend [ legend.position Position.Top ]
-                plugin.title [ title.display true; title.text "Chart.js Doughnut Chart" ]
+                plugin.title [ title.display true; title.text "Chart.js Bubble Chart" ]
                 plugin.dataLabels [
                     dataLabels.display true
                     dataLabels.align Position.Bottom
                     dataLabels.borderRadius 3
                     dataLabels.color "red"
                     dataLabels.backgroundColor "green"
-                // datalabels.labels [
-                //     labels.value {|color="blue"|}
-                // ]
-                // datalabels.formatter renderCustomLabel
                 ]
             ]
         ]
         bubble.data [
-            bubbleData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
+            // bubbleData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
             bubbleData.datasets [|
                 bubbleData.dataset [
-                    bubbleDataSet.label "# of Votes"
-                    // bubbleDataSet.borderColor [|
-                    //     "rgba(255, 99, 132, 1)"
-                    //     "rgba(54, 162, 235, 1)"
-                    //     "rgba(255, 206, 86, 1)"
-                    //     "rgba(75, 192, 192, 1)"
-                    //     "rgba(153, 102, 255, 1)"
-                    //     "rgba(255, 159, 64, 1)"
-                    // |]
-                    bubbleDataSet.borderWidth 1
-                    bubbleDataSet.backgroundColor [|
-                        "rgba(255, 99, 132, 0.2)"
-                        "rgba(54, 162, 235, 0.2)"
-                        "rgba(255, 206, 86, 0.2)"
-                        "rgba(75, 192, 192, 0.2)"
-                        "rgba(153, 102, 255, 0.2)"
-                        "rgba(255, 159, 64, 0.2)"
+                    bubbleDataSet.label "Red bubbles"
+                    bubbleDataSet.backgroundColor "rgba(255, 99, 132)"
+                    bubbleDataSet.dataPoints [|
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 10
+                            bubbleDataPoint.y 10
+                            bubbleDataPoint.r 15
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 20
+                            bubbleDataPoint.y 15
+                            bubbleDataPoint.r 10
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 10
+                            bubbleDataPoint.y 30
+                            bubbleDataPoint.r 5
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 50
+                            bubbleDataPoint.y 40
+                            bubbleDataPoint.r 20
+                        ]
                     |]
-                    bubbleDataSet.data [| "12"; "19"; "3"; "5"; "2"; "3" |]
+                    bubbleDataSet.dataLabels [| datalabel.anchor "end" |]
+                ]
+                bubbleData.dataset [
+                    bubbleDataSet.label "Blue bubbles"
+                    bubbleDataSet.backgroundColor "rgba(54, 162, 235)"
+                    bubbleDataSet.dataPoints [|
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 10
+                            bubbleDataPoint.y 20
+                            bubbleDataPoint.r 15
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 20
+                            bubbleDataPoint.y 10
+                            bubbleDataPoint.r 10
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 30
+                            bubbleDataPoint.y 30
+                            bubbleDataPoint.r 5
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 40
+                            bubbleDataPoint.y 40
+                            bubbleDataPoint.r 20
+                        ]
+                    |]
                     bubbleDataSet.dataLabels [| datalabel.anchor "end" |]
                 ]
             |]
@@ -511,7 +527,7 @@ let view (model: Model) (dispatch: Msg -> unit) =
         prop.style [ style.height 600; style.width 600 ]
         prop.children [
             // ChartJSLineChart()
-        // ChartJSLineChartWithCustomToolTips()
+            // ChartJSLineChartWithCustomToolTips()
             ChartJSBubbleChart()
         // ChartJSBubbleChart()
         // ChartJSDoughnutChart()

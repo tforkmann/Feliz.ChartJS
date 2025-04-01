@@ -54,9 +54,6 @@ type bubbleDataSet =
     static member inline backgroundColor(backgroundColor: string) : IBubbleDataSetsProp =
         Interop.mkBubbleDataSetsProp "backgroundColor" backgroundColor
 
-    static member inline backgroundColor(backgroundColor: string []) : IBubbleDataSetsProp =
-        Interop.mkBubbleDataSetsProp "backgroundColor" backgroundColor
-
     static member inline borderWidth(borderWidth: int) : IBubbleDataSetsProp =
         Interop.mkBubbleDataSetsProp "borderWidth" borderWidth
 
@@ -67,4 +64,15 @@ type bubbleDataSet =
         Interop.mkBubbleDataSetsProp "borderRadius" borderRadius
     static member inline dataLabels props : IBubbleDataSetsProp =
         Interop.mkBubbleDataSetsProp "datalabels" (createObj !!props)
-    static member inline data(data: string []) : IBubbleDataSetsProp = Interop.mkBubbleDataSetsProp "data" data
+    static member inline dataPoints (props: IBubbleDataPointsProp seq) : IBubbleDataSetsProp = !!("data" ==> props)
+
+
+[<Erase>]
+type bubbleDataPoints =
+    static member inline dataPoint (props: IBubbleDataPointProp seq) : IBubbleDataPointsProp = !!(createObj !!props)
+
+[<Erase>]
+type bubbleDataPoint =
+    static member inline x(x: float) : IBubbleDataPointProp = Interop.mkBubbleDataPointProp "x" x
+    static member inline y(y: float) : IBubbleDataPointProp = Interop.mkBubbleDataPointProp "y" y
+    static member inline r(r: float) : IBubbleDataPointProp = Interop.mkBubbleDataPointProp "r" r

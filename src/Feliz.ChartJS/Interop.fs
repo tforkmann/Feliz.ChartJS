@@ -38,6 +38,7 @@ module Interop =
     let inline mkBarDataSetsProp (key: string) (value: obj) : IBarDataSetsProp = unbox (key, value)
     let inline mkBubbleDataProp (key: string) (value: obj) : IBubbleDataProp = unbox (key, value)
     let inline mkBubbleDataSetsProp (key: string) (value: obj) : IBubbleDataSetsProp = unbox (key, value)
+    let inline mkBubbleDataPointProp (key: string) (value: obj) : IBubbleDataPointProp = unbox (key, value)
     let inline mkDoughnutDataProp (key: string) (value: obj) : IDoughnutDataProp = unbox (key, value)
     let inline mkDoughnutDataSetsProp (key: string) (value: obj) : IDoughnutDataSetsProp = unbox (key, value)
     let inline mkLayoutProp (key: string) (value: obj) : ILayoutProp = unbox (key, value)
@@ -53,6 +54,7 @@ module Interop =
     let LineElement: obj = import "LineElement" "chart.js"
     let PointElement: obj = import "PointElement" "chart.js"
     let BarElement: obj = import "BarElement" "chart.js"
+    // let Point: obj = import "Point" "chart.js"
     let ArcElement: obj = import "ArcElement" "chart.js"
     let Legend: obj = import "Legend" "chart.js"
     let Title: obj = import "Title" "chart.js"
@@ -80,15 +82,16 @@ module Interop =
     let eventChartJSOperations: IEventChartJSOperations = importAll "chart.js"
 
     // ChartJS?register (ZoomPlugin)
-    ChartJS?register (CategoryScale)
-    ChartJS?register (LinearScale)
-    ChartJS?register (TimeScale)
-    ChartJS?register (PointElement)
-    ChartJS?register (LineElement)
-    ChartJS?register (BarElement)
-    ChartJS?register (ArcElement)
-    ChartJS?register (Tooltip)
-    ChartJS?register (Legend)
-    ChartJS?register (Title)
-    ChartJS?register (ChartDataLabels)
-    ChartJS?register (MomentAdapter)
+    ChartJS?register CategoryScale
+    ChartJS?register LinearScale
+    ChartJS?register TimeScale
+    ChartJS?register PointElement
+    ChartJS?register LineElement
+    ChartJS?register BarElement
+    // ChartJS?register Point
+    ChartJS?register ArcElement
+    ChartJS?register Tooltip
+    ChartJS?register Legend
+    ChartJS?register Title
+    ChartJS?register ChartDataLabels
+    ChartJS?register MomentAdapter

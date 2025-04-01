@@ -129,6 +129,15 @@ type IBubbleDataProp =
     interface
     end
 
+type IBubbleDataPointsProp =
+    interface
+    end
+
+type IBubbleDataPointProp =
+    interface
+    end
+
+
 type IBubbleDataSetsProp =
     interface
     end
