@@ -11,7 +11,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview  }) => {
     var isDev = command === 'serve'
     return {
         plugins: [react(), tailwindcss()],
-        root: "./src/Client",
+        root: isDev ? "./src/Client" : "./src/Docs",
         base: isDev ? undefined : '/Feliz.ChartJS/',
         build: {
             outDir: "../../publish/docs",
