@@ -196,10 +196,10 @@ Target.create "InstallDocs" (fun _ ->
     run npm "install --frozen-lockfile" "."
     run dotnet "restore" docsSrcPath )
 
-Target.create "PublishDocs" (fun _ -> run npm "run build::docs" ".")
+Target.create "PublishDocs" (fun _ -> run npm "run build::docs" "")
 
 Target.create "RunDocs" (fun _ ->
-    run npm "run startdocs" ".")
+    run npm "run start::docs" "")
 
 let dependencies = [
 

@@ -15,7 +15,7 @@ type State = { Page: Page; Theme: string }
 
 let init () =
     let nextPage = Router.currentUrl () |> Page.parseFromUrlSegments
-    { Page = nextPage; Theme = "light" }, Cmd.navigatePage nextPage
+    { Page = nextPage; Theme = "corporate" }, Cmd.navigatePage nextPage
 
 let update (msg: Msg) (state: State) : State * Cmd<Msg> =
     match msg with
@@ -23,8 +23,6 @@ let update (msg: Msg) (state: State) : State * Cmd<Msg> =
     | SetTheme theme -> { state with Theme = theme }, Cmd.none
 
 let private rightSide state dispatch (title: string) (docLink: string) elm =
-
-
     Daisy.drawerContent [
         Daisy.navbar [
             Daisy.navbarStart [
@@ -57,30 +55,10 @@ let private rightSide state dispatch (title: string) (docLink: string) elm =
                   ++ prop.className "my-6 text-5xl font-bold"
                   prop.text title
               ]
-
               elm ]
     ]
 
 let private leftSide (p: Page) =
-    let miBadge (b: string) (t: string) (mp: Page) =
-        Html.li [
-            Html.a [
-                prop.href mp
-                prop.onClick Router.goToUrl
-                if p = mp then
-                    menuItem.active
-                    ++ prop.className "justify-between"
-                else
-                    prop.className "justify-between"
-                prop.children [
-                    Html.span t
-                    Html.span [
-                        prop.className "badge"
-                        prop.text b
-                    ]
-                ]
-            ]
-        ]
 
     let mi (t: string) (mp: Page) =
         Html.li [
@@ -124,6 +102,7 @@ let private leftSide (p: Page) =
                         mi "BarChart" BarChart
                         mi "DoughnutChart" DoughnutChart
                         mi "MixedChart" MixedChart
+                        mi "BubbleChart" BubbleChart
                         ]
                 ]
             ]
@@ -147,7 +126,6 @@ let private inLayout state dispatch (title: string) (docLink: string) (p: Page) 
             ]
         ]
     ]
-
 
 
 [<ReactComponent>]
