@@ -68,8 +68,8 @@ let private leftSide (p: Page) =
                 prop.href mp
                 prop.onClick Router.goToUrl
                 if p = mp then
-                    (menuItem.active
-                     ++ prop.className "justify-between")
+                    menuItem.active
+                    ++ prop.className "justify-between"
                 else
                     prop.className "justify-between"
                 prop.children [

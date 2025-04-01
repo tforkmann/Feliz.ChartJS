@@ -25,6 +25,7 @@ module Page =
         | [ "barchart" ] -> BarChart
         | [ "doughnutchart" ] -> DoughnutChart
         | [ "mixedchart" ] -> MixedChart
+        | [ "bubblechart" ] -> BubbleChart
         | [] -> Install
         | _ -> defaultPage
 
@@ -37,6 +38,7 @@ module Page =
         | BarChart -> ["barchart"] |> noQueryString
         | DoughnutChart -> ["doughnutchart"] |> noQueryString
         | MixedChart -> ["mixedchart"] |> noQueryString
+        | BubbleChart -> ["bubblechart"] |> noQueryString
         | Use -> [ "use" ] |> noQueryString
 
 [<RequireQualifiedAccess>]
