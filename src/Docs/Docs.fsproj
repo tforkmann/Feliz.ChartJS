@@ -12,6 +12,7 @@
         <Compile Include="Pages\BarChart.fs" />
         <Compile Include="Pages\DoughnutChart.fs" />
         <Compile Include="Pages\MixedChart.fs" />
+        <Compile Include="Pages\BubbleChart.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
         <Content Include="index.html" />

@@ -19,16 +19,12 @@ let ChartJSBarChart () =
                     title.display true
                     title.text "Chart.js Bar Chart"
                 ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.align Position.Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
-                    // datalabels.labels [
-                    //     labels.value {|color="blue"|}
-                    // ]
-                    // datalabels.formatter renderCustomLabel
+                plugin.dataLabels [
+                    dataLabels.display true
+                    dataLabels.align Position.Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
                     ]
             ]
         ]
@@ -83,16 +79,16 @@ let code =
                     title.display true
                     title.text "Chart.js Bar Chart"
                 ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.align Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
-                    // datalabels.labels [
+                plugin.dataLabels [
+                    dataLabels.display true
+                    dataLabels.align Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
+                    // dataLabels.labels [
                     //     labels.value {|color="blue"|}
                     // ]
-                    // datalabels.formatter renderCustomLabel
+                    // dataLabels.formatter renderCustomLabel
                     ]
             ]
         ]

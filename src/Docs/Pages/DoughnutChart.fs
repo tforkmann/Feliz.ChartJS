@@ -16,16 +16,12 @@ let ChartJSDoughnutChart () =
                     title.display true
                     title.text "Chart.js Doughnut Chart"
                 ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.align Position.Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
-                    // datalabels.labels [
-                    //     labels.value {|color="blue"|}
-                    // ]
-                    // datalabels.formatter renderCustomLabel
+                plugin.dataLabels [
+                    dataLabels.display true
+                    dataLabels.align Position.Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
                     ]
             ]
         ]
@@ -66,8 +62,8 @@ let ChartJSDoughnutChart () =
                         2
                         3
                     |]
-                    doughnutDataSet.datalabels [|
-                        datalabel.anchor "end"
+                    doughnutDataSet.dataLabels [|
+                        dataLabels.anchor "end"
                     |]
                 ]
             |]
@@ -93,16 +89,12 @@ let code =
                     title.display true
                     title.text "Chart.js Doughnut Chart"
                 ]
-                plugin.datalabels [
-                    datalabels.display true
-                    datalabels.align Bottom
-                    datalabels.borderRadius 3
-                    datalabels.color "red"
-                    datalabels.backgroundColor "green"
-                    // datalabels.labels [
-                    //     labels.value {|color="blue"|}
-                    // ]
-                    // datalabels.formatter renderCustomLabel
+                plugin.dataLabels [
+                    dataLabels.display true
+                    dataLabels.align Bottom
+                    dataLabels.borderRadius 3
+                    dataLabels.color "red"
+                    dataLabels.backgroundColor "green"
                     ]
             ]
         ]
@@ -143,8 +135,8 @@ let code =
                         2
                         3
                     |]
-                    doughnutDataSet.datalabels [|
-                        datalabel.anchor "end"
+                    doughnutDataSet.dataLabels [|
+                        dataLabels.anchor "end"
                     |]
                 ]
             |]

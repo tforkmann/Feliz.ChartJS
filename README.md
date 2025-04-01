@@ -33,12 +33,12 @@ Here is an example ChartJS
 ChartJS.line [
         line.options [
             option.responsive true
-            option.plugins[plugin.datalabels [
-                               datalabels.display true
-                               datalabels.align Bottom
-                               datalabels.borderRadius 3
-                               datalabels.color "red"
-                               datalabels.backgroundColor "green"
+            option.plugins[plugin.dataLabels [
+                               dataLabels.display true
+                               dataLabels.align Bottom
+                               dataLabels.borderRadius 3
+                               dataLabels.color "red"
+                               dataLabels.backgroundColor "green"
                                ]]
         ]
         line.data [

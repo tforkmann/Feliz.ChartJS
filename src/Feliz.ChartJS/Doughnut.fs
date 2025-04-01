@@ -65,5 +65,5 @@ type doughnutDataSet =
         Interop.mkDoughnutDataSetsProp "datalabels" (createObj !!props)
 
 [<Erase>]
-type datalabel =
+type dataLabel =
     static member inline anchor(anchor: string) : IDataLabelProp = Interop.mkDataLabelProp "anchor" anchor

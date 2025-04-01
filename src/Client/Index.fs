@@ -266,7 +266,7 @@ let ChartJSDoughnutChart () =
                         "rgba(255, 159, 64, 1)"
                     |]
                     doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
-                    doughnutDataSet.dataLabels [| datalabel.anchor "end" |]
+                    doughnutDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
             |]
         ]
@@ -309,7 +309,6 @@ let ChartJSBubbleChart () =
             ]
         ]
         bubble.data [
-            // bubbleData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
             bubbleData.datasets [|
                 bubbleData.dataset [
                     bubbleDataSet.label "Red bubbles"
@@ -336,7 +335,7 @@ let ChartJSBubbleChart () =
                             bubbleDataPoint.r 20
                         ]
                     |]
-                    bubbleDataSet.dataLabels [| datalabel.anchor "end" |]
+                    bubbleDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
                 bubbleData.dataset [
                     bubbleDataSet.label "Blue bubbles"
@@ -363,7 +362,7 @@ let ChartJSBubbleChart () =
                             bubbleDataPoint.r 20
                         ]
                     |]
-                    bubbleDataSet.dataLabels [| datalabel.anchor "end" |]
+                    bubbleDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
             |]
         ]
@@ -444,7 +443,7 @@ let ChartJSMultiDoughnutChart () =
                         "rgba(255, 159, 64, 0.2)"
                     |]
                     doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
-                    doughnutDataSet.dataLabels [| datalabel.anchor "end" |]
+                    doughnutDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
                 doughnutData.dataset [
                     doughnutDataSet.label "Detailed of Votes"
@@ -467,7 +466,7 @@ let ChartJSMultiDoughnutChart () =
                         "rgba(255, 159, 64, 0.2)"
                     |]
                     doughnutDataSet.data [| 12; 19; 3; 5; 2; 3 |]
-                    doughnutDataSet.dataLabels [| datalabel.anchor "end" |]
+                    doughnutDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
             |]
         ]
