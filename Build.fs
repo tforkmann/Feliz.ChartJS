@@ -193,7 +193,7 @@ let docsDeployPath = "docs"
 
 Target.create "InstallDocs" (fun _ ->
 
-    run npm "install --frozen-lockfile" docsSrcPath
+    run npm "install --frozen-lockfile" "."
     run dotnet "restore" docsSrcPath )
 
 Target.create "PublishDocs" (fun _ -> run npm "run build" ".")
