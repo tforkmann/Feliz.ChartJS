@@ -66,7 +66,7 @@ let ChartJSBubbleChart () =
                             bubbleDataPoint.r 20
                         ]
                     |]
-                    bubbleDataSet.dataLabels [| datalabel.anchor "end" |]
+                    bubbleDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
                 bubbleData.dataset [
                     bubbleDataSet.label "Blue bubbles"
@@ -93,7 +93,7 @@ let ChartJSBubbleChart () =
                             bubbleDataPoint.r 20
                         ]
                     |]
-                    bubbleDataSet.dataLabels [| datalabel.anchor "end" |]
+                    bubbleDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
             |]
         ]
@@ -176,10 +176,10 @@ let code =
 let title = Html.text "Bubble Chart"
 
 [<ReactComponent>]
-let DoughnutChartView () =
+let BubbleChartView () =
     Html.div [
         Bulma.content [
             codedView title code ChartJSChart
         ]
-        fixDocsView "LineChart" false
+        fixDocsView "BubbleChart" false
     ]

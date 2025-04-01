@@ -178,7 +178,7 @@ NUGET
     Feliz.Bulma (3.0)
       Feliz (>= 2.4)
       FSharp.Core (>= 4.7.2)
-    Feliz.ChartJS (1.0.5)
+    Feliz.ChartJS (1.0.6)
       Feliz (>= 2.9)
     Feliz.CompilerPlugins (2.2)
       Fable.AST (>= 4.2.1)

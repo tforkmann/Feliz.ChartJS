@@ -159,9 +159,9 @@ let AppView (state: State) (dispatch: Msg -> unit) =
         | Use -> "How to use", "/docs/use", Pages.Use.UseView()
         | LineChart -> "LineChart", "/linechart", Pages.LineChart.LineChartView()
         | BarChart -> "BarChart", "/barchart", Pages.BarChart.BarChartView()
-        | DoughnutChart -> "DoughnutChart", "/linechart", Pages.DoughnutChart.DoughnutChartView()
-        | MixedChart -> "MixedChart", "/linechart", Pages.MixedChart.MixedChartView()
-
+        | DoughnutChart -> "DoughnutChart", "/doughnutchart", Pages.DoughnutChart.DoughnutChartView()
+        | MixedChart -> "MixedChart", "/mixedchart", Pages.MixedChart.MixedChartView()
+        | BubbleChart -> "BubbleChart", "/bubblechart", Pages.BubbleChart.BubbleChartView()
     React.router [
         router.hashMode
         router.onUrlChanged (

@@ -63,7 +63,7 @@ let ChartJSDoughnutChart () =
                         3
                     |]
                     doughnutDataSet.dataLabels [|
-                        dataLabels.anchor "end"
+                        dataLabel.anchor "end"
                     |]
                 ]
             |]
