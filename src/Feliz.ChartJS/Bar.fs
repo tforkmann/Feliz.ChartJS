@@ -66,3 +66,6 @@ type barDataSet =
         Interop.mkBarDataSetsProp "borderRadius" borderRadius
 
     static member inline data(data: string []) : IBarDataSetsProp = Interop.mkBarDataSetsProp "data" data
+    static member inline data(data: int []) : IBarDataSetsProp = Interop.mkBarDataSetsProp "data" data
+    static member inline data(data: float []) : IBarDataSetsProp = Interop.mkBarDataSetsProp "data" data
+    static member inline data(data: decimal []) : IBarDataSetsProp = Interop.mkBarDataSetsProp "data" data

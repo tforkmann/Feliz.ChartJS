@@ -44,13 +44,13 @@ type doughnutDataSet =
         Interop.mkDoughnutDataSetsProp "borderWidth" borderWidth
 
     static member inline borderColor(borderColor: string[]) : IDoughnutDataSetsProp =
-        (!!("borderColor" ==> borderColor))
+        !!("borderColor" ==> borderColor)
 
     static member inline cutout(cutout: int) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "cutout" cutout
 
     static member inline backgroundColor(backgroundColor: string[]) : IDoughnutDataSetsProp =
-        (!!("backgroundColor" ==> backgroundColor))
+        !!("backgroundColor" ==> backgroundColor)
 
     static member inline hoverOffset(hoverOffset: int) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "hoverOffset" hoverOffset
@@ -59,6 +59,12 @@ type doughnutDataSet =
         Interop.mkDoughnutDataSetsProp "weight" weight
 
     static member inline data(data: int[]) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "data" data
+    static member inline data(data: float[]) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "data" data
+    static member inline data(data: string[]) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "data" data
+    static member inline data(data: decimal[]) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "data" data
 
     static member inline dataLabels props : IDoughnutDataSetsProp =
