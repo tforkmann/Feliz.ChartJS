@@ -28,7 +28,7 @@ let release = ReleaseNotes.load "RELEASE_NOTES.md"
 
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
-let gitHome = "https://github/tforkmann/"
+let gitHome = "https://github.com/tforkmann/"
 // The name of the project on GitHub
 let gitName = "Feliz.ChartJS"
 
