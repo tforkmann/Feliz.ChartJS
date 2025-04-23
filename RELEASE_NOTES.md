@@ -1,3 +1,5 @@
+#### 1.1.0 - 2025-04-23
+*  Add precision to ticks
 #### 1.0.68 - 2025-04-16
 *  Fix repository link
 #### 1.0.7 - 2025-04-09

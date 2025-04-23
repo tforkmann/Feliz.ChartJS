@@ -292,6 +292,7 @@ type axes =
 type ticks =
     static member inline color(color: string) : ITicksProp = Interop.mkTicksProp "color" color
     static member inline stepSize(stepSize: int) : ITicksProp = Interop.mkTicksProp "stepSize" stepSize
+    static member inline precision(precision: int) : ITicksProp = Interop.mkTicksProp "precision" precision
 
 [<Erase>]
 type time =
