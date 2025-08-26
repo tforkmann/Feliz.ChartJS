@@ -15,7 +15,4 @@ Program.mkProgram Index.init Index.update Index.view
 |> Program.withConsoleTrace
 #endif
 |> Program.withReactSynchronous "elmish-app"
-#if DEBUG
-|> Program.withDebugger
-#endif
 |> Program.run

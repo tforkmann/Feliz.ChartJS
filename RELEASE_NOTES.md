@@ -1,3 +1,5 @@
+#### 1.1.1 - 2025-08-26
+*  Add disable for axis
 #### 1.1.0 - 2025-04-23
 *  Add precision to ticks
 #### 1.0.68 - 2025-04-16

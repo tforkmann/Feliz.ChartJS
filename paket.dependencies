@@ -3,7 +3,6 @@ framework: net9.0
 storage: none
 
 nuget Expecto
-nuget Fable.Elmish.Debugger
 nuget Fable.Mocha
 nuget Fable.Remoting.Client
 nuget Feliz.Bulma
