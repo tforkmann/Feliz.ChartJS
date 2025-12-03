@@ -109,64 +109,58 @@ let ChartJSChart =
 
 let code =
     """
-    ChartJS.doughnut [
-        doughnut.options [
+    ChartJS.bubble [
+        bubble.options [
             option.responsive true
+            option.layout [ layout.padding [ padding.bottom 10 ] ]
+            option.scales [ scale.y [ y.beginAtZero true ] ]
             option.plugins [
-                plugin.legend [ legend.position Top ]
-                plugin.title [
-                    title.display true
-                    title.text "Chart.js Doughnut Chart"
-                ]
+                plugin.legend [ legend.position Position.Top ]
+                plugin.title [ title.display true; title.text "Chart.js Bubble Chart" ]
                 plugin.dataLabels [
                     dataLabels.display true
-                    dataLabels.align Bottom
+                    dataLabels.align Position.Bottom
                     dataLabels.borderRadius 3
                     dataLabels.color "red"
                     dataLabels.backgroundColor "green"
-                    ]
+                ]
             ]
         ]
-        doughnut.data [
-            doughnutData.labels [|
-                "Red"
-                "Blue"
-                "Yellow"
-                "Green"
-                "Purple"
-                "Orange"
-            |]
-            doughnutData.datasets [|
-                doughnutData.dataset [
-                    doughnutDataSet.label "# of Votes"
-                    doughnutDataSet.borderColor [|
-                        "rgba(255, 99, 132, 1)"
-                        "rgba(54, 162, 235, 1)"
-                        "rgba(255, 206, 86, 1)"
-                        "rgba(75, 192, 192, 1)"
-                        "rgba(153, 102, 255, 1)"
-                        "rgba(255, 159, 64, 1)"
+        bubble.data [
+            bubbleData.datasets [|
+                bubbleData.dataset [
+                    bubbleDataSet.label "Red bubbles"
+                    bubbleDataSet.backgroundColor "rgba(255, 99, 132)"
+                    bubbleDataSet.dataPoints [|
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 10
+                            bubbleDataPoint.y 10
+                            bubbleDataPoint.r 15
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 20
+                            bubbleDataPoint.y 15
+                            bubbleDataPoint.r 10
+                        ]
                     |]
-                    doughnutDataSet.borderWidth 1
-                    doughnutDataSet.backgroundColor [|
-                        "rgba(255, 99, 132, 0.2)"
-                        "rgba(54, 162, 235, 0.2)"
-                        "rgba(255, 206, 86, 0.2)"
-                        "rgba(75, 192, 192, 0.2)"
-                        "rgba(153, 102, 255, 0.2)"
-                        "rgba(255, 159, 64, 0.2)"
+                    bubbleDataSet.dataLabels [| dataLabel.anchor "end" |]
+                ]
+                bubbleData.dataset [
+                    bubbleDataSet.label "Blue bubbles"
+                    bubbleDataSet.backgroundColor "rgba(54, 162, 235)"
+                    bubbleDataSet.dataPoints [|
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 10
+                            bubbleDataPoint.y 20
+                            bubbleDataPoint.r 15
+                        ]
+                        bubbleDataPoints.dataPoint [
+                            bubbleDataPoint.x 20
+                            bubbleDataPoint.y 10
+                            bubbleDataPoint.r 10
+                        ]
                     |]
-                    doughnutDataSet.data [|
-                        12
-                        19
-                        3
-                        5
-                        2
-                        3
-                    |]
-                    doughnutDataSet.datalabels [|
-                        datalabel.anchor "end"
-                    |]
+                    bubbleDataSet.dataLabels [| dataLabel.anchor "end" |]
                 ]
             |]
         ]

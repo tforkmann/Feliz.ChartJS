@@ -136,7 +136,7 @@ let code =
                         3
                     |]
                     doughnutDataSet.dataLabels [|
-                        dataLabels.anchor "end"
+                        dataLabel.anchor "end"
                     |]
                 ]
             |]
@@ -152,5 +152,5 @@ let DoughnutChartView () =
         Bulma.content [
             codedView title code ChartJSChart
         ]
-        fixDocsView "LineChart" false
+        fixDocsView "DoughnutChart" false
     ]

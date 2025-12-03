@@ -28,58 +28,45 @@ dotnet run
 ```
 
 ## Example ChartJS
-Here is an example ChartJS
+Here is an example Line Chart:
 ```fs
 ChartJS.line [
-        line.options [
-            option.responsive true
-            option.plugins[plugin.dataLabels [
-                               dataLabels.display true
-                               dataLabels.align Bottom
-                               dataLabels.borderRadius 3
-                               dataLabels.color "red"
-                               dataLabels.backgroundColor "green"
-                               ]]
-        ]
-        line.data [
-            lineData.labels [|
-                "Red"
-                "Blue"
-                "Yellow"
-                "Green"
-                "Purple"
-                "Orange"
-            |]
-            lineData.datasets [|
-                lineData.dataset [
-                    lineDataSet.label "My First Dataset"
-                    lineDataSet.borderColor "rgb(53, 162, 235)"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    lineDataSet.data [|
-                        "1"
-                        "2"
-                        "3"
-                        "4"
-                        "5"
-                        "6"
-                    |]
-                ]
-                lineData.dataset [
-                    lineDataSet.label "My Second Dataset"
-                    lineDataSet.borderColor "yellow"
-                    lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
-                    lineDataSet.data [|
-                        "1"
-                        "2"
-                        "3"
-                        "4"
-                        "4"
-                        "6"
-                    |]
-                ]
-            |]
+    line.options [
+        option.responsive true
+        option.plugins [
+            plugin.dataLabels [
+                dataLabels.display true
+                dataLabels.align Position.Bottom
+                dataLabels.borderRadius 3
+                dataLabels.color "red"
+                dataLabels.backgroundColor "green"
+            ]
         ]
     ]
+    line.data [
+        lineData.labels [| "Red"; "Blue"; "Yellow"; "Green"; "Purple"; "Orange" |]
+        lineData.datasets [|
+            lineData.dataset [
+                lineDataSet.label "My First Dataset"
+                lineDataSet.borderColor "rgb(53, 162, 235)"
+                lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                lineDataSet.data [| "1"; "2"; "3"; "4"; "5"; "6" |]
+            ]
+            lineData.dataset [
+                lineDataSet.label "My Second Dataset"
+                lineDataSet.borderColor "yellow"
+                lineDataSet.backgroundColor "rgba(53, 162, 235, 0.5)"
+                lineDataSet.data [| "1"; "2"; "3"; "4"; "4"; "6" |]
+            ]
+        |]
+    ]
+]
 ```
+
+## Supported Chart Types
+- Line Chart (`ChartJS.line`)
+- Bar Chart (`ChartJS.bar`)
+- Doughnut Chart (`ChartJS.doughnut`)
+- Bubble Chart (`ChartJS.bubble`)
 
 You can find more examples [here](https://tforkmann.github.io/Feliz.ChartJS/)
