@@ -101,8 +101,12 @@ let private leftSide (p: Page) =
                         mi "LineChart" LineChart
                         mi "BarChart" BarChart
                         mi "DoughnutChart" DoughnutChart
-                        mi "MixedChart" MixedChart
+                        mi "PieChart" PieChart
+                        mi "RadarChart" RadarChart
+                        mi "PolarAreaChart" PolarAreaChart
+                        mi "ScatterChart" ScatterChart
                         mi "BubbleChart" BubbleChart
+                        mi "MixedChart" MixedChart
                         ]
                 ]
             ]
@@ -138,8 +142,12 @@ let AppView (state: State) (dispatch: Msg -> unit) =
         | LineChart -> "LineChart", "/linechart", Pages.LineChart.LineChartView()
         | BarChart -> "BarChart", "/barchart", Pages.BarChart.BarChartView()
         | DoughnutChart -> "DoughnutChart", "/doughnutchart", Pages.DoughnutChart.DoughnutChartView()
-        | MixedChart -> "MixedChart", "/mixedchart", Pages.MixedChart.MixedChartView()
+        | PieChart -> "PieChart", "/piechart", Pages.PieChart.PieChartView()
+        | RadarChart -> "RadarChart", "/radarchart", Pages.RadarChart.RadarChartView()
+        | PolarAreaChart -> "PolarAreaChart", "/polarareachart", Pages.PolarAreaChart.PolarAreaChartView()
+        | ScatterChart -> "ScatterChart", "/scatterchart", Pages.ScatterChart.ScatterChartView()
         | BubbleChart -> "BubbleChart", "/bubblechart", Pages.BubbleChart.BubbleChartView()
+        | MixedChart -> "MixedChart", "/mixedchart", Pages.MixedChart.MixedChartView()
     React.router [
         router.hashMode
         router.onUrlChanged (

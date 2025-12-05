@@ -12,6 +12,10 @@ type Page =
     | BarChart
     | DoughnutChart
     | MixedChart
+    | PieChart
+    | RadarChart
+    | PolarAreaChart
+    | ScatterChart
 
 
 [<RequireQualifiedAccess>]
@@ -26,6 +30,10 @@ module Page =
         | [ "doughnutchart" ] -> DoughnutChart
         | [ "mixedchart" ] -> MixedChart
         | [ "bubblechart" ] -> BubbleChart
+        | [ "piechart" ] -> PieChart
+        | [ "radarchart" ] -> RadarChart
+        | [ "polarareachart" ] -> PolarAreaChart
+        | [ "scatterchart" ] -> ScatterChart
         | [] -> Install
         | _ -> defaultPage
 
@@ -39,6 +47,10 @@ module Page =
         | DoughnutChart -> ["doughnutchart"] |> noQueryString
         | MixedChart -> ["mixedchart"] |> noQueryString
         | BubbleChart -> ["bubblechart"] |> noQueryString
+        | PieChart -> ["piechart"] |> noQueryString
+        | RadarChart -> ["radarchart"] |> noQueryString
+        | PolarAreaChart -> ["polarareachart"] |> noQueryString
+        | ScatterChart -> ["scatterchart"] |> noQueryString
         | Use -> [ "use" ] |> noQueryString
 
 [<RequireQualifiedAccess>]

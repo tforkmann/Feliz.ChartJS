@@ -4,6 +4,9 @@
         <TargetFramework>net9.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
+        <ProjectReference Include="..\Feliz.ChartJS\Feliz.ChartJS.fsproj" />
+    </ItemGroup>
+    <ItemGroup>
         <Compile Include="Router.fs" />
         <Compile Include="SharedView.fs" />
         <Compile Include="Pages\Install.fs" />
@@ -11,8 +14,12 @@
         <Compile Include="Pages\LineChart.fs" />
         <Compile Include="Pages\BarChart.fs" />
         <Compile Include="Pages\DoughnutChart.fs" />
-        <Compile Include="Pages\MixedChart.fs" />
+        <Compile Include="Pages\PieChart.fs" />
+        <Compile Include="Pages\RadarChart.fs" />
+        <Compile Include="Pages\PolarAreaChart.fs" />
+        <Compile Include="Pages\ScatterChart.fs" />
         <Compile Include="Pages\BubbleChart.fs" />
+        <Compile Include="Pages\MixedChart.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
         <Content Include="index.html" />

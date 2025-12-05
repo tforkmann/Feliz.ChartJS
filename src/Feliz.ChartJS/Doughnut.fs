@@ -67,9 +67,41 @@ type doughnutDataSet =
     static member inline data(data: decimal[]) : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "data" data
 
+    static member inline hidden(hidden: bool) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "hidden" hidden
+
+    static member inline order(order: int) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "order" order
+
+    static member inline hoverBackgroundColor(hoverBackgroundColor: string) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "hoverBackgroundColor" hoverBackgroundColor
+
+    static member inline hoverBackgroundColor(hoverBackgroundColor: string[]) : IDoughnutDataSetsProp =
+        !!("hoverBackgroundColor" ==> hoverBackgroundColor)
+
+    static member inline hoverBorderColor(hoverBorderColor: string) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "hoverBorderColor" hoverBorderColor
+
+    static member inline hoverBorderColor(hoverBorderColor: string[]) : IDoughnutDataSetsProp =
+        !!("hoverBorderColor" ==> hoverBorderColor)
+
+    static member inline hoverBorderWidth(hoverBorderWidth: int) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "hoverBorderWidth" hoverBorderWidth
+
+    static member inline rotation(rotation: float) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "rotation" rotation
+
+    static member inline circumference(circumference: float) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "circumference" circumference
+
+    static member inline spacing(spacing: int) : IDoughnutDataSetsProp =
+        Interop.mkDoughnutDataSetsProp "spacing" spacing
+
     static member inline dataLabels props : IDoughnutDataSetsProp =
         Interop.mkDoughnutDataSetsProp "datalabels" (createObj !!props)
 
 [<Erase>]
 type dataLabel =
     static member inline anchor(anchor: string) : IDataLabelProp = Interop.mkDataLabelProp "anchor" anchor
+    static member inline align(align: string) : IDataLabelProp = Interop.mkDataLabelProp "align" align
+    static member inline offset(offset: int) : IDataLabelProp = Interop.mkDataLabelProp "offset" offset

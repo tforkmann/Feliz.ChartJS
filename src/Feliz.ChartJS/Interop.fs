@@ -41,6 +41,28 @@ module Interop =
     let inline mkBubbleDataPointProp (key: string) (value: obj) : IBubbleDataPointProp = unbox (key, value)
     let inline mkDoughnutDataProp (key: string) (value: obj) : IDoughnutDataProp = unbox (key, value)
     let inline mkDoughnutDataSetsProp (key: string) (value: obj) : IDoughnutDataSetsProp = unbox (key, value)
+    let inline mkPieChartProp (key: string) (value: obj) : IPieChartProp = unbox (key, value)
+    let inline mkPieDataProp (key: string) (value: obj) : IPieDataProp = unbox (key, value)
+    let inline mkPieDataSetsProp (key: string) (value: obj) : IPieDataSetsProp = unbox (key, value)
+    let inline mkRadarChartProp (key: string) (value: obj) : IRadarChartProp = unbox (key, value)
+    let inline mkRadarDataProp (key: string) (value: obj) : IRadarDataProp = unbox (key, value)
+    let inline mkRadarDataSetsProp (key: string) (value: obj) : IRadarDataSetsProp = unbox (key, value)
+    let inline mkPolarAreaChartProp (key: string) (value: obj) : IPolarAreaChartProp = unbox (key, value)
+    let inline mkPolarAreaDataProp (key: string) (value: obj) : IPolarAreaDataProp = unbox (key, value)
+    let inline mkPolarAreaDataSetsProp (key: string) (value: obj) : IPolarAreaDataSetsProp = unbox (key, value)
+    let inline mkScatterChartProp (key: string) (value: obj) : IScatterChartProp = unbox (key, value)
+    let inline mkScatterDataProp (key: string) (value: obj) : IScatterDataProp = unbox (key, value)
+    let inline mkScatterDataSetsProp (key: string) (value: obj) : IScatterDataSetsProp = unbox (key, value)
+    let inline mkScatterDataPointProp (key: string) (value: obj) : IScatterDataPointProp = unbox (key, value)
+    let inline mkAnimationProp (key: string) (value: obj) : IAnimationProp = unbox (key, value)
+    let inline mkAnimationsProp (key: string) (value: obj) : IAnimationsProp = unbox (key, value)
+    let inline mkTransitionProp (key: string) (value: obj) : ITransitionProp = unbox (key, value)
+    let inline mkInteractionProp (key: string) (value: obj) : IInteractionProp = unbox (key, value)
+    let inline mkElementsProp (key: string) (value: obj) : IElementsProp = unbox (key, value)
+    let inline mkPointElementProp (key: string) (value: obj) : IPointElementProp = unbox (key, value)
+    let inline mkLineElementProp (key: string) (value: obj) : ILineElementProp = unbox (key, value)
+    let inline mkBarElementProp (key: string) (value: obj) : IBarElementProp = unbox (key, value)
+    let inline mkArcElementProp (key: string) (value: obj) : IArcElementProp = unbox (key, value)
     let inline mkLayoutProp (key: string) (value: obj) : ILayoutProp = unbox (key, value)
     let inline mkPaddingProp (key: string) (value: obj) : IPaddingProp = unbox (key, value)
     let inline convertToInteractionItems (value: obj) : InteractionItem [] = unbox value
@@ -56,6 +78,8 @@ module Interop =
     let BarElement: obj = import "BarElement" "chart.js"
     // let Point: obj = import "Point" "chart.js"
     let ArcElement: obj = import "ArcElement" "chart.js"
+    let RadialLinearScale: obj = import "RadialLinearScale" "chart.js"
+    let Filler: obj = import "Filler" "chart.js"
     let Legend: obj = import "Legend" "chart.js"
     let Title: obj = import "Title" "chart.js"
     let Tooltip: obj = import "Tooltip" "chart.js"
@@ -70,6 +94,10 @@ module Interop =
     let doughnut: obj = import "Doughnut" "react-chartjs-2"
     let bubble: obj = import "Bubble" "react-chartjs-2"
     let bar: obj = import "Bar" "react-chartjs-2"
+    let pie: obj = import "Pie" "react-chartjs-2"
+    let radar: obj = import "Radar" "react-chartjs-2"
+    let polarArea: obj = import "PolarArea" "react-chartjs-2"
+    let scatter: obj = import "Scatter" "react-chartjs-2"
     type IEventOperations =
         abstract getDatasetAtEvent: ChartJS * MouseEvent -> InteractionItem []
         abstract getElementAtEvent: ChartJS * MouseEvent -> InteractionItem []
@@ -90,6 +118,8 @@ module Interop =
     ChartJS?register BarElement
     // ChartJS?register Point
     ChartJS?register ArcElement
+    ChartJS?register RadialLinearScale
+    ChartJS?register Filler
     ChartJS?register Tooltip
     ChartJS?register Legend
     ChartJS?register Title

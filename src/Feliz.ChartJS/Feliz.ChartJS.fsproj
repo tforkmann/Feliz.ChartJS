@@ -15,6 +15,11 @@
     <Compile Include="Bar.fs" />
     <Compile Include="Doughnut.fs" />
     <Compile Include="Bubble.fs" />
+    <Compile Include="Pie.fs" />
+    <Compile Include="Radar.fs" />
+    <Compile Include="PolarArea.fs" />
+    <Compile Include="Scatter.fs" />
+    <Compile Include="ChartMethods.fs" />
     <Compile Include="ChartJS.fs" />
   </ItemGroup>
   <PropertyGroup>

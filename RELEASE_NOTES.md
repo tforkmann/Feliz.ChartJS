@@ -1,3 +1,18 @@
+#### 2.0.0 - 2025-12-05
+* **BREAKING**: Major release with comprehensive Chart.js API coverage
+* **New Chart Types**: Added Pie, Radar, PolarArea, and Scatter charts
+* **Animation**: Full animation configuration (duration, easing, delay, loop, callbacks)
+* **Interaction**: Complete interaction options (mode, intersect, axis, includeInvisible)
+* **Elements**: Global element configuration (point, line, bar, arc)
+* **Line Chart**: Added fill, tension, pointRadius, pointStyle, pointHoverRadius, spanGaps, borderDash, and more
+* **Bar Chart**: Added stack, grouped, hoverBackgroundColor, hoverBorderColor, inflateAmount, pointStyle
+* **Doughnut Chart**: Added rotation, circumference, spacing, hover colors
+* **Legend**: Added onClick, onHover, onLeave event handlers, align, maxHeight, maxWidth, fullSize, reverse, rtl
+* **Chart Methods**: New ChartMethods module with update, destroy, reset, resize, toBase64Image, generateLegend, and more
+* **New Types**: Added PointStyle, BorderCapStyle, BorderJoinStyle, FillTarget, Easing, InteractionMode, InteractionAxis enums
+* **Scales**: Registered RadialLinearScale and Filler plugin for Radar/PolarArea charts
+* **Options**: Added indexAxis, devicePixelRatio, resizeDelay, onClick, onHover, onResize
+
 #### 1.1.2 - 2025-09-05
 * Update packages
 #### 1.1.1 - 2025-08-26

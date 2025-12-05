@@ -91,6 +91,42 @@ type IWheelProp =
     interface
     end
 
+type IAnimationProp =
+    interface
+    end
+
+type IAnimationsProp =
+    interface
+    end
+
+type ITransitionProp =
+    interface
+    end
+
+type IInteractionProp =
+    interface
+    end
+
+type IElementsProp =
+    interface
+    end
+
+type IPointElementProp =
+    interface
+    end
+
+type ILineElementProp =
+    interface
+    end
+
+type IBarElementProp =
+    interface
+    end
+
+type IArcElementProp =
+    interface
+    end
+
 type ILineChartProp =
     interface
     end
@@ -104,6 +140,22 @@ type IBubbleChartProp =
     end
 
 type IDoughnutChartProp =
+    interface
+    end
+
+type IPieChartProp =
+    interface
+    end
+
+type IRadarChartProp =
+    interface
+    end
+
+type IPolarAreaChartProp =
+    interface
+    end
+
+type IScatterChartProp =
     interface
     end
 
@@ -147,6 +199,46 @@ type IDoughnutDataProp =
     end
 
 type IDoughnutDataSetsProp =
+    interface
+    end
+
+type IPieDataProp =
+    interface
+    end
+
+type IPieDataSetsProp =
+    interface
+    end
+
+type IRadarDataProp =
+    interface
+    end
+
+type IRadarDataSetsProp =
+    interface
+    end
+
+type IPolarAreaDataProp =
+    interface
+    end
+
+type IPolarAreaDataSetsProp =
+    interface
+    end
+
+type IScatterDataProp =
+    interface
+    end
+
+type IScatterDataSetsProp =
+    interface
+    end
+
+type IScatterDataPointProp =
+    interface
+    end
+
+type IScatterDataPointsProp =
     interface
     end
 
@@ -207,6 +299,90 @@ type YAxis =
 type AxesType =
     | Time
     | Logarithmic
+    | Linear
+    | Category
+    | [<CompiledName("radialLinear")>] RadialLinear
+
+[<StringEnum;RequireQualifiedAccess>]
+type PointStyle =
+    | Circle
+    | Cross
+    | CrossRot
+    | Dash
+    | Line
+    | Rect
+    | RectRounded
+    | RectRot
+    | Star
+    | Triangle
+
+[<StringEnum;RequireQualifiedAccess>]
+type BorderCapStyle =
+    | Butt
+    | Round
+    | Square
+
+[<StringEnum;RequireQualifiedAccess>]
+type BorderJoinStyle =
+    | Bevel
+    | Round
+    | Miter
+
+[<StringEnum;RequireQualifiedAccess>]
+type FillTarget =
+    | Origin
+    | Start
+    | End
+
+[<StringEnum;RequireQualifiedAccess>]
+type Easing =
+    | Linear
+    | EaseInQuad
+    | EaseOutQuad
+    | EaseInOutQuad
+    | EaseInCubic
+    | EaseOutCubic
+    | EaseInOutCubic
+    | EaseInQuart
+    | EaseOutQuart
+    | EaseInOutQuart
+    | EaseInQuint
+    | EaseOutQuint
+    | EaseInOutQuint
+    | EaseInSine
+    | EaseOutSine
+    | EaseInOutSine
+    | EaseInExpo
+    | EaseOutExpo
+    | EaseInOutExpo
+    | EaseInCirc
+    | EaseOutCirc
+    | EaseInOutCirc
+    | EaseInElastic
+    | EaseOutElastic
+    | EaseInOutElastic
+    | EaseInBack
+    | EaseOutBack
+    | EaseInOutBack
+    | EaseInBounce
+    | EaseOutBounce
+    | EaseInOutBounce
+
+[<StringEnum;RequireQualifiedAccess>]
+type InteractionMode =
+    | Point
+    | Nearest
+    | Index
+    | Dataset
+    | X
+    | Y
+
+[<StringEnum;RequireQualifiedAccess>]
+type InteractionAxis =
+    | X
+    | Y
+    | XY
+    | R
 
 type InteractionItem =
     abstract element : obj
