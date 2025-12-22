@@ -1,3 +1,5 @@
+#### 2.0.1 - 2025-12-22
+* Radar extended options
 #### 2.0.0 - 2025-12-05
 * **BREAKING**: Major release with comprehensive Chart.js API coverage
 * **New Chart Types**: Added Pie, Radar, PolarArea, and Scatter charts

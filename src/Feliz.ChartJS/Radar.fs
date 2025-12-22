@@ -40,8 +40,17 @@ type radarDataSet =
     static member inline backgroundColor(backgroundColor: string) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "backgroundColor" backgroundColor
 
+    static member inline backgroundColor(backgroundColor: string[]) : IRadarDataSetsProp =
+        !!("backgroundColor" ==> backgroundColor)
+
+    static member inline borderColor(borderColor: string[]) : IRadarDataSetsProp =
+        !!("borderColor" ==> borderColor)
+
     static member inline borderWidth(borderWidth: int) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "borderWidth" borderWidth
+
+    static member inline borderWidth(borderWidth: int[]) : IRadarDataSetsProp =
+        !!("borderWidth" ==> borderWidth)
 
     static member inline borderDash(borderDash: int[]) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "borderDash" borderDash
@@ -82,29 +91,53 @@ type radarDataSet =
     static member inline pointBorderWidth(pointBorderWidth: int) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointBorderWidth" pointBorderWidth
 
+    static member inline pointBorderWidth(pointBorderWidth: int[]) : IRadarDataSetsProp =
+        !!("pointBorderWidth" ==> pointBorderWidth)
+
     static member inline pointRadius(pointRadius: int) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointRadius" pointRadius
 
     static member inline pointRadius(pointRadius: int[]) : IRadarDataSetsProp =
         !!("pointRadius" ==> pointRadius)
 
+    static member inline pointRadius(pointRadius: float) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "pointRadius" pointRadius
+
     static member inline pointHoverRadius(pointHoverRadius: int) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointHoverRadius" pointHoverRadius
+
+    static member inline pointHoverRadius(pointHoverRadius: int[]) : IRadarDataSetsProp =
+        !!("pointHoverRadius" ==> pointHoverRadius)
 
     static member inline pointHoverBackgroundColor(pointHoverBackgroundColor: string) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointHoverBackgroundColor" pointHoverBackgroundColor
 
+    static member inline pointHoverBackgroundColor(pointHoverBackgroundColor: string[]) : IRadarDataSetsProp =
+        !!("pointHoverBackgroundColor" ==> pointHoverBackgroundColor)
+
     static member inline pointHoverBorderColor(pointHoverBorderColor: string) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointHoverBorderColor" pointHoverBorderColor
+
+    static member inline pointHoverBorderColor(pointHoverBorderColor: string[]) : IRadarDataSetsProp =
+        !!("pointHoverBorderColor" ==> pointHoverBorderColor)
 
     static member inline pointHoverBorderWidth(pointHoverBorderWidth: int) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointHoverBorderWidth" pointHoverBorderWidth
 
+    static member inline pointHoverBorderWidth(pointHoverBorderWidth: int[]) : IRadarDataSetsProp =
+        !!("pointHoverBorderWidth" ==> pointHoverBorderWidth)
+
     static member inline pointStyle(pointStyle: PointStyle) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "pointStyle" pointStyle
+
+    static member inline pointStyle(pointStyle: string) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointStyle" pointStyle
 
     static member inline pointHitRadius(pointHitRadius: int) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "pointHitRadius" pointHitRadius
+
+    static member inline pointHitRadius(pointHitRadius: int[]) : IRadarDataSetsProp =
+        !!("pointHitRadius" ==> pointHitRadius)
 
     static member inline hidden(hidden: bool) : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "hidden" hidden
@@ -123,3 +156,24 @@ type radarDataSet =
 
     static member inline dataLabels props : IRadarDataSetsProp =
         Interop.mkRadarDataSetsProp "datalabels" (createObj !!props)
+
+    static member inline spanGaps(spanGaps: bool) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "spanGaps" spanGaps
+
+    static member inline spanGaps(spanGaps: int) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "spanGaps" spanGaps
+
+    static member inline clip(clip: bool) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "clip" clip
+
+    static member inline clip(clip: int) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "clip" clip
+
+    static member inline hoverBackgroundColor(hoverBackgroundColor: string) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "hoverBackgroundColor" hoverBackgroundColor
+
+    static member inline hoverBorderColor(hoverBorderColor: string) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "hoverBorderColor" hoverBorderColor
+
+    static member inline hoverBorderWidth(hoverBorderWidth: int) : IRadarDataSetsProp =
+        Interop.mkRadarDataSetsProp "hoverBorderWidth" hoverBorderWidth
