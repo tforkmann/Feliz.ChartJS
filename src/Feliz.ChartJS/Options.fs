@@ -46,6 +46,9 @@ type option =
     static member inline interaction(props: IInteractionProp seq) : IOptionsProp =
         Interop.mkOptionsProp "interaction" (createObj !!props)
 
+    static member inline hover(props: IHoverProp seq) : IOptionsProp =
+        Interop.mkOptionsProp "hover" (createObj !!props)
+
     static member inline elements(props: IElementsProp seq) : IOptionsProp =
         Interop.mkOptionsProp "elements" (createObj !!props)
 
@@ -325,11 +328,40 @@ type axes =
     static member inline title(props: ITitleProp seq) : IAxesProp =
         Interop.mkAxesProp "title" (createObj !!props)
 
+    static member inline grid(props: IGridProp seq) : IAxesProp =
+        Interop.mkAxesProp "grid" (createObj !!props)
+
+    static member inline border(props: IGridProp seq) : IAxesProp =
+        Interop.mkAxesProp "border" (createObj !!props)
+
 [<Erase>]
 type ticks =
     static member inline color(color: string) : ITicksProp = Interop.mkTicksProp "color" color
     static member inline stepSize(stepSize: int) : ITicksProp = Interop.mkTicksProp "stepSize" stepSize
     static member inline precision(precision: int) : ITicksProp = Interop.mkTicksProp "precision" precision
+
+[<Erase>]
+type grid =
+    /// The color of the grid lines
+    static member inline color(color: string) : IGridProp = Interop.mkGridProp "color" color
+    /// If false, the grid lines will not be drawn
+    static member inline display(display: bool) : IGridProp = Interop.mkGridProp "display" display
+    /// If true, draw lines on the chart area inside the axis lines
+    static member inline drawOnChartArea(drawOnChartArea: bool) : IGridProp = Interop.mkGridProp "drawOnChartArea" drawOnChartArea
+    /// If true, draw lines beside the ticks
+    static member inline drawTicks(drawTicks: bool) : IGridProp = Interop.mkGridProp "drawTicks" drawTicks
+    /// Length in pixels that the grid lines will draw into the axis area
+    static member inline tickLength(tickLength: int) : IGridProp = Interop.mkGridProp "tickLength" tickLength
+    /// Stroke width of grid lines
+    static member inline lineWidth(lineWidth: int) : IGridProp = Interop.mkGridProp "lineWidth" lineWidth
+    /// If true, gridlines are circular (on radar and polar area charts only)
+    static member inline circular(circular: bool) : IGridProp = Interop.mkGridProp "circular" circular
+    /// Length and spacing of dashes on grid lines
+    static member inline borderDash(borderDash: int[]) : IGridProp = Interop.mkGridProp "borderDash" borderDash
+    /// Offset for line dashes
+    static member inline borderDashOffset(borderDashOffset: float) : IGridProp = Interop.mkGridProp "borderDashOffset" borderDashOffset
+    /// z-index of gridline layer. Values <= 0 are drawn under datasets, > 0 on top
+    static member inline z(z: int) : IGridProp = Interop.mkGridProp "z" z
 
 [<Erase>]
 type time =
@@ -536,6 +568,24 @@ type interaction =
         Interop.mkInteractionProp "includeInvisible" includeInvisible
 
 [<Erase>]
+type hover =
+    /// Sets which elements appear in the tooltip. See Interaction Modes for details.
+    static member inline mode(mode: InteractionMode) : IHoverProp =
+        Interop.mkHoverProp "mode" mode
+
+    /// If true, the hover mode only applies when the mouse position intersects an item on the chart.
+    static member inline intersect(intersect: bool) : IHoverProp =
+        Interop.mkHoverProp "intersect" intersect
+
+    /// Define which directions are used in calculating distances. Defaults to 'x' for 'index' mode and 'xy' in dataset and 'nearest' modes.
+    static member inline axis(axis: InteractionAxis) : IHoverProp =
+        Interop.mkHoverProp "axis" axis
+
+    /// if true, the invisible points that are outside of the chart area will also be included when evaluating interactions.
+    static member inline includeInvisible(includeInvisible: bool) : IHoverProp =
+        Interop.mkHoverProp "includeInvisible" includeInvisible
+
+[<Erase>]
 type elements =
     static member inline point(props: IPointElementProp seq) : IElementsProp =
         Interop.mkElementsProp "point" (createObj !!props)
@@ -642,6 +692,18 @@ type barElement =
     static member inline pointStyle(pointStyle: PointStyle) : IBarElementProp =
         Interop.mkBarElementProp "pointStyle" pointStyle
 
+    static member inline hoverBackgroundColor(hoverBackgroundColor: string) : IBarElementProp =
+        Interop.mkBarElementProp "hoverBackgroundColor" hoverBackgroundColor
+
+    static member inline hoverBorderColor(hoverBorderColor: string) : IBarElementProp =
+        Interop.mkBarElementProp "hoverBorderColor" hoverBorderColor
+
+    static member inline hoverBorderWidth(hoverBorderWidth: int) : IBarElementProp =
+        Interop.mkBarElementProp "hoverBorderWidth" hoverBorderWidth
+
+    static member inline hoverBorderRadius(hoverBorderRadius: int) : IBarElementProp =
+        Interop.mkBarElementProp "hoverBorderRadius" hoverBorderRadius
+
 [<Erase>]
 type arcElement =
     static member inline angle(angle: float) : IArcElementProp =
@@ -670,3 +732,15 @@ type arcElement =
 
     static member inline circular(circular: bool) : IArcElementProp =
         Interop.mkArcElementProp "circular" circular
+
+    static member inline hoverBackgroundColor(hoverBackgroundColor: string) : IArcElementProp =
+        Interop.mkArcElementProp "hoverBackgroundColor" hoverBackgroundColor
+
+    static member inline hoverBorderColor(hoverBorderColor: string) : IArcElementProp =
+        Interop.mkArcElementProp "hoverBorderColor" hoverBorderColor
+
+    static member inline hoverBorderWidth(hoverBorderWidth: int) : IArcElementProp =
+        Interop.mkArcElementProp "hoverBorderWidth" hoverBorderWidth
+
+    static member inline hoverOffset(hoverOffset: int) : IArcElementProp =
+        Interop.mkArcElementProp "hoverOffset" hoverOffset

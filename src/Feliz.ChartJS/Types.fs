@@ -52,6 +52,10 @@ type IAxesProp =
     interface
     end
 
+type IGridProp =
+    interface
+    end
+
 type ITicksProp =
     interface
     end
@@ -104,6 +108,10 @@ type ITransitionProp =
     end
 
 type IInteractionProp =
+    interface
+    end
+
+type IHoverProp =
     interface
     end
 
