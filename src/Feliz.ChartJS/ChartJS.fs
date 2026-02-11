@@ -12,28 +12,28 @@ type ChartJS =
     /// Creates a new ChartJS component.
 
     static member inline line(props: ILineChartProp seq) =
-        Interop.reactApi.createElement (Interop.line, createObj !!props)
+        ReactLegacy.createElement (Interop.line, createObj !!props)
 
     static member inline bar(props: IBarChartProp seq) =
-        Interop.reactApi.createElement (Interop.bar, createObj !!props)
+        ReactLegacy.createElement (Interop.bar, createObj !!props)
 
     static member inline doughnut(props: IDoughnutChartProp seq) =
-        Interop.reactApi.createElement (Interop.doughnut, createObj !!props)
+        ReactLegacy.createElement (Interop.doughnut, createObj !!props)
 
     static member inline bubble(props: IBubbleChartProp seq) =
-        Interop.reactApi.createElement (Interop.bubble, createObj !!props)
+        ReactLegacy.createElement (Interop.bubble, createObj !!props)
 
     static member inline pie(props: IPieChartProp seq) =
-        Interop.reactApi.createElement (Interop.pie, createObj !!props)
+        ReactLegacy.createElement (Interop.pie, createObj !!props)
 
     static member inline radar(props: IRadarChartProp seq) =
-        Interop.reactApi.createElement (Interop.radar, createObj !!props)
+        ReactLegacy.createElement (Interop.radar, createObj !!props)
 
     static member inline polarArea(props: IPolarAreaChartProp seq) =
-        Interop.reactApi.createElement (Interop.polarArea, createObj !!props)
+        ReactLegacy.createElement (Interop.polarArea, createObj !!props)
 
     static member inline scatter(props: IScatterChartProp seq) =
-        Interop.reactApi.createElement (Interop.scatter, createObj !!props)
+        ReactLegacy.createElement (Interop.scatter, createObj !!props)
 
     static member inline option props : IOptionsProp = !!(createObj !!props)
 

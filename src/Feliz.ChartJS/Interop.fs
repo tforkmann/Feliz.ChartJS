@@ -91,15 +91,15 @@ module Interop =
     // let hammerJS: obj = importAll "hammerjs"
     // let ZoomPlugin: obj = importAll "chartjs-plugin-zoom"
 
-    let chart: obj = import "Chart" "react-chartjs-2"
-    let line: obj = import "Line" "react-chartjs-2"
-    let doughnut: obj = import "Doughnut" "react-chartjs-2"
-    let bubble: obj = import "Bubble" "react-chartjs-2"
-    let bar: obj = import "Bar" "react-chartjs-2"
-    let pie: obj = import "Pie" "react-chartjs-2"
-    let radar: obj = import "Radar" "react-chartjs-2"
-    let polarArea: obj = import "PolarArea" "react-chartjs-2"
-    let scatter: obj = import "Scatter" "react-chartjs-2"
+    let chart: Feliz.ReactElement = import "Chart" "react-chartjs-2"
+    let line: Feliz.ReactElement = import "Line" "react-chartjs-2"
+    let doughnut: Feliz.ReactElement = import "Doughnut" "react-chartjs-2"
+    let bubble: Feliz.ReactElement = import "Bubble" "react-chartjs-2"
+    let bar: Feliz.ReactElement = import "Bar" "react-chartjs-2"
+    let pie: Feliz.ReactElement = import "Pie" "react-chartjs-2"
+    let radar: Feliz.ReactElement = import "Radar" "react-chartjs-2"
+    let polarArea: Feliz.ReactElement = import "PolarArea" "react-chartjs-2"
+    let scatter: Feliz.ReactElement = import "Scatter" "react-chartjs-2"
     type IEventOperations =
         abstract getDatasetAtEvent: ChartJS * MouseEvent -> InteractionItem []
         abstract getElementAtEvent: ChartJS * MouseEvent -> InteractionItem []
